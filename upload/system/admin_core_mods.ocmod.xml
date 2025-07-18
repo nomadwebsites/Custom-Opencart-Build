@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+	<name>Admin Core Mods</name>
+	<code>admin_core_mods</code>
+	<version>1.0.9</version>
+	<author>Nomad Technology Solutions LLC</author>
+	<link>https://nomadtechnologysolutions.com</link>
+	<file path="admin/view/template/common/header.twig">
+		<!-- Replace logo -->
+		<operation>
+		    <search><![CDATA[<img src="view/image/logo.png" alt="{{ heading_title }}" title="{{ heading_title }}" />]]></search>
+		    <add position="replace"><![CDATA[<img src="view/image/admin-logo.png?version=1" alt="{{ heading_title }}" title="{{ heading_title }}" style="max-height: 100%;" />]]></add>
+		</operation>
+		<!-- Clean up dropdown menu -->
+		<operation>
+		    <search><![CDATA[<li class="dropdown-header">{{ text_store }}</li>]]></search>
+		    <add position="replace"><![CDATA[<li class="dropdown-header">Front-End</li>]]></add>
+		</operation>
+		<!-- Clean up dropdown menu -->
+		<operation>
+		    <search><![CDATA[<li class="dropdown-header">{{ text_help }}</li>]]></search>
+		    <add position="before"><![CDATA[<!--]]></add>
+		</operation>
+		<!-- Clean up dropdown menu -->
+		<operation>
+		    <search><![CDATA[<li><a href="https://forum.opencart.com" target="_blank"><i class="fa fa-comments-o fa-fw"></i> {{ text_support }}</a></li>]]></search>
+		    <add position="after"><![CDATA[-->]]></add>
+		</operation>
+		<!-- Add link to documentation -->
+		<operation>
+			<search><![CDATA[<li class="dropdown"><a href="#"]]></search>
+			<add position="before"><![CDATA[      <li><a href="https://wiki.nomadtechnologysolutions.com" target="_blank"><i class="fa fa-book"></i> <span class="hidden-xs hidden-sm hidden-md">Documentation</span></a></li>]]></add>
+		</operation>
+	</file>
+
+	<!-- Language mods -->
+	<file path="admin/language/en-gb/common/footer.php">
+		<!-- Powered by -->
+		<operation>
+		    <search><![CDATA[<a href="http://www.opencart.com">OpenCart</a> &copy; 2009-' . date('Y') . ' All Rights Reserved.]]></search>
+		    <add position="replace"><![CDATA[<a href="http://www.opencart.com" target="_blank">Powered by OpenCart</a> &copy; 2009-' . date('Y') . ' All Rights Reserved, and <a href="https://nomadtechnologysolutions.com" target="_blank">Nomad Technology Solutions LLC</a>.]]></add>
+		</operation>
+		<operation>
+		    <search><![CDATA[$_['text_version'] = 'Version %s']]></search>
+		    <add position="replace"><![CDATA[$_['text_version'] = 'Version %s-custom']]></add>
+		</operation>
+	</file>
+	<file path="admin/language/en-gb/sale/order.php">
+		<!-- Missing Orders -->
+		<operation>
+		    <search><![CDATA[Missing Orders]]></search>
+		    <add position="replace"><![CDATA[Incomplete Orders]]></add>
+		</operation>
+
+		<!-- Date Modified -->
+		<operation>
+		    <search><![CDATA[Date Modified]]></search>
+		    <add position="replace"><![CDATA[Last Updated]]></add>
+		</operation>
+	</file>
+	<!-- Admin Voucher Email template -->
+	<file path="admin/language/en-gb/mail/voucher.php">
+		<operation>
+		    <search><![CDATA[To redeem this Gift Certificate, write down the redemption code which is <b>%s</b> then click on the the link below and purchase the product you wish to use this gift certificate on. You can enter the gift certificate code on the shopping cart page before you click checkout.]]></search>
+		    <add position="replace"><![CDATA[<b>Here’s How to Use Your Gift Certificate:</b><br /> Simply enter the code <b>%s</b> at checkout to redeem your gift.]]></add>
+		</operation>
+		<operation>
+		    <search><![CDATA[With a message saying]]></search>
+		    <add position="replace"><![CDATA[With the message:]]></add>
+		</operation>
+	</file>
+	<!-- Admin product template -->
+	<file path="admin/language/en-gb/catalog/product.php">
+		<operation>
+		    <search><![CDATA[With a message saying]]></search>
+		    <add position="replace"><![CDATA[With the message:]]></add>
+		</operation>
+	</file>
+	<file path="admin/language/en-gb/*.php">
+		<!-- Fix date format -->
+		<operation>
+		    <search><![CDATA[d/m/Y]]></search>
+		    <add position="replace"><![CDATA[m/d/Y]]></add>
+		</operation>
+	</file>
+
+	<!-- Admin Voucher Email template -->
+	<file path="admin/view/template/mail/voucher.twig">
+		<!-- Fix logo width -->
+		<operation>
+		    <search><![CDATA[<div style="float: right; margin-left: 20px;"><a href="{{ store_url }}" title="{{ store_name }}"><img src="{{ image }}" alt="{{ store_name }}" /></a></div>]]></search>
+		    <add position="replace"><![CDATA[<a href="{{ store_url }}" title="{{ store_name }}"><img src="{{ image }}" alt="{{ store_name }}" style="margin-bottom: 20px; border: none;width: 250px;max-width: 30%;" /></a>]]></add>
+		</operation>
+	</file>
+
+	<!-- Admin dashboard template -->
+	<file path="admin/view/template/common/dashboard.twig">
+		<!-- Remove cache button for non-admins -->
+		<operation>
+		    <search><![CDATA[<button type="button" id="button-developer" title="{{ button_developer  }}" data-loading-text="{{ text_loading }}" class="btn btn-info"><i class="fa fa-cog"></i></button>]]></search>
+		    <add position="replace"><![CDATA[{% if show_button_developer %}<button type="button" id="button-developer" title="{{ button_developer  }}" data-loading-text="{{ text_loading }}" class="btn btn-info"><i class="fa fa-cog"></i></button>{% endif %}]]></add>
+		</operation>
+	</file>
+
+	<!-- Admin dashboard controller -->
+	<file path="admin/controller/common/dashboard.php">
+		<!-- Remove cache button for non-admins -->
+		<operation>
+		    <search><![CDATA[$this->response->setOutput($this->load->view('common/dashboard', $data));]]></search>
+		    <add position="before"><![CDATA[
+		if ($this->user->hasPermission('access', 'common/developer')) {
+			$data['show_button_developer'] = true;
+		} else {
+			$data['show_button_developer'] = false;
+		}
+            ]]></add>
+		</operation>
+	</file>
+
+	<!-- Admin dashboard sales tile -->
+	<file path="admin/view/template/extension/dashboard/sale_info.twig">
+		<!-- Add dollar sign to total slide -->
+		<operation>
+		    <search><![CDATA[<h2 class="pull-right">{{ total }}</h2>]]></search>
+		    <add position="replace"><![CDATA[<h2 class="pull-right">${{ total }}</h2>]]></add>
+		</operation>
+	</file>
+
+	<!-- Admin menu - remove items -->
+	<file path="admin/controller/common/column_left.php">
+		<operation>
+		    <search><![CDATA[if ($this->user->hasPermission('access', 'localisation/country')) {]]></search>
+		    <add position="replace"><![CDATA[if ($this->user->hasPermission('modify', 'localisation/country')) {]]></add>
+		</operation>
+		<operation>
+		    <search><![CDATA[if ($this->user->hasPermission('access', 'localisation/zone')) {]]></search>
+		    <add position="replace"><![CDATA[if ($this->user->hasPermission('modify', 'localisation/zone')) {]]></add>
+		</operation>
+		<operation>
+		    <search><![CDATA[if ($this->user->hasPermission('access', 'localisation/geo_zone')) {]]></search>
+		    <add position="replace"><![CDATA[if ($this->user->hasPermission('modify', 'localisation/geo_zone')) {]]></add>
+		</operation>
+		<operation>
+		    <search><![CDATA[if ($this->user->hasPermission('access', 'tool/upload')) {]]></search>
+		    <add position="replace"><![CDATA[if ($this->user->hasPermission('modify', 'tool/upload') && $this->user->hasPermission('access', 'common/developer')) {]]></add>
+		</operation>
+	</file>
+
+</modification>

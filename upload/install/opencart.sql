@@ -111,23 +111,6 @@ CREATE TABLE `oc_attribute` (
   PRIMARY KEY (`attribute_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Dumping data for table `oc_attribute`
---
-
-INSERT INTO `oc_attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) VALUES
-(1, 6, 1),
-(2, 6, 5),
-(3, 6, 3),
-(4, 3, 1),
-(5, 3, 2),
-(6, 3, 3),
-(7, 3, 4),
-(8, 3, 5),
-(9, 3, 6),
-(10, 3, 7),
-(11, 3, 8);
-
 -----------------------------------------------------------
 
 --
@@ -142,22 +125,6 @@ CREATE TABLE `oc_attribute_description` (
   PRIMARY KEY (`attribute_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Dumping data for table `oc_attribute_description`
---
-
-INSERT INTO `oc_attribute_description` (`attribute_id`, `language_id`, `name`) VALUES
-(1, 1, 'Description'),
-(2, 1, 'No. of Cores'),
-(4, 1, 'test 1'),
-(5, 1, 'test 2'),
-(6, 1, 'test 3'),
-(7, 1, 'test 4'),
-(8, 1, 'test 5'),
-(9, 1, 'test 6'),
-(10, 1, 'test 7'),
-(11, 1, 'test 8'),
-(3, 1, 'Clockspeed');
 
 -----------------------------------------------------------
 
@@ -172,15 +139,6 @@ CREATE TABLE `oc_attribute_group` (
   PRIMARY KEY (`attribute_group_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Dumping data for table `oc_attribute_group`
---
-
-INSERT INTO `oc_attribute_group` (`attribute_group_id`, `sort_order`) VALUES
-(3, 2),
-(4, 1),
-(5, 3),
-(6, 4);
 
 -----------------------------------------------------------
 
@@ -196,15 +154,6 @@ CREATE TABLE `oc_attribute_group_description` (
   PRIMARY KEY (`attribute_group_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Dumping data for table `oc_attribute_group_description`
---
-
-INSERT INTO `oc_attribute_group_description` (`attribute_group_id`, `language_id`, `name`) VALUES
-(3, 1, 'Memory'),
-(4, 1, 'Technical'),
-(5, 1, 'Motherboard'),
-(6, 1, 'Processor');
 
 -----------------------------------------------------------
 
@@ -220,14 +169,6 @@ CREATE TABLE `oc_banner` (
   PRIMARY KEY (`banner_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Dumping data for table `oc_banner`
---
-
-INSERT INTO `oc_banner` (`banner_id`, `name`, `status`) VALUES
-(6, 'HP Products', 1),
-(7, 'Home Page Slideshow', 1),
-(8, 'Manufacturers', 1);
 
 -----------------------------------------------------------
 
@@ -247,25 +188,6 @@ CREATE TABLE `oc_banner_image` (
   PRIMARY KEY (`banner_image_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Dumping data for table `oc_banner_image`
---
-
-INSERT INTO `oc_banner_image` (`banner_image_id`, `banner_id`, `language_id`, `title`, `link`, `image`, `sort_order`) VALUES
-(79, 7, 1, 'iPhone 6', 'index.php?route=product/product&amp;path=57&amp;product_id=49', 'catalog/demo/banners/iPhone6.jpg', 0),
-(87, 6, 1, 'HP Banner', 'index.php?route=product/manufacturer/info&amp;manufacturer_id=7', 'catalog/demo/compaq_presario.jpg', 0),
-(94, 8, 1, 'NFL', '', 'catalog/demo/manufacturer/nfl.png', 0),
-(95, 8, 1, 'RedBull', '', 'catalog/demo/manufacturer/redbull.png', 0),
-(96, 8, 1, 'Sony', '', 'catalog/demo/manufacturer/sony.png', 0),
-(91, 8, 1, 'Coca Cola', '', 'catalog/demo/manufacturer/cocacola.png', 0),
-(92, 8, 1, 'Burger King', '', 'catalog/demo/manufacturer/burgerking.png', 0),
-(93, 8, 1, 'Canon', '', 'catalog/demo/manufacturer/canon.png', 0),
-(88, 8, 1, 'Harley Davidson', '', 'catalog/demo/manufacturer/harley.png', 0),
-(89, 8, 1, 'Dell', '', 'catalog/demo/manufacturer/dell.png', 0),
-(90, 8, 1, 'Disney', '', 'catalog/demo/manufacturer/disney.png', 0),
-(80, 7, 1, 'MacBookAir', '', 'catalog/demo/banners/MacBookAir.jpg', 0),
-(97, 8, 1, 'Starbucks', '', 'catalog/demo/manufacturer/starbucks.png', 0),
-(98, 8, 1, 'Nintendo', '', 'catalog/demo/manufacturer/nintendo.png', 0);
 
 -----------------------------------------------------------
 
@@ -314,44 +236,7 @@ CREATE TABLE `oc_category` (
 --
 
 INSERT INTO `oc_category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
-(25, '', 0, 1, 1, 3, 1, '2009-01-31 01:04:25', '2011-05-30 12:14:55'),
-(27, '', 20, 0, 0, 2, 1, '2009-01-31 01:55:34', '2010-08-22 06:32:15'),
-(20, 'catalog/demo/compaq_presario.jpg', 0, 1, 1, 1, 1, '2009-01-05 21:49:43', '2011-07-16 02:14:42'),
-(24, '', 0, 1, 1, 5, 1, '2009-01-20 02:36:26', '2011-05-30 12:15:18'),
-(18, 'catalog/demo/hp_2.jpg', 0, 1, 0, 2, 1, '2009-01-05 21:49:15', '2011-05-30 12:13:55'),
-(17, '', 0, 1, 1, 4, 1, '2009-01-03 21:08:57', '2011-05-30 12:15:11'),
-(28, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:12', '2010-08-22 06:32:46'),
-(26, '', 20, 0, 0, 1, 1, '2009-01-31 01:55:14', '2010-08-22 06:31:45'),
-(29, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:37', '2010-08-22 06:32:39'),
-(30, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:59', '2010-08-22 06:33:00'),
-(31, '', 25, 0, 0, 1, 1, '2009-02-03 14:17:24', '2010-08-22 06:33:06'),
-(32, '', 25, 0, 0, 1, 1, '2009-02-03 14:17:34', '2010-08-22 06:33:12'),
-(33, '', 0, 1, 1, 6, 1, '2009-02-03 14:17:55', '2011-05-30 12:15:25'),
-(34, 'catalog/demo/ipod_touch_4.jpg', 0, 1, 4, 7, 1, '2009-02-03 14:18:11', '2011-05-30 12:15:31'),
-(35, '', 28, 0, 0, 0, 1, '2010-09-17 10:06:48', '2010-09-18 14:02:42'),
-(36, '', 28, 0, 0, 0, 1, '2010-09-17 10:07:13', '2010-09-18 14:02:55'),
-(37, '', 34, 0, 0, 0, 1, '2010-09-18 14:03:39', '2011-04-22 01:55:08'),
-(38, '', 34, 0, 0, 0, 1, '2010-09-18 14:03:51', '2010-09-18 14:03:51'),
-(39, '', 34, 0, 0, 0, 1, '2010-09-18 14:04:17', '2011-04-22 01:55:20'),
-(40, '', 34, 0, 0, 0, 1, '2010-09-18 14:05:36', '2010-09-18 14:05:36'),
-(41, '', 34, 0, 0, 0, 1, '2010-09-18 14:05:49', '2011-04-22 01:55:30'),
-(42, '', 34, 0, 0, 0, 1, '2010-09-18 14:06:34', '2010-11-07 20:31:04'),
-(43, '', 34, 0, 0, 0, 1, '2010-09-18 14:06:49', '2011-04-22 01:55:40'),
-(44, '', 34, 0, 0, 0, 1, '2010-09-21 15:39:21', '2010-11-07 20:30:55'),
-(45, '', 18, 0, 0, 0, 1, '2010-09-24 18:29:16', '2011-04-26 08:52:11'),
-(46, '', 18, 0, 0, 0, 1, '2010-09-24 18:29:31', '2011-04-26 08:52:23'),
-(47, '', 34, 0, 0, 0, 1, '2010-11-07 11:13:16', '2010-11-07 11:13:16'),
-(48, '', 34, 0, 0, 0, 1, '2010-11-07 11:13:33', '2010-11-07 11:13:33'),
-(49, '', 34, 0, 0, 0, 1, '2010-11-07 11:14:04', '2010-11-07 11:14:04'),
-(50, '', 34, 0, 0, 0, 1, '2010-11-07 11:14:23', '2011-04-22 01:16:01'),
-(51, '', 34, 0, 0, 0, 1, '2010-11-07 11:14:38', '2011-04-22 01:16:13'),
-(52, '', 34, 0, 0, 0, 1, '2010-11-07 11:16:09', '2011-04-22 01:54:57'),
-(53, '', 34, 0, 0, 0, 1, '2010-11-07 11:28:53', '2011-04-22 01:14:36'),
-(54, '', 34, 0, 0, 0, 1, '2010-11-07 11:29:16', '2011-04-22 01:16:50'),
-(55, '', 34, 0, 0, 0, 1, '2010-11-08 10:31:32', '2010-11-08 10:31:32'),
-(56, '', 34, 0, 0, 0, 1, '2010-11-08 10:31:50', '2011-04-22 01:16:37'),
-(57, '', 0, 1, 1, 3, 1, '2011-04-26 08:53:16', '2011-05-30 12:15:05'),
-(58, '', 52, 0, 0, 0, 1, '2011-05-08 13:44:16', '2011-05-08 13:44:16');
+(1, '', 0, 1, 1, 999, 1, '2024-05-16 22:00:00', '2024-05-16 22:00:00');
 
 -----------------------------------------------------------
 
@@ -377,44 +262,7 @@ CREATE TABLE `oc_category_description` (
 --
 
 INSERT INTO `oc_category_description` (`category_id`, `language_id`, `name`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
-(28, 1, 'Monitors', '', 'Monitors', '', ''),
-(33, 1, 'Cameras', '', 'Cameras', '', ''),
-(32, 1, 'Web Cameras', '', 'Web Cameras', '', ''),
-(31, 1, 'Scanners', '', 'Scanners', '', ''),
-(30, 1, 'Printers', '', 'Printers', '', ''),
-(29, 1, 'Mice and Trackballs', '', 'Mice and Trackballs', '', ''),
-(27, 1, 'Mac', '', 'Mac', '', ''),
-(26, 1, 'PC', '', 'PC', '', ''),
-(17, 1, 'Software', '', 'Software', '', ''),
-(25, 1, 'Components', '', 'Components', '', ''),
-(24, 1, 'Phones &amp; PDAs', '', 'Phones &amp; PDAs', '', ''),
-(20, 1, 'Desktops', '&lt;p&gt;\r\n	Example of category description text&lt;/p&gt;\r\n', 'Desktops', 'Example of category description', ''),
-(35, 1, 'test 1', '', 'test 1', '', ''),
-(36, 1, 'test 2', '', 'test 2', '', ''),
-(37, 1, 'test 5', '', 'test 5', '', ''),
-(38, 1, 'test 4', '', 'test 4', '', ''),
-(39, 1, 'test 6', '', 'test 6', '', ''),
-(40, 1, 'test 7', '', 'test 7', '', ''),
-(41, 1, 'test 8', '', 'test 8', '', ''),
-(42, 1, 'test 9', '', 'test 9', '', ''),
-(43, 1, 'test 11', '', 'test 11', '', ''),
-(34, 1, 'MP3 Players', '&lt;p&gt;\r\n	Shop Laptop feature only the best laptop deals on the market. By comparing laptop deals from the likes of PC World, Comet, Dixons, The Link and Carphone Warehouse, Shop Laptop has the most comprehensive selection of laptops on the internet. At Shop Laptop, we pride ourselves on offering customers the very best laptop deals. From refurbished laptops to netbooks, Shop Laptop ensures that every laptop - in every colour, style, size and technical spec - is featured on the site at the lowest possible price.&lt;/p&gt;\r\n', 'MP3 Players', '', ''),
-(18, 1, 'Laptops &amp; Notebooks', '&lt;p&gt;\r\n	Shop Laptop feature only the best laptop deals on the market. By comparing laptop deals from the likes of PC World, Comet, Dixons, The Link and Carphone Warehouse, Shop Laptop has the most comprehensive selection of laptops on the internet. At Shop Laptop, we pride ourselves on offering customers the very best laptop deals. From refurbished laptops to netbooks, Shop Laptop ensures that every laptop - in every colour, style, size and technical spec - is featured on the site at the lowest possible price.&lt;/p&gt;\r\n', 'Laptops &amp; Notebooks', '', ''),
-(44, 1, 'test 12', '', 'test 12', '', ''),
-(45, 1, 'Windows', '', 'Windows', '', ''),
-(46, 1, 'Macs', '', 'Macs', '', ''),
-(47, 1, 'test 15', '', 'test 15', '', ''),
-(48, 1, 'test 16', '', 'test 16', '', ''),
-(49, 1, 'test 17', '', 'test 17', '', ''),
-(50, 1, 'test 18', '', 'test 18', '', ''),
-(51, 1, 'test 19', '', 'test 19', '', ''),
-(52, 1, 'test 20', '', 'test 20', '', ''),
-(53, 1, 'test 21', '', 'test 21', '', ''),
-(54, 1, 'test 22', '', 'test 22', '', ''),
-(55, 1, 'test 23', '', 'test 23', '', ''),
-(56, 1, 'test 24', '', 'test 24', '', ''),
-(57, 1, 'Tablets', '', 'Tablets', '', ''),
-(58, 1, 'test 25', '', 'test 25', '', '');
+(1, 1, 'Shop All Products', '', 'Shop All Products', '', '');
 
 -----------------------------------------------------------
 
@@ -448,77 +296,7 @@ CREATE TABLE `oc_category_path` (
 --
 
 INSERT INTO `oc_category_path` (`category_id`, `path_id`, `level`) VALUES
-(25, 25, 0),
-(28, 25, 0),
-(28, 28, 1),
-(35, 25, 0),
-(35, 28, 1),
-(35, 35, 2),
-(36, 25, 0),
-(36, 28, 1),
-(36, 36, 2),
-(29, 25, 0),
-(29, 29, 1),
-(30, 25, 0),
-(30, 30, 1),
-(31, 25, 0),
-(31, 31, 1),
-(32, 25, 0),
-(32, 32, 1),
-(20, 20, 0),
-(27, 20, 0),
-(27, 27, 1),
-(26, 20, 0),
-(26, 26, 1),
-(24, 24, 0),
-(18, 18, 0),
-(45, 18, 0),
-(45, 45, 1),
-(46, 18, 0),
-(46, 46, 1),
-(17, 17, 0),
-(33, 33, 0),
-(34, 34, 0),
-(37, 34, 0),
-(37, 37, 1),
-(38, 34, 0),
-(38, 38, 1),
-(39, 34, 0),
-(39, 39, 1),
-(40, 34, 0),
-(40, 40, 1),
-(41, 34, 0),
-(41, 41, 1),
-(42, 34, 0),
-(42, 42, 1),
-(43, 34, 0),
-(43, 43, 1),
-(44, 34, 0),
-(44, 44, 1),
-(47, 34, 0),
-(47, 47, 1),
-(48, 34, 0),
-(48, 48, 1),
-(49, 34, 0),
-(49, 49, 1),
-(50, 34, 0),
-(50, 50, 1),
-(51, 34, 0),
-(51, 51, 1),
-(52, 34, 0),
-(52, 52, 1),
-(58, 34, 0),
-(58, 52, 1),
-(58, 58, 2),
-(53, 34, 0),
-(53, 53, 1),
-(54, 34, 0),
-(54, 54, 1),
-(55, 34, 0),
-(55, 55, 1),
-(56, 34, 0),
-(56, 56, 1),
-(57, 57, 0);
+(1, 1, 0);
 
 -----------------------------------------------------------
 
@@ -567,44 +345,7 @@ CREATE TABLE `oc_category_to_store` (
 --
 
 INSERT INTO `oc_category_to_store` (`category_id`, `store_id`) VALUES
-(17, 0),
-(18, 0),
-(20, 0),
-(24, 0),
-(25, 0),
-(26, 0),
-(27, 0),
-(28, 0),
-(29, 0),
-(30, 0),
-(31, 0),
-(32, 0),
-(33, 0),
-(34, 0),
-(35, 0),
-(36, 0),
-(37, 0),
-(38, 0),
-(39, 0),
-(40, 0),
-(41, 0),
-(42, 0),
-(43, 0),
-(44, 0),
-(45, 0),
-(46, 0),
-(47, 0),
-(48, 0),
-(49, 0),
-(50, 0),
-(51, 0),
-(52, 0),
-(53, 0),
-(54, 0),
-(55, 0),
-(56, 0),
-(57, 0),
-(58, 0);
+(1, 0);
 
 -----------------------------------------------------------
 
@@ -908,15 +649,6 @@ CREATE TABLE `oc_coupon` (
   PRIMARY KEY (`coupon_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Dumping data for table `oc_coupon`
---
-
-INSERT INTO `oc_coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logged`, `shipping`, `total`, `date_start`, `date_end`, `uses_total`, `uses_customer`, `status`, `date_added`) VALUES
-(4, '-10% Discount', '2222', 'P', '10.0000', 0, 0, '0.0000', '2014-01-01', '2020-01-01', 10, '10', 0, '2009-01-27 13:55:03'),
-(5, 'Free Shipping', '3333', 'P', '0.0000', 0, 1, '100.0000', '2014-01-01', '2014-02-01', 10, '10', 0, '2009-03-14 21:13:53'),
-(6, '-10.00 Discount', '1111', 'F', '10.0000', 0, 0, '10.0000', '2014-01-01', '2020-01-01', 100000, '10000', 0, '2009-03-14 21:15:18');
-
 -----------------------------------------------------------
 
 --
@@ -986,9 +718,7 @@ CREATE TABLE `oc_currency` (
 --
 
 INSERT INTO `oc_currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
-(1, 'Pound Sterling', 'GBP', '£', '', '2', 0.61250001, 1, '2014-09-25 14:40:00'),
-(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2014-09-25 14:40:00'),
-(3, 'Euro', 'EUR', '', '€', '2', 0.78460002, 1, '2014-09-25 14:40:00');
+(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2014-09-25 14:40:00');
 
 -----------------------------------------------------------
 
@@ -1453,30 +1183,6 @@ INSERT INTO `oc_event` (`event_id`, `code`, `trigger`, `action`, `status`) VALUE
 (32, 'admin_mail_return', 'admin/model/sale/return/addReturnHistory/after', 'mail/return', 1);
 INSERT INTO `oc_event` (`event_id`, `code`, `trigger`, `action`, `status`) VALUES
 (33, 'admin_mail_forgotten', 'admin/model/user/user/editCode/after', 'mail/forgotten', 1);
-INSERT INTO `oc_event` (`event_id`, `code`, `trigger`, `action`, `status`, `sort_order`) VALUES
-(34, 'advertise_google', 'admin/model/catalog/product/deleteProduct/after', 'extension/advertise/google/deleteProduct', 1, 0);
-INSERT INTO `oc_event` (`event_id`, `code`, `trigger`, `action`, `status`, `sort_order`) VALUES
-(35, 'advertise_google', 'admin/model/catalog/product/copyProduct/after', 'extension/advertise/google/copyProduct', 1, 0);
-INSERT INTO `oc_event` (`event_id`, `code`, `trigger`, `action`, `status`, `sort_order`) VALUES
-(36, 'advertise_google', 'admin/view/common/column_left/before', 'extension/advertise/google/admin_link', 1, 0);
-INSERT INTO `oc_event` (`event_id`, `code`, `trigger`, `action`, `status`, `sort_order`) VALUES
-(37, 'advertise_google', 'admin/model/catalog/product/addProduct/after', 'extension/advertise/google/addProduct', 1, 0);
-INSERT INTO `oc_event` (`event_id`, `code`, `trigger`, `action`, `status`, `sort_order`) VALUES
-(38, 'advertise_google', 'catalog/controller/checkout/success/before', 'extension/advertise/google/before_checkout_success', 1, 0);
-INSERT INTO `oc_event` (`event_id`, `code`, `trigger`, `action`, `status`, `sort_order`) VALUES
-(39, 'advertise_google', 'catalog/view/common/header/after', 'extension/advertise/google/google_global_site_tag', 1, 0);
-INSERT INTO `oc_event` (`event_id`, `code`, `trigger`, `action`, `status`, `sort_order`) VALUES
-(40, 'advertise_google', 'catalog/view/common/success/after', 'extension/advertise/google/google_dynamic_remarketing_purchase', 1, 0);
-INSERT INTO `oc_event` (`event_id`, `code`, `trigger`, `action`, `status`, `sort_order`) VALUES
-(41, 'advertise_google', 'catalog/view/product/product/after', 'extension/advertise/google/google_dynamic_remarketing_product', 1, 0);
-INSERT INTO `oc_event` (`event_id`, `code`, `trigger`, `action`, `status`, `sort_order`) VALUES
-(42, 'advertise_google', 'catalog/view/product/search/after', 'extension/advertise/google/google_dynamic_remarketing_searchresults', 1, 0);
-INSERT INTO `oc_event` (`event_id`, `code`, `trigger`, `action`, `status`, `sort_order`) VALUES
-(43, 'advertise_google', 'catalog/view/product/category/after', 'extension/advertise/google/google_dynamic_remarketing_category', 1, 0);
-INSERT INTO `oc_event` (`event_id`, `code`, `trigger`, `action`, `status`, `sort_order`) VALUES
-(44, 'advertise_google', 'catalog/view/common/home/after', 'extension/advertise/google/google_dynamic_remarketing_home', 1, 0);
-INSERT INTO `oc_event` (`event_id`, `code`, `trigger`, `action`, `status`, `sort_order`) VALUES
-(45, 'advertise_google', 'catalog/view/checkout/cart/after', 'extension/advertise/google/google_dynamic_remarketing_cart', 1, 0);
 
 -----------------------------------------------------------
 
@@ -1536,8 +1242,7 @@ INSERT INTO `oc_extension` (`extension_id`, `type`, `code`) VALUES
 (38, 'report', 'sale_tax'),
 (39, 'report', 'customer_activity'),
 (40, 'report', 'customer_order'),
-(41, 'report', 'customer_reward'),
-(42, 'advertise', 'google');
+(41, 'report', 'customer_reward');
 
 -----------------------------------------------------------
 
@@ -1646,8 +1351,205 @@ CREATE TABLE `oc_geo_zone` (
 --
 
 INSERT INTO `oc_geo_zone` (`geo_zone_id`, `name`, `description`, `date_modified`, `date_added`) VALUES
-(3, 'UK VAT Zone', 'UK VAT', '2010-02-26 22:33:24', '2009-01-06 23:26:25'),
-(4, 'UK Shipping', 'UK Shipping Zones', '2010-12-15 15:18:13', '2009-06-23 01:14:53');
+(5, 'South Carolina', 'South Carolina Sales Tax', '2024-05-08 20:20:00', '2024-05-08 20:20:00'),
+(6, 'United States', 'United States Shipping', '2024-05-08 20:20:00', '2024-05-08 20:20:00'),
+(462, 'Canada British Columbia', 'British Columbia Tax Zone', '2024-09-19 13:07:25', '2024-09-19 13:07:25'),
+(463, 'Canada Manitoba', 'Manitoba Tax Zone', '2024-09-19 13:07:25', '2024-09-19 13:07:25'),
+(464, 'Canada New Brunswick', 'New Brunswick Tax Zone', '2024-09-19 13:07:25', '2024-09-19 13:07:25'),
+(465, 'Canada Newfoundland and Labrador', 'Newfoundland and Labrador Tax Zone', '2024-09-19 13:07:25', '2024-09-19 13:07:25'),
+(466, 'Canada Nova Scotia', 'Nova Scotia Tax Zone', '2024-09-19 13:07:25', '2024-09-19 13:07:25'),
+(467, 'Canada Ontario', 'Ontario Tax Zone', '2024-09-19 13:07:25', '2024-09-19 13:07:25'),
+(468, 'Canada Prince Edward Island', 'Prince Edward Island Tax Zone', '2024-09-19 13:07:25', '2024-09-19 13:07:25'),
+(469, 'Canada Québec', 'Québec Tax Zone', '2024-09-19 13:07:25', '2024-09-19 13:07:25'),
+(470, 'Canada Saskatchewan', 'Saskatchewan Tax Zone', '2024-09-19 13:07:25', '2024-09-19 13:07:25'),
+(445, 'Zimbabwe', 'Zimbabwe Tax Zone', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(444, 'Zambia', 'Zambia Tax Zone', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(443, 'Yemen', 'Yemen Tax Zone', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(442, 'Vietnam', 'Vietnam Tax Zone', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(441, 'Venezuela', 'Venezuela Tax Zone', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(440, 'Vanuatu', 'Vanuatu Tax Zone', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(439, 'Uzbekistan', 'Uzbekistan Tax Zone', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(438, 'Uruguay', 'Uruguay Tax Zone', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(437, 'United Kingdom', 'United Kingdom Tax Zone', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(436, 'United Arab Emirates', 'United Arab Emirates Tax Zone', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(435, 'Ukraine', 'Ukraine Tax Zone', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(434, 'Uganda', 'Uganda Tax Zone', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(433, 'Turkmenistan', 'Turkmenistan Tax Zone', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(432, 'Turkey', 'Turkey Tax Zone', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(431, 'Tunisia', 'Tunisia Tax Zone', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(430, 'Trinidad and Tobago', 'Trinidad and Tobago Tax Zone', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(429, 'Tonga', 'Tonga Tax Zone', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(428, 'Togo', 'Togo Tax Zone', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(427, 'Timor-Leste', 'Timor-Leste Tax Zone', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(426, 'Thailand', 'Thailand Tax Zone', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(425, 'Tanzania', 'Tanzania Tax Zone', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(424, 'Taiwan', 'Taiwan Tax Zone', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(423, 'Switzerland', 'Switzerland Tax Zone', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(422, 'Sweden', 'Sweden Tax Zone', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(421, 'Swaziland', 'Swaziland Tax Zone', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(420, 'Suriname', 'Suriname Tax Zone', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(419, 'Sudan', 'Sudan Tax Zone', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(418, 'St. Vincent', 'St. Vincent Tax Zone', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(417, 'St. Maarten', 'St. Maarten Tax Zone', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(416, 'St. Lucia', 'St. Lucia Tax Zone', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(415, 'St. Kitts and Nevis', 'St. Kitts and Nevis Tax Zone', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(414, 'Sri Lanka', 'Sri Lanka Tax Zone', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(413, 'Spain', 'Spain Tax Zone', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(412, 'South Africa', 'South Africa Tax Zone', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(411, 'Solomon Islands', 'Solomon Islands Tax Zone', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(410, 'Slovenia', 'Slovenia Tax Zone', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(409, 'Slovakia', 'Slovakia Tax Zone', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(408, 'Singapore', 'Singapore Tax Zone', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(407, 'Sierra Leone', 'Sierra Leone Tax Zone', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(406, 'Seychelles', 'Seychelles Tax Zone', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(405, 'Serbia', 'Serbia Tax Zone', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(404, 'Senegal', 'Senegal Tax Zone', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(403, 'Saudi Arabia', 'Saudi Arabia Tax Zone', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(402, 'San Marino', 'San Marino Tax Zone', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(401, 'Rwanda', 'Rwanda Tax Zone', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(400, 'Russia', 'Russia Tax Zone', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(399, 'Romania', 'Romania Tax Zone', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(398, 'Reunion', 'Reunion Tax Zone', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(397, 'Portugal', 'Portugal Tax Zone', '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(396, 'Poland', 'Poland Tax Zone', '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(395, 'Philippines', 'Philippines Tax Zone', '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(394, 'Peru', 'Peru Tax Zone', '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(393, 'Paraguay', 'Paraguay Tax Zone', '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(392, 'Papua New Guinea', 'Papua New Guinea Tax Zone', '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(391, 'Panama', 'Panama Tax Zone', '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(390, 'Pakistan', 'Pakistan Tax Zone', '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(389, 'Norway', 'Norway Tax Zone', '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(388, 'Nigeria', 'Nigeria Tax Zone', '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(387, 'Niger', 'Niger Tax Zone', '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(386, 'Nicaragua', 'Nicaragua Tax Zone', '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(385, 'New Zealand', 'New Zealand Tax Zone', '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(384, 'Netherlands', 'Netherlands Tax Zone', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(383, 'Nepal', 'Nepal Tax Zone', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(382, 'Namibia', 'Namibia Tax Zone', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(381, 'Myanmar', 'Myanmar Tax Zone', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(380, 'Mozambique', 'Mozambique Tax Zone', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(379, 'Morocco', 'Morocco Tax Zone', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(378, 'Montserrat', 'Montserrat Tax Zone', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(377, 'Montenegro', 'Montenegro Tax Zone', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(376, 'Mongolia', 'Mongolia Tax Zone', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(375, 'Monaco', 'Monaco Tax Zone', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(374, 'Moldova', 'Moldova Tax Zone', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(373, 'Micronesia', 'Micronesia Tax Zone', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(372, 'Mexico', 'Mexico Tax Zone', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(371, 'Mauritius', 'Mauritius Tax Zone', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(370, 'Mauritania', 'Mauritania Tax Zone', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(369, 'Martinique', 'Martinique Tax Zone', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(368, 'Marshall Islands', 'Marshall Islands Tax Zone', '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(367, 'Malta', 'Malta Tax Zone', '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(366, 'Mali', 'Mali Tax Zone', '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(365, 'Maldives', 'Maldives Tax Zone', '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(364, 'Malaysia', 'Malaysia Tax Zone', '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(363, 'Malawi', 'Malawi Tax Zone', '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(362, 'Madagascar', 'Madagascar Tax Zone', '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(361, 'Macedonia', 'Macedonia Tax Zone', '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(360, 'Luxembourg', 'Luxembourg Tax Zone', '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(359, 'Lithuania', 'Lithuania Tax Zone', '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(358, 'Liechtenstein', 'Liechtenstein Tax Zone', '2024-09-19 12:42:52', '2024-09-19 12:42:52'),
+(357, 'Liberia', 'Liberia Tax Zone', '2024-09-19 12:42:52', '2024-09-19 12:42:52'),
+(356, 'Lesotho', 'Lesotho Tax Zone', '2024-09-19 12:42:52', '2024-09-19 12:42:52'),
+(355, 'Lebanon', 'Lebanon Tax Zone', '2024-09-19 12:42:52', '2024-09-19 12:42:52'),
+(354, 'Latvia', 'Latvia Tax Zone', '2024-09-19 12:42:42', '2024-09-19 12:42:42'),
+(353, 'Laos', 'Laos Tax Zone', '2024-09-19 12:42:42', '2024-09-19 12:42:42'),
+(352, 'Kyrgyzstan', 'Kyrgyzstan Tax Zone', '2024-09-19 12:42:42', '2024-09-19 12:42:42'),
+(351, 'Korea', 'Korea Tax Zone', '2024-09-19 12:42:42', '2024-09-19 12:42:42'),
+(350, 'Kenya', 'Kenya Tax Zone', '2024-09-19 12:42:42', '2024-09-19 12:42:42'),
+(349, 'Kazakhstan', 'Kazakhstan Tax Zone', '2024-09-19 12:42:32', '2024-09-19 12:42:32'),
+(348, 'Jordan', 'Jordan Tax Zone', '2024-09-19 12:42:32', '2024-09-19 12:42:32'),
+(347, 'Jersey', 'Jersey Tax Zone', '2024-09-19 12:42:32', '2024-09-19 12:42:32'),
+(346, 'Japan', 'Japan Tax Zone', '2024-09-19 12:42:32', '2024-09-19 12:42:32'),
+(345, 'Jamaica', 'Jamaica Tax Zone', '2024-09-19 12:42:32', '2024-09-19 12:42:32'),
+(344, 'Ivory Coast', 'Ivory Coast Tax Zone', '2024-09-19 12:42:22', '2024-09-19 12:42:22'),
+(343, 'Italy', 'Italy Tax Zone', '2024-09-19 12:42:22', '2024-09-19 12:42:22'),
+(342, 'Israel', 'Israel Tax Zone', '2024-09-19 12:42:22', '2024-09-19 12:42:22'),
+(341, 'Ireland', 'Ireland Tax Zone', '2024-09-19 12:42:22', '2024-09-19 12:42:22'),
+(340, 'Iraq', 'Iraq Tax Zone', '2024-09-19 12:42:22', '2024-09-19 12:42:22'),
+(339, 'Indonesia', 'Indonesia Tax Zone', '2024-09-19 12:42:22', '2024-09-19 12:42:22'),
+(338, 'India', 'India Tax Zone', '2024-09-19 12:42:04', '2024-09-19 12:42:04'),
+(337, 'Iceland', 'Iceland Tax Zone', '2024-09-19 12:42:04', '2024-09-19 12:42:04'),
+(336, 'Hungary', 'Hungary Tax Zone', '2024-09-19 12:42:04', '2024-09-19 12:42:04'),
+(335, 'Honduras', 'Honduras Tax Zone', '2024-09-19 12:41:56', '2024-09-19 12:41:56'),
+(334, 'Haiti', 'Haiti Tax Zone', '2024-09-19 12:41:56', '2024-09-19 12:41:56'),
+(333, 'Guyana', 'Guyana Tax Zone', '2024-09-19 12:41:56', '2024-09-19 12:41:56'),
+(332, 'Guinea-Bissau', 'Guinea-Bissau Tax Zone', '2024-09-19 12:41:44', '2024-09-19 12:41:44'),
+(331, 'Guinea', 'Guinea Tax Zone', '2024-09-19 12:41:44', '2024-09-19 12:41:44'),
+(330, 'Guatemala', 'Guatemala Tax Zone', '2024-09-19 12:41:31', '2024-09-19 12:41:31'),
+(329, 'Guam', 'Guam Tax Zone', '2024-09-19 12:41:31', '2024-09-19 12:41:31'),
+(328, 'Guadeloupe', 'Guadeloupe Tax Zone', '2024-09-19 12:41:31', '2024-09-19 12:41:31'),
+(326, 'Greece', 'Greece Tax Zone', '2024-09-19 12:41:31', '2024-09-19 12:41:31'),
+(327, 'Grenada', 'Grenada Tax Zone', '2024-09-19 12:41:31', '2024-09-19 12:41:31'),
+(325, 'Ghana', 'Ghana Tax Zone', '2024-09-19 12:41:31', '2024-09-19 12:41:31'),
+(324, 'Germany', 'Germany Tax Zone', '2024-09-19 12:41:31', '2024-09-19 12:41:31'),
+(323, 'Georgia', 'Georgia Tax Zone', '2024-09-19 12:40:50', '2024-09-19 12:40:50'),
+(322, 'Gambia', 'Gambia Tax Zone', '2024-09-19 12:40:50', '2024-09-19 12:40:50'),
+(321, 'Gabon', 'Gabon Tax Zone', '2024-09-19 12:40:50', '2024-09-19 12:40:50'),
+(320, 'French Polynesia (Tahiti)', 'French Polynesia (Tahiti) Tax Zone', '2024-09-19 12:40:50', '2024-09-19 12:40:50'),
+(319, 'France', 'France Tax Zone', '2024-09-19 12:40:50', '2024-09-19 12:40:50'),
+(318, 'Finland', 'Finland Tax Zone', '2024-09-19 12:40:50', '2024-09-19 12:40:50'),
+(317, 'Fiji', 'Fiji Tax Zone', '2024-09-19 12:40:50', '2024-09-19 12:40:50'),
+(316, 'Faroe Islands (Denmark)', 'Faroe Islands (Denmark) Tax Zone', '2024-09-19 12:40:39', '2024-09-19 12:40:39'),
+(315, 'Ethiopia', 'Ethiopia Tax Zone', '2024-09-19 12:40:39', '2024-09-19 12:40:39'),
+(314, 'Estonia', 'Estonia Tax Zone', '2024-09-19 12:40:39', '2024-09-19 12:40:39'),
+(313, 'Eritrea', 'Eritrea Tax Zone', '2024-09-19 12:40:39', '2024-09-19 12:40:39'),
+(312, 'Equatorial Guinea', 'Equatorial Guinea Tax Zone', '2024-09-19 12:40:39', '2024-09-19 12:40:39'),
+(311, 'El Salvador', 'El Salvador Tax Zone', '2024-09-19 12:40:39', '2024-09-19 12:40:39'),
+(310, 'Egypt', 'Egypt Tax Zone', '2024-09-19 12:40:27', '2024-09-19 12:40:27'),
+(309, 'Ecuador', 'Ecuador Tax Zone', '2024-09-19 12:40:27', '2024-09-19 12:40:27'),
+(308, 'Dominican Republic', 'Dominican Republic Tax Zone', '2024-09-19 12:40:27', '2024-09-19 12:40:27'),
+(307, 'Dominica', 'Dominica Tax Zone', '2024-09-19 12:40:15', '2024-09-19 12:40:15'),
+(306, 'Djibouti', 'Djibouti Tax Zone', '2024-09-19 12:40:08', '2024-09-19 12:40:08'),
+(305, 'Denmark', 'Denmark Tax Zone', '2024-09-19 12:28:22', '2024-09-19 12:28:22'),
+(304, 'Czech Republic', 'Czech Republic Tax Zone', '2024-09-19 12:28:09', '2024-09-19 12:28:09'),
+(303, 'Cyprus', 'Cyprus Tax Zone', '2024-09-19 12:27:58', '2024-09-19 12:27:58'),
+(302, 'Curaçao', 'Curaçao Tax Zone', '2024-09-19 12:27:45', '2024-09-19 12:27:45'),
+(301, 'Croatia', 'Croatia Tax Zone', '2024-09-19 12:27:32', '2024-09-19 12:27:32'),
+(300, 'Costa Rica', 'Costa Rica Tax Zone', '2024-09-19 12:27:19', '2024-09-19 12:27:19'),
+(299, 'Cook Islands', 'Cook Islands Tax Zone', '2024-09-19 12:27:05', '2024-09-19 12:27:05'),
+(298, 'Congo', 'Congo Tax Zone', '2024-09-19 12:26:53', '2024-09-19 12:26:53'),
+(297, 'Comoros', 'Comoros Tax Zone', '2024-09-19 12:26:34', '2024-09-19 12:26:34'),
+(296, 'Colombia', 'Colombia Tax Zone', '2024-09-19 12:26:21', '2024-09-19 12:26:21'),
+(295, 'China', 'China Tax Zone', '2024-09-19 12:26:08', '2024-09-19 12:26:08'),
+(294, 'Chile', 'Chile Tax Zone', '2024-09-19 12:25:52', '2024-09-19 12:25:52'),
+(293, 'Chad', 'Chad Tax Zone', '2024-09-19 12:25:38', '2024-09-19 12:25:38'),
+(292, 'Central African Republic', 'Central African Republic Tax Zone', '2024-09-19 12:25:23', '2024-09-19 12:25:23'),
+(291, 'Cape Verde', 'Cape Verde Tax Zone', '2024-09-19 12:24:41', '2024-09-19 12:24:41'),
+(290, 'Canada', 'Canada Tax Zone', '2024-09-19 12:24:21', '2024-09-19 12:24:21'),
+(289, 'Cameroon', 'Cameroon Tax Zone', '2024-09-19 12:22:27', '2024-09-19 12:22:27'),
+(288, 'Cambodia', 'Cambodia Tax Zone', '2024-09-19 12:22:10', '2024-09-19 12:22:10'),
+(287, 'Burundi', 'Burundi Tax Zone', '2024-09-19 12:21:58', '2024-09-19 12:21:58'),
+(286, 'Burkina Faso', 'Burkina Faso Tax Zone', '2024-09-19 12:21:43', '2024-09-19 12:21:43'),
+(285, 'Bulgaria', 'Bulgaria Tax Zone', '2024-09-19 12:19:46', '2024-09-19 12:19:46'),
+(284, 'Brazil', 'Brazil Tax Zone', '2024-09-19 12:19:26', '2024-09-19 12:19:26'),
+(283, 'Botswana', 'Botswana Tax Zone', '2024-09-19 12:19:11', '2024-09-19 12:19:11'),
+(282, 'Bosnia', 'Bosnia Tax Zone', '2024-09-19 12:18:57', '2024-09-19 12:18:57'),
+(281, 'Bonaire', 'Bonaire Tax Zone', '2024-09-19 12:18:39', '2024-09-19 12:18:39'),
+(279, 'Bhutan', 'Bhutan Tax Zone', '2024-09-19 12:17:48', '2024-09-19 12:17:48'),
+(280, 'Bolivia', 'Bolivia Tax Zone', '2024-09-19 12:18:06', '2024-09-19 12:18:06'),
+(276, 'Belgium', 'Belgium Tax Zone', '2024-09-19 12:17:08', '2024-09-19 12:17:08'),
+(277, 'Belize', 'Belize Tax Zone', '2024-09-19 12:17:23', '2024-09-19 12:17:23'),
+(278, 'Benin', 'Benin Tax Zone', '2024-09-19 12:17:36', '2024-09-19 12:17:36'),
+(275, 'Belarus', 'Belarus Tax Zone', '2024-09-19 12:16:55', '2024-09-19 12:16:55'),
+(273, 'Bangladesh', 'Bangladesh Tax Zone', '2024-09-19 12:16:26', '2024-09-19 12:16:26'),
+(274, 'Barbados', 'Barbados Tax Zone', '2024-09-19 12:16:42', '2024-09-19 12:16:42'),
+(272, 'Bahrain', 'Bahrain Tax Zone', '2024-09-19 12:16:14', '2024-09-19 12:16:14'),
+(271, 'Bahamas', 'Bahamas Tax Zone', '2024-09-19 12:16:02', '2024-09-19 12:16:02'),
+(269, 'Austria', 'Austria Tax Zone', '2024-09-19 12:15:34', '2024-09-19 12:15:34'),
+(270, 'Azerbaijan', 'Azerbaijan Tax Zone', '2024-09-19 12:15:48', '2024-09-19 12:15:48'),
+(268, 'Australia', 'Australia Tax Zone', '2024-09-19 12:15:17', '2024-09-19 12:15:17'),
+(267, 'Aruba', 'Aruba Tax Zone', '2024-09-19 12:14:57', '2024-09-19 12:14:57'),
+(266, 'Armenia', 'Armenia Tax Zone', '2024-09-19 12:14:41', '2024-09-19 12:14:41'),
+(265, 'Argentina', 'Argentina Tax Zone', '2024-09-19 12:14:23', '2024-09-19 12:14:23'),
+(263, 'Anguilla', 'Anguilla Tax Zone', '2024-09-19 12:13:45', '2024-09-19 12:13:45'),
+(264, 'Antigua & Barbuda', 'Antigua & Barbuda Tax Zone', '2024-09-19 12:14:04', '2024-09-19 12:14:04'),
+(262, 'Angola', 'Angola Tax Zone', '2024-09-19 12:13:23', '2024-09-19 12:13:23'),
+(260, 'American Samoa', 'American Samoa Tax Zone', '2024-09-19 12:12:36', '2024-09-19 12:12:36'),
+(261, 'Andorra', 'Andorra Tax Zone', '2024-09-19 12:12:58', '2024-09-19 12:12:58'),
+(259, 'Algeria', 'Algeria Tax Zone', '2024-09-19 12:12:05', '2024-09-19 12:12:05'),
+(258, 'Albania', 'Albania Tax Zone', '2024-09-19 12:01:18', '2024-09-19 12:01:18');
 
 -----------------------------------------------------------
 
@@ -1663,16 +1565,6 @@ CREATE TABLE `oc_information` (
   `status` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`information_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `oc_information`
---
-
-INSERT INTO `oc_information` (`information_id`, `bottom`, `sort_order`, `status`) VALUES
-(3, 1, 3, 1),
-(4, 1, 1, 1),
-(5, 1, 4, 1),
-(6, 1, 2, 1);
 
 -----------------------------------------------------------
 
@@ -1691,16 +1583,6 @@ CREATE TABLE `oc_information_description` (
   `meta_keyword` varchar(255) NOT NULL,
   PRIMARY KEY (`information_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `oc_information_description`
---
-
-INSERT INTO `oc_information_description` (`information_id`, `language_id`, `title`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
-(4, 1, 'About Us', '&lt;p&gt;\r\n	About Us&lt;/p&gt;\r\n', 'About Us', '', ''),
-(5, 1, 'Terms &amp; Conditions', '&lt;p&gt;\r\n	Terms &amp;amp; Conditions&lt;/p&gt;\r\n', 'Terms &amp; Conditions', '', ''),
-(3, 1, 'Privacy Policy', '&lt;p&gt;\r\n	Privacy Policy&lt;/p&gt;\r\n', 'Privacy Policy', '', ''),
-(6, 1, 'Delivery Information', '&lt;p&gt;\r\n	Delivery Information&lt;/p&gt;\r\n', 'Delivery Information', '', '');
 
 -----------------------------------------------------------
 
@@ -1728,16 +1610,6 @@ CREATE TABLE `oc_information_to_store` (
   `store_id` int(11) NOT NULL,
   PRIMARY KEY (`information_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `oc_information_to_store`
---
-
-INSERT INTO `oc_information_to_store` (`information_id`, `store_id`) VALUES
-(3, 0),
-(4, 0),
-(5, 0),
-(6, 0);
 
 -----------------------------------------------------------
 
@@ -1796,7 +1668,8 @@ INSERT INTO `oc_layout` (`layout_id`, `name`) VALUES
 (10, 'Affiliate'),
 (11, 'Information'),
 (12, 'Compare'),
-(13, 'Search');
+(13, 'Search'),
+(14, 'Gift Certificate');
 
 -----------------------------------------------------------
 
@@ -1819,16 +1692,8 @@ CREATE TABLE `oc_layout_module` (
 --
 
 INSERT INTO `oc_layout_module` (`layout_module_id`, `layout_id`, `code`, `position`, `sort_order`) VALUES
-(2, 4, '0', 'content_top', 0),
-(3, 4, '0', 'content_top', 1),
-(20, 5, '0', 'column_left', 2),
 (69, 10, 'account', 'column_right', 1),
-(68, 6, 'account', 'column_right', 1),
-(67, 1, 'carousel.29', 'content_top', 3),
-(66, 1, 'slideshow.27', 'content_top', 1),
-(65, 1, 'featured.28', 'content_top', 2),
-(72, 3, 'category', 'column_left', 1),
-(73, 3, 'banner.30', 'column_left', 2);
+(68, 6, 'account', 'column_right', 1);
 
 -----------------------------------------------------------
 
@@ -1862,7 +1727,8 @@ INSERT INTO `oc_layout_route` (`layout_route_id`, `layout_id`, `store_id`, `rout
 (34, 4, 0, ''),
 (45, 5, 0, 'product/manufacturer'),
 (52, 12, 0, 'product/compare'),
-(53, 13, 0, 'product/search');
+(53, 13, 0, 'product/search'),
+(54, 14, 0, 'account/voucher');
 
 -----------------------------------------------------------
 
@@ -1882,9 +1748,9 @@ CREATE TABLE `oc_length_class` (
 --
 
 INSERT INTO `oc_length_class` (`length_class_id`, `value`) VALUES
-(1, '1.00000000'),
-(2, '10.00000000'),
-(3, '0.39370000');
+(1, '2.54000000'),
+(2, '25.40000000'),
+(3, '1.00000000');
 
 -----------------------------------------------------------
 
@@ -1946,18 +1812,6 @@ CREATE TABLE `oc_manufacturer` (
   PRIMARY KEY (`manufacturer_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Dumping data for table `oc_manufacturer`
---
-
-INSERT INTO `oc_manufacturer` (`manufacturer_id`, `name`, `image`, `sort_order`) VALUES
-(5, 'HTC', 'catalog/demo/htc_logo.jpg', 0),
-(6, 'Palm', 'catalog/demo/palm_logo.jpg', 0),
-(7, 'Hewlett-Packard', 'catalog/demo/hp_logo.jpg', 0),
-(8, 'Apple', 'catalog/demo/apple_logo.jpg', 0),
-(9, 'Canon', 'catalog/demo/canon_logo.jpg', 0),
-(10, 'Sony', 'catalog/demo/sony_logo.jpg', 0);
-
 -----------------------------------------------------------
 
 --
@@ -1970,18 +1824,6 @@ CREATE TABLE `oc_manufacturer_to_store` (
   `store_id` int(11) NOT NULL,
   PRIMARY KEY (`manufacturer_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `oc_manufacturer_to_store`
---
-
-INSERT INTO `oc_manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
-(5, 0),
-(6, 0),
-(7, 0),
-(8, 0),
-(9, 0),
-(10, 0);
 
 -----------------------------------------------------------
 
@@ -2035,17 +1877,6 @@ CREATE TABLE `oc_module` (
   PRIMARY KEY (`module_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Dumping data for table `oc_module`
---
-
-INSERT INTO `oc_module` (`module_id`, `name`, `code`, `setting`) VALUES
-(30, 'Category', 'banner', '{"name":"Category","banner_id":"6","width":"182","height":"182","status":"1"}'),
-(29, 'Home Page', 'carousel', '{"name":"Home Page","banner_id":"8","width":"130","height":"100","status":"1"}'),
-(28, 'Home Page', 'featured', '{"name":"Home Page","product":["43","40","42","30"],"limit":"4","width":"200","height":"200","status":"1"}'),
-(27, 'Home Page', 'slideshow', '{"name":"Home Page","banner_id":"7","width":"1140","height":"380","status":"1"}'),
-(31, 'Banner 1', 'banner', '{"name":"Banner 1","banner_id":"6","width":"182","height":"182","status":"1"}');
-
 -----------------------------------------------------------
 
 --
@@ -2060,23 +1891,6 @@ CREATE TABLE `oc_option` (
   PRIMARY KEY (`option_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Dumping data for table `oc_option`
---
-
-INSERT INTO `oc_option` (`option_id`, `type`, `sort_order`) VALUES
-(1, 'radio', 1),
-(2, 'checkbox', 2),
-(4, 'text', 3),
-(5, 'select', 4),
-(6, 'textarea', 5),
-(7, 'file', 6),
-(8, 'date', 7),
-(9, 'time', 8),
-(10, 'datetime', 9),
-(11, 'select', 10),
-(12, 'date', 11);
-
 -----------------------------------------------------------
 
 --
@@ -2090,23 +1904,6 @@ CREATE TABLE `oc_option_description` (
   `name` varchar(128) NOT NULL,
   PRIMARY KEY (`option_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `oc_option_description`
---
-
-INSERT INTO `oc_option_description` (`option_id`, `language_id`, `name`) VALUES
-(1, 1, 'Radio'),
-(2, 1, 'Checkbox'),
-(4, 1, 'Text'),
-(6, 1, 'Textarea'),
-(8, 1, 'Date'),
-(7, 1, 'File'),
-(5, 1, 'Select'),
-(9, 1, 'Time'),
-(10, 1, 'Date &amp; Time'),
-(12, 1, 'Delivery Date'),
-(11, 1, 'Size');
 
 -----------------------------------------------------------
 
@@ -2123,26 +1920,6 @@ CREATE TABLE `oc_option_value` (
   PRIMARY KEY (`option_value_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Dumping data for table `oc_option_value`
---
-
-INSERT INTO `oc_option_value` (`option_value_id`, `option_id`, `image`, `sort_order`) VALUES
-(43, 1, '', 3),
-(32, 1, '', 1),
-(45, 2, '', 4),
-(44, 2, '', 3),
-(42, 5, '', 4),
-(41, 5, '', 3),
-(39, 5, '', 1),
-(40, 5, '', 2),
-(31, 1, '', 2),
-(23, 2, '', 1),
-(24, 2, '', 2),
-(46, 11, '', 1),
-(47, 11, '', 2),
-(48, 11, '', 3);
-
 -----------------------------------------------------------
 
 --
@@ -2157,26 +1934,6 @@ CREATE TABLE `oc_option_value_description` (
   `name` varchar(128) NOT NULL,
   PRIMARY KEY (`option_value_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `oc_option_value_description`
---
-
-INSERT INTO `oc_option_value_description` (`option_value_id`, `language_id`, `option_id`, `name`) VALUES
-(43, 1, 1, 'Large'),
-(32, 1, 1, 'Small'),
-(45, 1, 2, 'Checkbox 4'),
-(44, 1, 2, 'Checkbox 3'),
-(31, 1, 1, 'Medium'),
-(42, 1, 5, 'Yellow'),
-(41, 1, 5, 'Green'),
-(39, 1, 5, 'Red'),
-(40, 1, 5, 'Blue'),
-(23, 1, 2, 'Checkbox 1'),
-(24, 1, 2, 'Checkbox 2'),
-(48, 1, 11, 'Large'),
-(47, 1, 11, 'Medium'),
-(46, 1, 11, 'Small');
 
 -----------------------------------------------------------
 
@@ -2247,6 +2004,7 @@ CREATE TABLE `oc_order` (
   `accept_language` varchar(255) NOT NULL,
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL,
+  `old_order_id` varchar(50) NULL,
   PRIMARY KEY (`order_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
@@ -2515,31 +2273,6 @@ CREATE TABLE `oc_product` (
   PRIMARY KEY (`product_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Dumping data for table `oc_product`
---
-
-INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `viewed`, `date_added`, `date_modified`) VALUES
-(28, 'Product 1', '', '', '', '', '', '', '', 939, 7, 'catalog/demo/htc_touch_hd_1.jpg', 5, 1, '100.0000', 200, 9, '2009-02-03', '146.40000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 16:06:50', '2011-09-30 01:05:39'),
-(29, 'Product 2', '', '', '', '', '', '', '', 999, 6, 'catalog/demo/palm_treo_pro_1.jpg', 6, 1, '279.9900', 0, 9, '2009-02-03', '133.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 3, 1, 1, 0, 1, 0, '2009-02-03 16:42:17', '2011-09-30 01:06:08'),
-(30, 'Product 3', '', '', '', '', '', '', '', 7, 6, 'catalog/demo/canon_eos_5d_1.jpg', 9, 1, '100.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 16:59:00', '2011-09-30 01:05:23'),
-(31, 'Product 4', '', '', '', '', '', '', '', 1000, 6, 'catalog/demo/nikon_d300_1.jpg', 0, 1, '80.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 3, 1, 1, 0, 1, 0, '2009-02-03 17:00:10', '2011-09-30 01:06:00'),
-(32, 'Product 5', '', '', '', '', '', '', '', 999, 6, 'catalog/demo/ipod_touch_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 17:07:26', '2011-09-30 01:07:22'),
-(33, 'Product 6', '', '', '', '', '', '', '', 1000, 6, 'catalog/demo/samsung_syncmaster_941bw.jpg', 0, 1, '200.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 17:08:31', '2011-09-30 01:06:29'),
-(34, 'Product 7', '', '', '', '', '', '', '', 1000, 6, 'catalog/demo/ipod_shuffle_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 18:07:54', '2011-09-30 01:07:17'),
-(35, 'Product 8', '', '', '', '', '', '', '', 1000, 5, '', 0, 0, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 18:08:31', '2011-09-30 01:06:17'),
-(36, 'Product 9', '', '', '', '', '', '', '', 994, 6, 'catalog/demo/ipod_nano_1.jpg', 8, 0, '100.0000', 100, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 18:09:19', '2011-09-30 01:07:12'),
-(40, 'product 11', '', '', '', '', '', '', '', 970, 5, 'catalog/demo/iphone_1.jpg', 8, 1, '101.0000', 0, 9, '2009-02-03', '10.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 21:07:12', '2011-09-30 01:06:53'),
-(41, 'Product 14', '', '', '', '', '', '', '', 977, 5, 'catalog/demo/imac_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 0, '2009-02-03 21:07:26', '2011-09-30 01:06:44'),
-(42, 'Product 15', '', '', '', '', '', '', '', 990, 5, 'catalog/demo/apple_cinema_30.jpg', 8, 1, '100.0000', 400, 9, '2009-02-04', '12.50000000', 1, '1.00000000', '2.00000000', '3.00000000', 1, 1, 2, 0, 1, 0, '2009-02-03 21:07:37', '2011-09-30 00:46:19'),
-(43, 'Product 16', '', '', '', '', '', '', '', 929, 5, 'catalog/demo/macbook_1.jpg', 8, 0, '500.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 21:07:49', '2011-09-30 01:05:46'),
-(44, 'Product 17', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/macbook_air_1.jpg', 8, 1, '1000.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 21:08:00', '2011-09-30 01:05:53'),
-(45, 'Product 18', '', '', '', '', '', '', '', 998, 5, 'catalog/demo/macbook_pro_1.jpg', 8, 1, '2000.0000', 0, 100, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 21:08:17', '2011-09-15 22:22:01'),
-(46, 'Product 19', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/sony_vaio_1.jpg', 10, 1, '1000.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-03 21:08:29', '2011-09-30 01:06:39'),
-(47, 'Product 21', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/hp_1.jpg', 7, 1, '100.0000', 400, 9, '2009-02-03', '1.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 0, 1, 0, '2009-02-03 21:08:40', '2011-09-30 01:05:28'),
-(48, 'product 20', 'test 1', '', '', '', '', '', 'test 2', 995, 5, 'catalog/demo/ipod_classic_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-08', '1.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 0, '2009-02-08 17:21:51', '2011-09-30 01:07:06'),
-(49, 'SAM1', '', '', '', '', '', '', '', 0, 8, 'catalog/demo/samsung_tab_1.jpg', 0, 1, '199.9900', 0, 9, '2011-04-25', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 1, '2011-04-26 08:57:34', '2011-09-30 01:06:23');
-
 -----------------------------------------------------------
 
 --
@@ -2621,17 +2354,6 @@ CREATE TABLE `oc_product_attribute` (
   PRIMARY KEY (`product_id`,`attribute_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Dumping data for table `oc_product_attribute`
---
-
-INSERT INTO `oc_product_attribute` (`product_id`, `attribute_id`, `language_id`, `text`) VALUES
-(43, 2, 1, '1'),
-(47, 4, 1, '16GB'),
-(43, 4, 1, '8gb'),
-(42, 3, 1, '100mhz'),
-(47, 2, 1, '4');
-
 -----------------------------------------------------------
 
 --
@@ -2652,31 +2374,6 @@ CREATE TABLE `oc_product_description` (
   KEY `name` (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Dumping data for table `oc_product_description`
---
-
-INSERT INTO `oc_product_description` (`product_id`, `language_id`, `name`, `description`, `tag`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
-(35, 1, 'Product 8', '&lt;p&gt;\r\n	Product 8&lt;/p&gt;\r\n', '', 'Product 8', '', ''),
-(48, 1, 'iPod Classic', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;More room to move.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Sleeker design.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Beautiful, durable, and sleeker than ever, iPod classic now features an anodized aluminum and polished stainless steel enclosure with rounded edges.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', 'iPod Classic', '', ''),
-(40, 1, 'iPhone', '&lt;p class=&quot;intro&quot;&gt;\r\n	iPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name or number in your address book, a favorites list, or a call log. It also automatically syncs all your contacts from a PC, Mac, or Internet service. And it lets you select and listen to voicemail messages in whatever order you want just like email.&lt;/p&gt;\r\n', '', 'iPhone', '', ''),
-(28, 1, 'HTC Touch HD', '&lt;p&gt;\r\n	HTC Touch - in High Definition. Watch music videos and streaming content in awe-inspiring high definition clarity for a mobile experience you never thought possible. Seductively sleek, the HTC Touch HD provides the next generation of mobile functionality, all at a simple touch. Fully integrated with Windows Mobile Professional 6.1, ultrafast 3.5G, GPS, 5MP camera, plus lots more - all delivered on a breathtakingly crisp 3.8&amp;quot; WVGA touchscreen - you can take control of your mobile world with the HTC Touch HD.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Processor Qualcomm&amp;reg; MSM 7201A&amp;trade; 528 MHz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Windows Mobile&amp;reg; 6.1 Professional Operating System&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Memory: 512 MB ROM, 288 MB RAM&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Dimensions: 115 mm x 62.8 mm x 12 mm / 146.4 grams&lt;/li&gt;\r\n	&lt;li&gt;\r\n		3.8-inch TFT-LCD flat touch-sensitive screen with 480 x 800 WVGA resolution&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HSDPA/WCDMA: Europe/Asia: 900/2100 MHz; Up to 2 Mbps up-link and 7.2 Mbps down-link speeds&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Quad-band GSM/GPRS/EDGE: Europe/Asia: 850/900/1800/1900 MHz (Band frequency, HSUPA availability, and data speed are operator dependent.)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Device Control via HTC TouchFLO&amp;trade; 3D &amp;amp; Touch-sensitive front panel buttons&lt;/li&gt;\r\n	&lt;li&gt;\r\n		GPS and A-GPS ready&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Bluetooth&amp;reg; 2.0 with Enhanced Data Rate and A2DP for wireless stereo headsets&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Wi-Fi&amp;reg;: IEEE 802.11 b/g&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HTC ExtUSB&amp;trade; (11-pin mini-USB 2.0)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		5 megapixel color camera with auto focus&lt;/li&gt;\r\n	&lt;li&gt;\r\n		VGA CMOS color camera&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in 3.5 mm audio jack, microphone, speaker, and FM radio&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Ring tone formats: AAC, AAC+, eAAC+, AMR-NB, AMR-WB, QCP, MP3, WMA, WAV&lt;/li&gt;\r\n	&lt;li&gt;\r\n		40 polyphonic and standard MIDI format 0 and 1 (SMF)/SP MIDI&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Rechargeable Lithium-ion or Lithium-ion polymer 1350 mAh battery&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Expansion Slot: microSD&amp;trade; memory card (SD 2.0 compatible)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		AC Adapter Voltage range/frequency: 100 ~ 240V AC, 50/60 Hz DC output: 5V and 1A&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Special Features: FM Radio, G-Sensor&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', '	 HTC Touch HD', '', ''),
-(44, 1, 'MacBook Air', '&lt;div&gt;\r\n	MacBook Air is ultrathin, ultraportable, and ultra unlike anything else. But you don&amp;rsquo;t lose inches and pounds overnight. It&amp;rsquo;s the result of rethinking conventions. Of multiple wireless innovations. And of breakthrough design. With MacBook Air, mobile computing suddenly has a new standard.&lt;/div&gt;\r\n', '', 'MacBook Air', '', ''),
-(45, 1, 'MacBook Pro', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Latest Intel mobile architecture&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Powered by the most advanced mobile processors from Intel, the new Core 2 Duo MacBook Pro is over 50% faster than the original Core Duo MacBook Pro and now supports up to 4GB of RAM.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Leading-edge graphics&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			The NVIDIA GeForce 8600M GT delivers exceptional graphics processing power. For the ultimate creative canvas, you can even configure the 17-inch model with a 1920-by-1200 resolution display.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Designed for life on the road&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Innovations such as a magnetic power connection and an illuminated keyboard with ambient light sensor put the MacBook Pro in a class by itself.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Connect. Create. Communicate.&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Quickly set up a video conference with the built-in iSight camera. Control presentations and media from up to 30 feet away with the included Apple Remote. Connect to high-bandwidth peripherals with FireWire 800 and DVI.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Next-generation wireless&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Featuring 802.11n wireless technology, the MacBook Pro delivers up to five times the performance and up to twice the range of previous-generation technologies.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', 'MacBook Pro', '', ''),
-(29, 1, 'Palm Treo Pro', '&lt;p&gt;\r\n	Redefine your workday with the Palm Treo Pro smartphone. Perfectly balanced, you can respond to business and personal email, stay on top of appointments and contacts, and use Wi-Fi or GPS when you&amp;rsquo;re out and about. Then watch a video on YouTube, catch up with news and sports on the web, or listen to a few songs. Balance your work and play the way you like it, with the Palm Treo Pro.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Windows Mobile&amp;reg; 6.1 Professional Edition&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Qualcomm&amp;reg; MSM7201 400MHz Processor&lt;/li&gt;\r\n	&lt;li&gt;\r\n		320x320 transflective colour TFT touchscreen&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HSDPA/UMTS/EDGE/GPRS/GSM radio&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Tri-band UMTS &amp;mdash; 850MHz, 1900MHz, 2100MHz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Quad-band GSM &amp;mdash; 850/900/1800/1900&lt;/li&gt;\r\n	&lt;li&gt;\r\n		802.11b/g with WPA, WPA2, and 801.1x authentication&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in GPS&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Bluetooth Version: 2.0 + Enhanced Data Rate&lt;/li&gt;\r\n	&lt;li&gt;\r\n		256MB storage (100MB user available), 128MB RAM&lt;/li&gt;\r\n	&lt;li&gt;\r\n		2.0 megapixel camera, up to 8x digital zoom and video capture&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Removable, rechargeable 1500mAh lithium-ion battery&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Up to 5.0 hours talk time and up to 250 hours standby&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MicroSDHC card expansion (up to 32GB supported)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MicroUSB 2.0 for synchronization and charging&lt;/li&gt;\r\n	&lt;li&gt;\r\n		3.5mm stereo headset jack&lt;/li&gt;\r\n	&lt;li&gt;\r\n		60mm (W) x 114mm (L) x 13.5mm (D) / 133g&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', 'Palm Treo Pro', '', ''),
-(36, 1, 'iPod Nano', '&lt;div&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Video in your pocket.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Its the small iPod with one very big idea: video. The worlds most popular music player now lets you enjoy movies, TV shows, and more on a two-inch display thats 65% brighter than before.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Sleek and colorful.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With an anodized aluminum and polished stainless steel enclosure and a choice of five colors, iPod nano is dressed to impress.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;iTunes.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Available as a free download, iTunes makes it easy to browse and buy millions of songs, movies, TV shows, audiobooks, and games and download free podcasts all at the iTunes Store. And you can import your own music, manage your whole media library, and sync your iPod or iPhone with ease.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', 'iPod Nano', '', ''),
-(46, 1, 'Sony VAIO', '&lt;div&gt;\r\n	Unprecedented power. The next generation of processing technology has arrived. Built into the newest VAIO notebooks lies Intel&amp;#39;s latest, most powerful innovation yet: Intel&amp;reg; Centrino&amp;reg; 2 processor technology. Boasting incredible speed, expanded wireless connectivity, enhanced multimedia support and greater energy efficiency, all the high-performance essentials are seamlessly combined into a single chip.&lt;/div&gt;\r\n', '', 'Sony VAIO', '', ''),
-(47, 1, 'HP LP3065', '&lt;p&gt;\r\n	Stop your co-workers in their tracks with the stunning new 30-inch diagonal HP LP3065 Flat Panel Monitor. This flagship monitor features best-in-class performance and presentation features on a huge wide-aspect screen while letting you work as comfortably as possible - you might even forget you&amp;#39;re at the office&lt;/p&gt;\r\n', '', 'HP LP3065', '', ''),
-(32, 1, 'iPod Touch', '&lt;p&gt;\r\n	&lt;strong&gt;Revolutionary multi-touch interface.&lt;/strong&gt;&lt;br /&gt;\r\n	iPod touch features the same multi-touch screen technology as iPhone. Pinch to zoom in on a photo. Scroll through your songs and videos with a flick. Flip through your library by album artwork with Cover Flow.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Gorgeous 3.5-inch widescreen display.&lt;/strong&gt;&lt;br /&gt;\r\n	Watch your movies, TV shows, and photos come alive with bright, vivid color on the 320-by-480-pixel display.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Music downloads straight from iTunes.&lt;/strong&gt;&lt;br /&gt;\r\n	Shop the iTunes Wi-Fi Music Store from anywhere with Wi-Fi.1 Browse or search to find the music youre looking for, preview it, and buy it with just a tap.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Surf the web with Wi-Fi.&lt;/strong&gt;&lt;br /&gt;\r\n	Browse the web using Safari and watch YouTube videos on the first iPod with Wi-Fi built in&lt;br /&gt;\r\n	&amp;nbsp;&lt;/p&gt;\r\n', '', '	 iPod Touch', '', ''),
-(41, 1, 'iMac', '&lt;div&gt;\r\n	Just when you thought iMac had everything, now there&acute;s even more. More powerful Intel Core 2 Duo processors. And more memory standard. Combine this with Mac OS X Leopard and iLife &acute;08, and it&acute;s more all-in-one than ever. iMac packs amazing performance into a stunningly slim space.&lt;/div&gt;\r\n', '', 'iMac', '', ''),
-(33, 1, 'Samsung SyncMaster 941BW', '&lt;div&gt;\r\n	Imagine the advantages of going big without slowing down. The big 19&amp;quot; 941BW monitor combines wide aspect ratio with fast pixel response time, for bigger images, more room to work and crisp motion. In addition, the exclusive MagicBright 2, MagicColor and MagicTune technologies help deliver the ideal image in every situation, while sleek, narrow bezels and adjustable stands deliver style just the way you want it. With the Samsung 941BW widescreen analog/digital LCD monitor, it&amp;#39;s not hard to imagine.&lt;/div&gt;\r\n', '', 'Samsung SyncMaster 941BW', '', ''),
-(34, 1, 'iPod Shuffle', '&lt;div&gt;\r\n	&lt;strong&gt;Born to be worn.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Clip on the worlds most wearable music player and take up to 240 songs with you anywhere. Choose from five colors including four new hues to make your musical fashion statement.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Random meets rhythm.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With iTunes autofill, iPod shuffle can deliver a new musical experience every time you sync. For more randomness, you can shuffle songs during playback with the slide of a switch.&lt;/p&gt;\r\n	&lt;strong&gt;Everything is easy.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Charge and sync with the included USB dock. Operate the iPod shuffle controls with one hand. Enjoy up to 12 hours straight of skip-free music playback.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', 'iPod Shuffle', '', ''),
-(43, 1, 'MacBook', '&lt;div&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Intel Core 2 Duo processor&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Powered by an Intel Core 2 Duo processor at speeds up to 2.16GHz, the new MacBook is the fastest ever.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;1GB memory, larger hard drives&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		The new MacBook now comes with 1GB of memory standard and larger hard drives for the entire line perfect for running more of your favorite applications and storing growing media collections.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Sleek, 1.08-inch-thin design&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		MacBook makes it easy to hit the road thanks to its tough polycarbonate case, built-in wireless technologies, and innovative MagSafe Power Adapter that releases automatically if someone accidentally trips on the cord.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Built-in iSight camera&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Right out of the box, you can have a video chat with friends or family,2 record a video at your desk, or take fun pictures with Photo Booth&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', 'MacBook', '', ''),
-(31, 1, 'Nikon D300', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon&amp;#39;s newly announced D3 professional digital SLR camera to offer serious photographers remarkable performance combined with agility.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		Similar to the D3, the D300 features Nikon&amp;#39;s exclusive EXPEED Image Processing System that is central to driving the speed and processing power needed for many of the camera&amp;#39;s new features. The D300 features a new 51-point autofocus system with Nikon&amp;#39;s 3D Focus Tracking feature and two new LiveView shooting modes that allow users to frame a photograph using the camera&amp;#39;s high-resolution LCD monitor. The D300 shares a similar Scene Recognition System as is found in the D3; it promises to greatly enhance the accuracy of autofocus, autoexposure, and auto white balance by recognizing the subject or scene being photographed and applying this information to the calculations for the three functions.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 reacts with lightning speed, powering up in a mere 0.13 seconds and shooting with an imperceptible 45-millisecond shutter release lag time. The D300 is capable of shooting at a rapid six frames per second and can go as fast as eight frames per second when using the optional MB-D10 multi-power battery pack. In continuous bursts, the D300 can shoot up to 100 shots at full 12.3-megapixel resolution. (NORMAL-LARGE image setting, using a SanDisk Extreme IV 1GB CompactFlash card.)&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 incorporates a range of innovative technologies and features that will significantly improve the accuracy, control, and performance photographers can get from their equipment. Its new Scene Recognition System advances the use of Nikon&amp;#39;s acclaimed 1,005-segment sensor to recognize colors and light patterns that help the camera determine the subject and the type of scene being photographed before a picture is taken. This information is used to improve the accuracy of autofocus, autoexposure, and auto white balance functions in the D300. For example, the camera can track moving subjects better and by identifying them, it can also automatically select focus points faster and with greater accuracy. It can also analyze highlights and more accurately determine exposure, as well as infer light sources to deliver more accurate white balance detection.&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', 'Nikon D300', '', ''),
-(49, 1, 'Samsung Galaxy Tab 10.1', '&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1, is the world&amp;rsquo;s thinnest tablet, measuring 8.6 mm thickness, running with Android 3.0 Honeycomb OS on a 1GHz dual-core Tegra 2 processor, similar to its younger brother Samsung Galaxy Tab 8.9.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 gives pure Android 3.0 experience, adding its new TouchWiz UX or TouchWiz 4.0 &amp;ndash; includes a live panel, which lets you to customize with different content, such as your pictures, bookmarks, and social feeds, sporting a 10.1 inches WXGA capacitive touch screen with 1280 x 800 pixels of resolution, equipped with 3 megapixel rear camera with LED flash and a 2 megapixel front camera, HSPA+ connectivity up to 21Mbps, 720p HD video recording capability, 1080p HD playback, DLNA support, Bluetooth 2.1, USB 2.0, gyroscope, Wi-Fi 802.11 a/b/g/n, micro-SD slot, 3.5mm headphone jack, and SIM slot, including the Samsung Stick &amp;ndash; a Bluetooth microphone that can be carried in a pocket like a pen and sound dock with powered subwoofer.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 will come in 16GB / 32GB / 64GB verities and pre-loaded with Social Hub, Reader&amp;rsquo;s Hub, Music Hub and Samsung Mini Apps Tray &amp;ndash; which gives you access to more commonly used apps to help ease multitasking and it is capable of Adobe Flash Player 10.2, powered by 6860mAh battery that gives you 10hours of video-playback time.&amp;nbsp;&amp;auml;&amp;ouml;&lt;/p&gt;\r\n', '', 'Samsung Galaxy Tab 10.1', '', ''),
-(42, 1, 'Apple Cinema 30&quot;', '&lt;p&gt;\r\n	&lt;font face=&quot;helvetica,geneva,arial&quot; size=&quot;2&quot;&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed specifically for the creative professional, this display provides more space for easier access to all the tools and palettes needed to edit, format and composite your work. Combine this display with a Mac Pro, MacBook Pro, or PowerMac G5 and there''s no limit to what you can achieve. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features an active-matrix liquid crystal display that produces flicker-free images that deliver twice the brightness, twice the sharpness and twice the contrast ratio of a typical CRT display. Unlike other flat panels, it''s designed with a pure digital interface to deliver distortion-free images that never need adjusting. With over 4 million digital pixels, the display is uniquely suited for scientific and technical applications such as visualizing molecular structures or analyzing geological data. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Offering accurate, brilliant color performance, the Cinema HD delivers up to 16.7 million colors across a wide gamut allowing you to see subtle nuances between colors from soft pastels to rich jewel tones. A wide viewing angle ensures uniform color from edge to edge. Apple''s ColorSync technology allows you to create custom profiles to maintain consistent color onscreen and in print. The result: You can confidently use this display in all your color-critical applications. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Housed in a new aluminum design, the display has a very thin bezel that enhances visual accuracy. Each display features two FireWire 400 ports and two USB 2.0 ports, making attachment of desktop peripherals, such as iSight, iPod, digital and still cameras, hard drives, printers and scanners, even more accessible and convenient. Taking advantage of the much thinner and lighter footprint of an LCD, the new displays support the VESA (Video Electronics Standards Association) mounting interface standard. Customers with the optional Cinema Display VESA Mount Adapter kit gain the flexibility to mount their display in locations most appropriate for their work environment. &lt;br&gt;\r\n	&lt;br&gt;\r\n	&lt;/font&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features a single cable design with elegant breakout for the USB 2.0, FireWire 400 and a pure digital connection using the industry standard Digital Video Interface (DVI) interface. The DVI connection allows for a direct pure-digital connection.&lt;br&gt;\r\n	&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;\r\n&lt;h3&gt;\r\n	Features:&lt;/h3&gt;\r\n&lt;p&gt;\r\n	Unrivaled display performance&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		30-inch (viewable) active-matrix liquid crystal display provides breathtaking image quality and vivid, richly saturated color.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Support for 2560-by-1600 pixel resolution for display of high definition still and video imagery.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Wide-format design for simultaneous display of two full pages of text and graphics.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Industry standard DVI connector for direct attachment to Mac- and Windows-based desktops and notebooks&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Incredibly wide (170 degree) horizontal and vertical viewing angle for maximum visibility and color performance.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Lightning-fast pixel response for full-motion digital video playback.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Support for 16.7 million saturated colors, for use in all graphics-intensive applications.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	Simple setup and operation&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Single cable with elegant breakout for connection to DVI, USB and FireWire ports&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in two-port USB 2.0 hub for easy connection of desktop peripheral devices.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Two FireWire 400 ports to support iSight and other desktop peripherals&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	Sleek, elegant design&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Huge virtual workspace, very small footprint.&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Narrow Bezel design to minimize visual impact of using dual displays&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Unique hinge design for effortless adjustment&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Support for VESA mounting solutions (Apple Cinema Display VESA Mount Adapter sold separately)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;h3&gt;\r\n	Technical specifications&lt;/h3&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Screen size (diagonal viewable image size)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Apple Cinema HD Display: 30 inches (29.7-inch viewable)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Screen type&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Thin film transistor (TFT) active-matrix liquid crystal display (AMLCD)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Resolutions&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		2560 x 1600 pixels (optimum resolution)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		2048 x 1280&lt;/li&gt;\r\n	&lt;li&gt;\r\n		1920 x 1200&lt;/li&gt;\r\n	&lt;li&gt;\r\n		1280 x 800&lt;/li&gt;\r\n	&lt;li&gt;\r\n		1024 x 640&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Display colors (maximum)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		16.7 million&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Viewing angle (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		170° horizontal; 170° vertical&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Brightness (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		30-inch Cinema HD Display: 400 cd/m2&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Contrast ratio (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		700:1&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Response time (typical)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		16 ms&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Pixel pitch&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		30-inch Cinema HD Display: 0.250 mm&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Screen treatment&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Antiglare hardcoat&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;User controls (hardware and software)&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Display Power,&lt;/li&gt;\r\n	&lt;li&gt;\r\n		System sleep, wake&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Brightness&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Monitor tilt&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Connectors and cables&lt;/b&gt;&lt;br&gt;\r\n	Cable&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		DVI (Digital Visual Interface)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		FireWire 400&lt;/li&gt;\r\n	&lt;li&gt;\r\n		USB 2.0&lt;/li&gt;\r\n	&lt;li&gt;\r\n		DC power (24 V)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	Connectors&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Two-port, self-powered USB 2.0 hub&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Two FireWire 400 ports&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Kensington security port&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;VESA mount adapter&lt;/b&gt;&lt;br&gt;\r\n	Requires optional Cinema Display VESA Mount Adapter (M9649G/A)&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Compatible with VESA FDMI (MIS-D, 100, C) compliant mounting solutions&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Electrical requirements&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Input voltage: 100-240 VAC 50-60Hz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Maximum power when operating: 150W&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Energy saver mode: 3W or less&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Environmental requirements&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Operating temperature: 50° to 95° F (10° to 35° C)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Storage temperature: -40° to 116° F (-40° to 47° C)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Operating humidity: 20% to 80% noncondensing&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Maximum operating altitude: 10,000 feet&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Agency approvals&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		FCC Part 15 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		EN55022 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		EN55024&lt;/li&gt;\r\n	&lt;li&gt;\r\n		VCCI Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		AS/NZS 3548 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		CNS 13438 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		ICES-003 Class B&lt;/li&gt;\r\n	&lt;li&gt;\r\n		ISO 13406 part 2&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MPR II&lt;/li&gt;\r\n	&lt;li&gt;\r\n		IEC 60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		UL 60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		CSA 60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		EN60950&lt;/li&gt;\r\n	&lt;li&gt;\r\n		ENERGY STAR&lt;/li&gt;\r\n	&lt;li&gt;\r\n		TCO ''03&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;Size and weight&lt;/b&gt;&lt;br&gt;\r\n	30-inch Apple Cinema HD Display&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Height: 21.3 inches (54.3 cm)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Width: 27.2 inches (68.8 cm)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Depth: 8.46 inches (21.5 cm)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Weight: 27.5 pounds (12.5 kg)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;p&gt;\r\n	&lt;b&gt;System Requirements&lt;/b&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Mac Pro, all graphic options&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MacBook Pro&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Power Mac G5 (PCI-X) with ATI Radeon 9650 or better or NVIDIA GeForce 6800 GT DDL or better&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Power Mac G5 (PCI Express), all graphics options&lt;/li&gt;\r\n	&lt;li&gt;\r\n		PowerBook G4 with dual-link DVI support&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Windows PC and graphics card that supports DVI ports with dual-link digital bandwidth and VESA DDC standard for plug-and-play setup&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', 'Apple Cinema 30', '', ''),
-(30, 1, 'Canon EOS 5D', '&lt;p&gt;\r\n	Canon''s press material for the EOS 5D states that it ''defines (a) new D-SLR category'', while we''re not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably ''chunkier''). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR''s, an important difference when compared to the latter is that the EOS 5D doesn''t have any environmental seals. While Canon don''t specifically refer to the EOS 5D as a ''professional'' digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they''ve not bought too many EF-S lenses...) äë&lt;/p&gt;\r\n', '', 'sdf', '', '');
-
 -----------------------------------------------------------
 
 --
@@ -2696,15 +2393,6 @@ CREATE TABLE `oc_product_discount` (
   PRIMARY KEY (`product_discount_id`),
   KEY `product_id` (`product_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `oc_product_discount`
---
-
-INSERT INTO `oc_product_discount` (`product_discount_id`, `product_id`, `customer_group_id`, `quantity`, `priority`, `price`, `date_start`, `date_end`) VALUES
-(440, 42, 1, 30, 1, '66.0000', '0000-00-00', '0000-00-00'),
-(439, 42, 1, 20, 1, '77.0000', '0000-00-00', '0000-00-00'),
-(438, 42, 1, 10, 1, '88.0000', '0000-00-00', '0000-00-00');
 
 -----------------------------------------------------------
 
@@ -2735,73 +2423,6 @@ CREATE TABLE `oc_product_image` (
   KEY `product_id` (`product_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Dumping data for table `oc_product_image`
---
-
-INSERT INTO `oc_product_image` (`product_image_id`, `product_id`, `image`, `sort_order`) VALUES
-(2345, 30, 'catalog/demo/canon_eos_5d_2.jpg', 0),
-(2321, 47, 'catalog/demo/hp_3.jpg', 0),
-(2035, 28, 'catalog/demo/htc_touch_hd_2.jpg', 0),
-(2351, 41, 'catalog/demo/imac_3.jpg', 0),
-(1982, 40, 'catalog/demo/iphone_6.jpg', 0),
-(2001, 36, 'catalog/demo/ipod_nano_5.jpg', 0),
-(2000, 36, 'catalog/demo/ipod_nano_4.jpg', 0),
-(2005, 34, 'catalog/demo/ipod_shuffle_5.jpg', 0),
-(2004, 34, 'catalog/demo/ipod_shuffle_4.jpg', 0),
-(2011, 32, 'catalog/demo/ipod_touch_7.jpg', 0),
-(2010, 32, 'catalog/demo/ipod_touch_6.jpg', 0),
-(2009, 32, 'catalog/demo/ipod_touch_5.jpg', 0),
-(1971, 43, 'catalog/demo/macbook_5.jpg', 0),
-(1970, 43, 'catalog/demo/macbook_4.jpg', 0),
-(1974, 44, 'catalog/demo/macbook_air_4.jpg', 0),
-(1973, 44, 'catalog/demo/macbook_air_2.jpg', 0),
-(1977, 45, 'catalog/demo/macbook_pro_2.jpg', 0),
-(1976, 45, 'catalog/demo/macbook_pro_3.jpg', 0),
-(1986, 31, 'catalog/demo/nikon_d300_3.jpg', 0),
-(1985, 31, 'catalog/demo/nikon_d300_2.jpg', 0),
-(1988, 29, 'catalog/demo/palm_treo_pro_3.jpg', 0),
-(1995, 46, 'catalog/demo/sony_vaio_5.jpg', 0),
-(1994, 46, 'catalog/demo/sony_vaio_4.jpg', 0),
-(1991, 48, 'catalog/demo/ipod_classic_4.jpg', 0),
-(1990, 48, 'catalog/demo/ipod_classic_3.jpg', 0),
-(1981, 40, 'catalog/demo/iphone_2.jpg', 0),
-(1980, 40, 'catalog/demo/iphone_5.jpg', 0),
-(2344, 30, 'catalog/demo/canon_eos_5d_3.jpg', 0),
-(2320, 47, 'catalog/demo/hp_2.jpg', 0),
-(2034, 28, 'catalog/demo/htc_touch_hd_3.jpg', 0),
-(2350, 41, 'catalog/demo/imac_2.jpg', 0),
-(1979, 40, 'catalog/demo/iphone_3.jpg', 0),
-(1978, 40, 'catalog/demo/iphone_4.jpg', 0),
-(1989, 48, 'catalog/demo/ipod_classic_2.jpg', 0),
-(1999, 36, 'catalog/demo/ipod_nano_2.jpg', 0),
-(1998, 36, 'catalog/demo/ipod_nano_3.jpg', 0),
-(2003, 34, 'catalog/demo/ipod_shuffle_2.jpg', 0),
-(2002, 34, 'catalog/demo/ipod_shuffle_3.jpg', 0),
-(2008, 32, 'catalog/demo/ipod_touch_2.jpg', 0),
-(2007, 32, 'catalog/demo/ipod_touch_3.jpg', 0),
-(2006, 32, 'catalog/demo/ipod_touch_4.jpg', 0),
-(1969, 43, 'catalog/demo/macbook_2.jpg', 0),
-(1968, 43, 'catalog/demo/macbook_3.jpg', 0),
-(1972, 44, 'catalog/demo/macbook_air_3.jpg', 0),
-(1975, 45, 'catalog/demo/macbook_pro_4.jpg', 0),
-(1984, 31, 'catalog/demo/nikon_d300_4.jpg', 0),
-(1983, 31, 'catalog/demo/nikon_d300_5.jpg', 0),
-(1987, 29, 'catalog/demo/palm_treo_pro_2.jpg', 0),
-(1993, 46, 'catalog/demo/sony_vaio_2.jpg', 0),
-(1992, 46, 'catalog/demo/sony_vaio_3.jpg', 0),
-(2327, 49, 'catalog/demo/samsung_tab_7.jpg', 0),
-(2326, 49, 'catalog/demo/samsung_tab_6.jpg', 0),
-(2325, 49, 'catalog/demo/samsung_tab_5.jpg', 0),
-(2324, 49, 'catalog/demo/samsung_tab_4.jpg', 0),
-(2323, 49, 'catalog/demo/samsung_tab_3.jpg', 0),
-(2322, 49, 'catalog/demo/samsung_tab_2.jpg', 0),
-(2317, 42, 'catalog/demo/canon_logo.jpg', 0),
-(2316, 42, 'catalog/demo/hp_1.jpg', 0),
-(2315, 42, 'catalog/demo/compaq_presario.jpg', 0),
-(2314, 42, 'catalog/demo/canon_eos_5d_1.jpg', 0),
-(2313, 42, 'catalog/demo/canon_eos_5d_2.jpg', 0);
-
 -----------------------------------------------------------
 
 --
@@ -2817,24 +2438,6 @@ CREATE TABLE `oc_product_option` (
   `required` tinyint(1) NOT NULL,
   PRIMARY KEY (`product_option_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `oc_product_option`
---
-
-INSERT INTO `oc_product_option` (`product_option_id`, `product_id`, `option_id`, `value`, `required`) VALUES
-(224, 35, 11, '', 1),
-(225, 47, 12, '2011-04-22', 1),
-(223, 42, 2, '', 1),
-(217, 42, 5, '', 1),
-(209, 42, 6, '', 1),
-(218, 42, 1, '', 1),
-(208, 42, 4, 'test', 1),
-(219, 42, 8, '2011-02-20', 1),
-(222, 42, 7, '', 1),
-(221, 42, 9, '22:25', 1),
-(220, 42, 10, '2011-02-20 22:25', 1),
-(226, 30, 5, '', 1);
 
 -----------------------------------------------------------
 
@@ -2859,28 +2462,6 @@ CREATE TABLE `oc_product_option_value` (
   `weight_prefix` varchar(1) NOT NULL,
   PRIMARY KEY (`product_option_value_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `oc_product_option_value`
---
-
-INSERT INTO `oc_product_option_value` (`product_option_value_id`, `product_option_id`, `product_id`, `option_id`, `option_value_id`, `quantity`, `subtract`, `price`, `price_prefix`, `points`, `points_prefix`, `weight`, `weight_prefix`) VALUES
-(1, 217, 42, 5, 41, 100, 0, '1.0000', '+', 0, '+', '1.00000000', '+'),
-(6, 218, 42, 1, 31, 146, 1, '20.0000', '+', 2, '-', '20.00000000', '+'),
-(7, 218, 42, 1, 43, 300, 1, '30.0000', '+', 3, '+', '30.00000000', '+'),
-(5, 218, 42, 1, 32, 96, 1, '10.0000', '+', 1, '+', '10.00000000', '+'),
-(4, 217, 42, 5, 39, 92, 1, '4.0000', '+', 0, '+', '4.00000000', '+'),
-(2, 217, 42, 5, 42, 200, 1, '2.0000', '+', 0, '+', '2.00000000', '+'),
-(3, 217, 42, 5, 40, 300, 0, '3.0000', '+', 0, '+', '3.00000000', '+'),
-(8, 223, 42, 2, 23, 48, 1, '10.0000', '+', 0, '+', '10.00000000', '+'),
-(10, 223, 42, 2, 44, 2696, 1, '30.0000', '+', 0, '+', '30.00000000', '+'),
-(9, 223, 42, 2, 24, 194, 1, '20.0000', '+', 0, '+', '20.00000000', '+'),
-(11, 223, 42, 2, 45, 3998, 1, '40.0000', '+', 0, '+', '40.00000000', '+'),
-(12, 224, 35, 11, 46, 0, 1, '5.0000', '+', 0, '+', '0.00000000', '+'),
-(13, 224, 35, 11, 47, 10, 1, '10.0000', '+', 0, '+', '0.00000000', '+'),
-(14, 224, 35, 11, 48, 15, 1, '15.0000', '+', 0, '+', '0.00000000', '+'),
-(16, 226, 30, 5, 40, 5, 1, '0.0000', '+', 0, '+', '0.00000000', '+'),
-(15, 226, 30, 5, 39, 2, 1, '0.0000', '+', 0, '+', '0.00000000', '+');
 
 -----------------------------------------------------------
 
@@ -2909,16 +2490,6 @@ CREATE TABLE `oc_product_related` (
   PRIMARY KEY (`product_id`,`related_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Dumping data for table `oc_product_related`
---
-
-INSERT INTO `oc_product_related` (`product_id`, `related_id`) VALUES
-(40, 42),
-(41, 42),
-(42, 40),
-(42, 41);
-
 -----------------------------------------------------------
 
 --
@@ -2933,31 +2504,6 @@ CREATE TABLE `oc_product_reward` (
   `points` int(8) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_reward_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `oc_product_reward`
---
-
-INSERT INTO `oc_product_reward` (`product_reward_id`, `product_id`, `customer_group_id`, `points`) VALUES
-(515, 42, 1, 100),
-(519, 47, 1, 300),
-(379, 28, 1, 400),
-(329, 43, 1, 600),
-(339, 29, 1, 0),
-(343, 48, 1, 0),
-(335, 40, 1, 0),
-(539, 30, 1, 200),
-(331, 44, 1, 700),
-(333, 45, 1, 800),
-(337, 31, 1, 0),
-(425, 35, 1, 0),
-(345, 33, 1, 0),
-(347, 46, 1, 0),
-(545, 41, 1, 0),
-(351, 36, 1, 0),
-(353, 34, 1, 0),
-(355, 32, 1, 0),
-(521, 49, 1, 1000);
 
 -----------------------------------------------------------
 
@@ -2978,15 +2524,6 @@ CREATE TABLE `oc_product_special` (
   KEY `product_id` (`product_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Dumping data for table `oc_product_special`
---
-
-INSERT INTO `oc_product_special` (`product_special_id`, `product_id`, `customer_group_id`, `priority`, `price`, `date_start`, `date_end`) VALUES
-(419, 42, 1, 1, '90.0000', '0000-00-00', '0000-00-00'),
-(439, 30, 1, 2, '90.0000', '0000-00-00', '0000-00-00'),
-(438, 30, 1, 1, '80.0000', '0000-00-00', '0000-00-00');
-
 -----------------------------------------------------------
 
 --
@@ -3000,42 +2537,6 @@ CREATE TABLE `oc_product_to_category` (
   PRIMARY KEY (`product_id`,`category_id`),
   KEY `category_id` (`category_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `oc_product_to_category`
---
-
-INSERT INTO `oc_product_to_category` (`product_id`, `category_id`) VALUES
-(28, 20),
-(28, 24),
-(29, 20),
-(29, 24),
-(30, 20),
-(30, 33),
-(31, 33),
-(32, 34),
-(33, 20),
-(33, 28),
-(34, 34),
-(35, 20),
-(36, 34),
-(40, 20),
-(40, 24),
-(41, 27),
-(42, 20),
-(42, 28),
-(43, 18),
-(43, 20),
-(44, 18),
-(44, 20),
-(45, 18),
-(46, 18),
-(46, 20),
-(47, 18),
-(47, 20),
-(48, 20),
-(48, 34),
-(49, 57);
 
 -----------------------------------------------------------
 
@@ -3076,31 +2577,6 @@ CREATE TABLE `oc_product_to_store` (
   `store_id` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `oc_product_to_store`
---
-
-INSERT INTO `oc_product_to_store` (`product_id`, `store_id`) VALUES
-(28, 0),
-(29, 0),
-(30, 0),
-(31, 0),
-(32, 0),
-(33, 0),
-(34, 0),
-(35, 0),
-(36, 0),
-(40, 0),
-(41, 0),
-(42, 0),
-(43, 0),
-(44, 0),
-(45, 0),
-(46, 0),
-(47, 0),
-(48, 0),
-(49, 0);
 
 -----------------------------------------------------------
 
@@ -3344,7 +2820,7 @@ CREATE TABLE `oc_setting` (
 INSERT INTO `oc_setting` (`store_id`, `code`, `key`, `value`, `serialized`) VALUES
 (0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai''hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
 (0, 'config', 'config_shared', '0', 0),
-(0, 'config', 'config_secure', '0', 0),
+(0, 'config', 'config_secure', '1', 0),
 (0, 'config', 'config_fraud_detection', '0', 0),
 (0, 'config', 'config_ftp_status', '0', 0),
 (0, 'config', 'config_ftp_root', '', 0),
@@ -3352,51 +2828,51 @@ INSERT INTO `oc_setting` (`store_id`, `code`, `key`, `value`, `serialized`) VALU
 (0, 'config', 'config_ftp_username', '', 0),
 (0, 'config', 'config_ftp_port', '21', 0),
 (0, 'config', 'config_ftp_hostname', '', 0),
-(0, 'config', 'config_meta_title', 'Your Store', 0),
-(0, 'config', 'config_meta_description', 'My Store', 0),
+(0, 'config', 'config_meta_title', 'New Store Coming Soon!', 0),
+(0, 'config', 'config_meta_description', 'REMEMBER TO SETUP EMAIL!', 0),
 (0, 'config', 'config_meta_keyword', '', 0),
 (0, 'config', 'config_theme', 'default', 0),
 (0, 'config', 'config_layout_id', '4', 0),
-(0, 'config', 'config_country_id', '222', 0),
-(0, 'config', 'config_zone_id', '3563', 0),
-(0, 'config', 'config_timezone', 'UTC', 0),
+(0, 'config', 'config_country_id', '223', 0),
+(0, 'config', 'config_zone_id', '', 0),
+(0, 'config', 'config_timezone', 'America/New_York', 0),
 (0, 'config', 'config_language', 'en-gb', 0),
 (0, 'config', 'config_admin_language', 'en-gb', 0),
 (0, 'config', 'config_currency', 'USD', 0),
 (0, 'config', 'config_currency_auto', '1', 0),
-(0, 'config', 'config_length_class_id', '1', 0),
-(0, 'config', 'config_weight_class_id', '1', 0),
-(0, 'config', 'config_product_count', '1', 0),
-(0, 'config', 'config_limit_admin', '20', 0),
+(0, 'config', 'config_length_class_id', '3', 0),
+(0, 'config', 'config_weight_class_id', '5', 0),
+(0, 'config', 'config_product_count', '0', 0),
+(0, 'config', 'config_limit_admin', '25', 0),
 (0, 'config', 'config_review_status', '1', 0),
 (0, 'config', 'config_review_guest', '1', 0),
 (0, 'config', 'config_voucher_min', '1', 0),
 (0, 'config', 'config_voucher_max', '1000', 0),
-(0, 'config', 'config_tax', '1', 0),
+(0, 'config', 'config_tax', '0', 0),
 (0, 'config', 'config_tax_default', 'shipping', 0),
 (0, 'config', 'config_tax_customer', 'shipping', 0),
-(0, 'config', 'config_customer_online', '0', 0),
-(0, 'config', 'config_customer_activity', '0', 0),
-(0, 'config', 'config_customer_search', '0', 0),
+(0, 'config', 'config_customer_online', '1', 0),
+(0, 'config', 'config_customer_activity', '1', 0),
+(0, 'config', 'config_customer_search', '1', 0),
 (0, 'config', 'config_customer_group_id', '1', 0),
 (0, 'config', 'config_customer_group_display', '["1"]', 1),
 (0, 'config', 'config_customer_price', '0', 0),
-(0, 'config', 'config_account_id', '3', 0),
+(0, 'config', 'config_account_id', '0', 0),
 (0, 'config', 'config_invoice_prefix', CONCAT('INV-', YEAR(CURDATE()), '-00'), 0),
 (0, 'config', 'config_api_id', '1', 0),
-(0, 'config', 'config_cart_weight', '1', 0),
+(0, 'config', 'config_cart_weight', '0', 0),
 (0, 'config', 'config_checkout_guest', '1', 0),
 (0, 'config', 'config_checkout_id', '5', 0),
 (0, 'config', 'config_order_status_id', '1', 0),
-(0, 'config', 'config_processing_status', '["5","1","2","12","3"]', 1),
+(0, 'config', 'config_processing_status', '["1","2","3","5"]', 1),
 (0, 'config', 'config_complete_status', '["5","3"]', 1),
 (0, 'config', 'config_stock_display', '0', 0),
-(0, 'config', 'config_stock_warning', '0', 0),
-(0, 'config', 'config_stock_checkout', '0', 0),
-(0, 'config', 'config_affiliate_approval', '0', 0),
+(0, 'config', 'config_stock_warning', '1', 0),
+(0, 'config', 'config_stock_checkout', '1', 0),
+(0, 'config', 'config_affiliate_approval', '1', 0),
 (0, 'config', 'config_affiliate_auto', '0', 0),
 (0, 'config', 'config_affiliate_commission', '5', 0),
-(0, 'config', 'config_affiliate_id', '4', 0),
+(0, 'config', 'config_affiliate_id', '0', 0),
 (0, 'config', 'config_return_id', '0', 0),
 (0, 'config', 'config_return_status_id', '2', 0),
 (0, 'config', 'config_logo', 'catalog/opencart-logo.png', 0),
@@ -3405,38 +2881,38 @@ INSERT INTO `oc_setting` (`store_id`, `code`, `key`, `value`, `serialized`) VALU
 (0, 'config', 'config_open', '', 0),
 (0, 'config', 'config_image', '', 0),
 (0, 'config', 'config_fax', '', 0),
-(0, 'config', 'config_telephone', '123456789', 0),
+(0, 'config', 'config_telephone', '1234567890', 0),
 (0, 'config', 'config_email', 'demo@opencart.com', 0),
 (0, 'config', 'config_geocode', '', 0),
-(0, 'config', 'config_owner', 'Your Name', 0),
-(0, 'config', 'config_address', 'Address 1', 0),
-(0, 'config', 'config_name', 'Your Store', 0),
-(0, 'config', 'config_seo_url', '0', 0),
-(0, 'config', 'config_file_max_size', '300000', 0),
+(0, 'config', 'config_owner', 'Business Name', 0),
+(0, 'config', 'config_address', '123 Business Street', 0),
+(0, 'config', 'config_name', 'Store Name', 0),
+(0, 'config', 'config_seo_url', '1', 0),
+(0, 'config', 'config_file_max_size', '5000000', 0),
 (0, 'config', 'config_file_ext_allowed', 'zip\r\ntxt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nwebp\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc', 0),
 (0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/tiff\r\nimage/svg+xml\r\nimage/webp\r\napplication/zip\r\n&quot;application/zip&quot;\r\napplication/x-zip\r\n&quot;application/x-zip&quot;\r\napplication/x-zip-compressed\r\n&quot;application/x-zip-compressed&quot;\r\napplication/rar\r\n&quot;application/rar&quot;\r\napplication/x-rar\r\n&quot;application/x-rar&quot;\r\napplication/x-rar-compressed\r\n&quot;application/x-rar-compressed&quot;\r\napplication/octet-stream\r\n&quot;application/octet-stream&quot;\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf', 0),
-(0, 'config', 'config_maintenance', '0', 0),
+(0, 'config', 'config_maintenance', '1', 0),
 (0, 'config', 'config_password', '1', 0),
 (0, 'config', 'config_encryption', '', 0),
-(0, 'config', 'config_compression', '0', 0),
+(0, 'config', 'config_compression', '5', 0),
 (0, 'config', 'config_error_display', '1', 0),
 (0, 'config', 'config_error_log', '1', 0),
 (0, 'config', 'config_error_filename', 'error.log', 0),
 (0, 'config', 'config_google_analytics', '', 0),
-(0, 'config', 'config_mail_engine', 'mail', 0),
-(0, 'config', 'config_mail_parameter', '', 0),
-(0, 'config', 'config_mail_smtp_hostname', '', 0),
-(0, 'config', 'config_mail_smtp_username', '', 0),
-(0, 'config', 'config_mail_smtp_password', '', 0),
-(0, 'config', 'config_mail_smtp_port', '25', 0),
-(0, 'config', 'config_mail_smtp_timeout', '5', 0),
+(0, 'config', 'config_mail_engine', 'smtp', 0),
+(0, 'config', 'config_mail_parameter', '-f support@exampledomain.com', 0),
+(0, 'config', 'config_mail_smtp_hostname', 'tls://pixel.mxrouting.net', 0),
+(0, 'config', 'config_mail_smtp_username', 'support@exampledomain.com', 0),
+(0, 'config', 'config_mail_smtp_password', 'passwordgoeshere', 0),
+(0, 'config', 'config_mail_smtp_port', '587', 0),
+(0, 'config', 'config_mail_smtp_timeout', '60', 0),
 (0, 'config', 'config_mail_alert_email', '', 0),
-(0, 'config', 'config_mail_alert', '["order"]', 1),
+(0, 'config', 'config_mail_alert', '["account","affiliate","order","review"]["order"]', 1),
 (0, 'config', 'config_captcha', 'basic', 0),
-(0, 'config', 'config_captcha_page', '["review","return","contact"]', 1),
+(0, 'config', 'config_captcha_page', '["affiliate","account","forgotten","register","review","return","contact"]', 1),
 (0, 'config', 'config_login_attempts', '5', 0),
 (0, 'payment_free_checkout', 'payment_free_checkout_status', '1', 0),
-(0, 'payment_free_checkout', 'payment_free_checkout_order_status_id', '1', 0),
+(0, 'payment_free_checkout', 'payment_free_checkout_order_status_id', '2', 0),
 (0, 'payment_free_checkout', 'payment_free_checkout_sort_order', '1', 0),
 (0, 'payment_cod', 'payment_cod_sort_order', '5', 0),
 (0, 'payment_cod', 'payment_cod_total', '0.01', 0),
@@ -3467,7 +2943,7 @@ INSERT INTO `oc_setting` (`store_id`, `code`, `key`, `value`, `serialized`) VALU
 (0, 'total_voucher', 'total_voucher_status', '1', 0),
 (0, 'module_category', 'module_category_status', '1', 0),
 (0, 'module_account', 'module_account_status', '1', 0),
-(0, 'theme_default', 'theme_default_product_limit', '15', 0),
+(0, 'theme_default', 'theme_default_product_limit', '32', 0),
 (0, 'theme_default', 'theme_default_product_description_length', '100', 0),
 (0, 'theme_default', 'theme_default_image_thumb_width', '228', 0),
 (0, 'theme_default', 'theme_default_image_thumb_height', '228', 0),
@@ -3630,8 +3106,204 @@ CREATE TABLE `oc_tax_rate` (
 --
 
 INSERT INTO `oc_tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`, `date_added`, `date_modified`) VALUES
-(86, 3, 'VAT (20%)', '20.0000', 'P', '2011-03-09 21:17:10', '2011-09-22 22:24:29'),
-(87, 3, 'Eco Tax (-2.00)', '2.0000', 'F', '2011-09-21 21:49:23', '2011-09-23 00:40:19');
+(88, 3, 'SC Sales Tax', '6.0000', 'P', '2024-05-08 20:20:00', '2024-05-08 20:20:00'),
+(126, 273, 'Bangladesh Tax', 15.0000, 'P', '2024-09-19 12:16:26', '2024-09-19 12:16:26'),
+(125, 272, 'Bahrain Tax', 10.0000, 'P', '2024-09-19 12:16:14', '2024-09-19 12:16:14'),
+(124, 271, 'Bahamas Tax', 10.0000, 'P', '2024-09-19 12:16:02', '2024-09-19 12:16:02'),
+(123, 270, 'Azerbaijan Tax', 18.0000, 'P', '2024-09-19 12:15:48', '2024-09-19 12:15:48'),
+(122, 269, 'Austria Tax', 20.0000, 'P', '2024-09-19 12:15:34', '2024-09-19 12:15:34'),
+(121, 268, 'Australia Tax', 10.0000, 'P', '2024-09-19 12:15:17', '2024-09-19 12:15:17'),
+(120, 267, 'Aruba Tax', 7.0000, 'P', '2024-09-19 12:14:57', '2024-09-19 12:14:57'),
+(119, 266, 'Armenia Tax', 20.0000, 'P', '2024-09-19 12:14:41', '2024-09-19 12:14:41'),
+(118, 265, 'Argentina Tax', 21.0000, 'P', '2024-09-19 12:14:23', '2024-09-19 12:14:23'),
+(117, 264, 'Antigua & Barbuda Tax', 15.0000, 'P', '2024-09-19 12:14:04', '2024-09-19 12:14:04'),
+(116, 263, 'Anguilla Tax', 13.0000, 'P', '2024-09-19 12:13:45', '2024-09-19 12:13:45'),
+(115, 262, 'Angola Tax', 14.0000, 'P', '2024-09-19 12:13:23', '2024-09-19 12:13:23'),
+(114, 261, 'Andorra Tax', 4.5000, 'P', '2024-09-19 12:12:58', '2024-09-19 12:12:58'),
+(113, 260, 'American Samoa Tax', 10.0000, 'P', '2024-09-19 12:12:36', '2024-09-19 12:12:36'),
+(112, 259, 'Algeria Tax', 19.0000, 'P', '2024-09-19 12:12:05', '2024-09-19 12:12:05'),
+(111, 258, 'Albania Tax', 20.0000, 'P', '2024-09-19 12:01:18', '2024-09-19 12:01:18'),
+(127, 274, 'Barbados Tax', 17.5000, 'P', '2024-09-19 12:16:42', '2024-09-19 12:16:42'),
+(128, 275, 'Belarus Tax', 20.0000, 'P', '2024-09-19 12:16:55', '2024-09-19 12:16:55'),
+(129, 276, 'Belgium Tax', 21.0000, 'P', '2024-09-19 12:17:08', '2024-09-19 12:17:08'),
+(130, 277, 'Belize Tax', 12.5000, 'P', '2024-09-19 12:17:23', '2024-09-19 12:17:23'),
+(131, 278, 'Benin Tax', 18.0000, 'P', '2024-09-19 12:17:36', '2024-09-19 12:17:36'),
+(132, 279, 'Bhutan Tax', 50.0000, 'P', '2024-09-19 12:17:48', '2024-09-19 12:17:48'),
+(133, 280, 'Bolivia Tax', 14.9400, 'P', '2024-09-19 12:18:06', '2024-09-19 12:18:06'),
+(134, 281, 'Bonaire Tax', 8.0000, 'P', '2024-09-19 12:18:39', '2024-09-19 12:18:39'),
+(135, 282, 'Bosnia Tax', 17.0000, 'P', '2024-09-19 12:18:57', '2024-09-19 12:18:57'),
+(136, 283, 'Botswana Tax', 12.0000, 'P', '2024-09-19 12:19:11', '2024-09-19 12:19:11'),
+(137, 284, 'Brazil Tax', 19.0000, 'P', '2024-09-19 12:19:26', '2024-09-19 12:19:26'),
+(138, 285, 'Bulgaria Tax', 20.0000, 'P', '2024-09-19 12:19:46', '2024-09-19 12:19:46'),
+(139, 286, 'Burkina Faso Tax', 18.0000, 'P', '2024-09-19 12:21:43', '2024-09-19 12:21:43'),
+(140, 287, 'Burundi Tax', 18.0000, 'P', '2024-09-19 12:21:58', '2024-09-19 12:21:58'),
+(141, 288, 'Cambodia Tax', 10.0000, 'P', '2024-09-19 12:22:10', '2024-09-19 12:22:10'),
+(142, 289, 'Cameroon Tax', 19.2500, 'P', '2024-09-19 12:22:27', '2024-09-19 12:22:27'),
+(143, 290, 'Canada Tax', 5.0000, 'P', '2024-09-19 12:24:21', '2024-09-19 12:24:21'),
+(144, 291, 'Cape Verde Tax', 15.0000, 'P', '2024-09-19 12:24:41', '2024-09-19 12:24:41'),
+(145, 292, 'Central African Republic Tax', 19.0000, 'P', '2024-09-19 12:25:23', '2024-09-19 12:25:23'),
+(146, 293, 'Chad Tax', 18.0000, 'P', '2024-09-19 12:25:38', '2024-09-19 12:25:38'),
+(147, 294, 'Chile Tax', 19.0000, 'P', '2024-09-19 12:25:52', '2024-09-19 12:25:52'),
+(148, 295, 'China Tax', 13.0000, 'P', '2024-09-19 12:26:08', '2024-09-19 12:26:08'),
+(149, 296, 'Colombia Tax', 19.0000, 'P', '2024-09-19 12:26:21', '2024-09-19 12:26:21'),
+(150, 297, 'Comoros Tax', 10.0000, 'P', '2024-09-19 12:26:34', '2024-09-19 12:26:34'),
+(151, 298, 'Congo Tax', 18.0000, 'P', '2024-09-19 12:26:53', '2024-09-19 12:26:53'),
+(152, 299, 'Cook Islands Tax', 15.0000, 'P', '2024-09-19 12:27:05', '2024-09-19 12:27:05'),
+(153, 300, 'Costa Rica Tax', 13.0000, 'P', '2024-09-19 12:27:19', '2024-09-19 12:27:19'),
+(154, 301, 'Croatia Tax', 25.0000, 'P', '2024-09-19 12:27:32', '2024-09-19 12:27:32'),
+(155, 302, 'Curaçao Tax', 6.0000, 'P', '2024-09-19 12:27:45', '2024-09-19 12:27:45'),
+(156, 303, 'Cyprus Tax', 19.0000, 'P', '2024-09-19 12:27:58', '2024-09-19 12:27:58'),
+(157, 304, 'Czech Republic Tax', 21.0000, 'P', '2024-09-19 12:28:09', '2024-09-19 12:28:09'),
+(158, 305, 'Denmark Tax', 25.0000, 'P', '2024-09-19 12:28:22', '2024-09-19 12:28:22'),
+(159, 306, 'Djibouti Tax', 26.0000, 'P', '2024-09-19 12:40:08', '2024-09-19 12:40:08'),
+(160, 307, 'Dominica Tax', 15.0000, 'P', '2024-09-19 12:40:15', '2024-09-19 12:40:15'),
+(161, 308, 'Dominican Republic Tax', 18.0000, 'P', '2024-09-19 12:40:27', '2024-09-19 12:40:27'),
+(162, 309, 'Ecuador Tax', 15.0000, 'P', '2024-09-19 12:40:27', '2024-09-19 12:40:27'),
+(163, 310, 'Egypt Tax', 14.0000, 'P', '2024-09-19 12:40:27', '2024-09-19 12:40:27'),
+(164, 311, 'El Salvador Tax', 13.0000, 'P', '2024-09-19 12:40:39', '2024-09-19 12:40:39'),
+(165, 312, 'Equatorial Guinea Tax', 15.0000, 'P', '2024-09-19 12:40:39', '2024-09-19 12:40:39'),
+(166, 313, 'Eritrea Tax', 10.0000, 'P', '2024-09-19 12:40:39', '2024-09-19 12:40:39'),
+(167, 314, 'Estonia Tax', 22.0000, 'P', '2024-09-19 12:40:39', '2024-09-19 12:40:39'),
+(168, 315, 'Ethiopia Tax', 15.0000, 'P', '2024-09-19 12:40:39', '2024-09-19 12:40:39'),
+(169, 316, 'Faroe Islands (Denmark) Tax', 25.0000, 'P', '2024-09-19 12:40:39', '2024-09-19 12:40:39'),
+(170, 317, 'Fiji Tax', 15.0000, 'P', '2024-09-19 12:40:50', '2024-09-19 12:40:50'),
+(171, 318, 'Finland Tax', 24.0000, 'P', '2024-09-19 12:40:50', '2024-09-19 12:40:50'),
+(172, 319, 'France Tax', 20.0000, 'P', '2024-09-19 12:40:50', '2024-09-19 12:40:50'),
+(173, 320, 'French Polynesia (Tahiti) Tax', 16.0000, 'P', '2024-09-19 12:40:50', '2024-09-19 12:40:50'),
+(174, 321, 'Gabon Tax', 18.0000, 'P', '2024-09-19 12:40:50', '2024-09-19 12:40:50'),
+(175, 322, 'Gambia Tax', 15.0000, 'P', '2024-09-19 12:40:50', '2024-09-19 12:40:50'),
+(176, 323, 'Georgia Tax', 18.0000, 'P', '2024-09-19 12:40:50', '2024-09-19 12:40:50'),
+(177, 324, 'Germany Tax', 19.0000, 'P', '2024-09-19 12:41:31', '2024-09-19 12:41:31'),
+(178, 325, 'Ghana Tax', 15.0000, 'P', '2024-09-19 12:41:31', '2024-09-19 12:41:31'),
+(179, 326, 'Greece Tax', 24.0000, 'P', '2024-09-19 12:41:31', '2024-09-19 12:41:31'),
+(180, 327, 'Grenada Tax', 15.0000, 'P', '2024-09-19 12:41:31', '2024-09-19 12:41:31'),
+(181, 328, 'Guadeloupe Tax', 8.5000, 'P', '2024-09-19 12:41:31', '2024-09-19 12:41:31'),
+(182, 329, 'Guam Tax', 4.0000, 'P', '2024-09-19 12:41:31', '2024-09-19 12:41:31'),
+(183, 330, 'Guatemala Tax', 12.0000, 'P', '2024-09-19 12:41:31', '2024-09-19 12:41:31'),
+(184, 331, 'Guinea Tax', 18.0000, 'P', '2024-09-19 12:41:44', '2024-09-19 12:41:44'),
+(185, 332, 'Guinea-Bissau Tax', 18.0000, 'P', '2024-09-19 12:41:44', '2024-09-19 12:41:44'),
+(186, 333, 'Guyana Tax', 14.0000, 'P', '2024-09-19 12:41:56', '2024-09-19 12:41:56'),
+(187, 334, 'Haiti Tax', 10.0000, 'P', '2024-09-19 12:41:56', '2024-09-19 12:41:56'),
+(188, 335, 'Honduras Tax', 15.0000, 'P', '2024-09-19 12:41:56', '2024-09-19 12:41:56'),
+(189, 336, 'Hungary Tax', 27.0000, 'P', '2024-09-19 12:42:04', '2024-09-19 12:42:04'),
+(190, 337, 'Iceland Tax', 24.0000, 'P', '2024-09-19 12:42:04', '2024-09-19 12:42:04'),
+(191, 338, 'India Tax', 28.0000, 'P', '2024-09-19 12:42:04', '2024-09-19 12:42:04'),
+(192, 339, 'Indonesia Tax', 11.0000, 'P', '2024-09-19 12:42:22', '2024-09-19 12:42:22'),
+(193, 340, 'Iraq Tax', 15.0000, 'P', '2024-09-19 12:42:22', '2024-09-19 12:42:22'),
+(194, 341, 'Ireland Tax', 23.0000, 'P', '2024-09-19 12:42:22', '2024-09-19 12:42:22'),
+(195, 342, 'Israel Tax', 17.0000, 'P', '2024-09-19 12:42:22', '2024-09-19 12:42:22'),
+(196, 343, 'Italy Tax', 22.0000, 'P', '2024-09-19 12:42:22', '2024-09-19 12:42:22'),
+(197, 344, 'Ivory Coast Tax', 18.0000, 'P', '2024-09-19 12:42:22', '2024-09-19 12:42:22'),
+(198, 345, 'Jamaica Tax', 16.5000, 'P', '2024-09-19 12:42:32', '2024-09-19 12:42:32'),
+(199, 346, 'Japan Tax', 10.0000, 'P', '2024-09-19 12:42:32', '2024-09-19 12:42:32'),
+(200, 347, 'Jersey Tax', 5.0000, 'P', '2024-09-19 12:42:32', '2024-09-19 12:42:32'),
+(201, 348, 'Jordan Tax', 16.0000, 'P', '2024-09-19 12:42:32', '2024-09-19 12:42:32'),
+(202, 349, 'Kazakhstan Tax', 12.0000, 'P', '2024-09-19 12:42:32', '2024-09-19 12:42:32'),
+(203, 350, 'Kenya Tax', 16.0000, 'P', '2024-09-19 12:42:42', '2024-09-19 12:42:42'),
+(204, 351, 'Korea Tax', 10.0000, 'P', '2024-09-19 12:42:42', '2024-09-19 12:42:42'),
+(205, 352, 'Kyrgyzstan Tax', 20.0000, 'P', '2024-09-19 12:42:42', '2024-09-19 12:42:42'),
+(206, 353, 'Laos Tax', 10.0000, 'P', '2024-09-19 12:42:42', '2024-09-19 12:42:42'),
+(207, 354, 'Latvia Tax', 21.0000, 'P', '2024-09-19 12:42:42', '2024-09-19 12:42:42'),
+(208, 355, 'Lebanon Tax', 11.0000, 'P', '2024-09-19 12:42:52', '2024-09-19 12:42:52'),
+(209, 356, 'Lesotho Tax', 14.0000, 'P', '2024-09-19 12:42:52', '2024-09-19 12:42:52'),
+(210, 357, 'Liberia Tax', 7.0000, 'P', '2024-09-19 12:42:52', '2024-09-19 12:42:52'),
+(211, 358, 'Liechtenstein Tax', 8.1000, 'P', '2024-09-19 12:42:52', '2024-09-19 12:42:52'),
+(212, 359, 'Lithuania Tax', 21.0000, 'P', '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(213, 360, 'Luxembourg Tax', 17.0000, 'P', '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(214, 361, 'Macedonia Tax', 18.0000, 'P', '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(215, 362, 'Madagascar Tax', 20.0000, 'P', '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(216, 363, 'Malawi Tax', 16.5000, 'P', '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(217, 364, 'Malaysia Tax', 10.0000, 'P', '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(218, 365, 'Maldives Tax', 8.0000, 'P', '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(219, 366, 'Mali Tax', 18.0000, 'P', '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(220, 367, 'Malta Tax', 18.0000, 'P', '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(221, 368, 'Marshall Islands Tax', 10.0000, 'P', '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(222, 369, 'Martinique Tax', 8.5000, 'P', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(223, 370, 'Mauritania Tax', 14.0000, 'P', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(224, 371, 'Mauritius Tax', 15.0000, 'P', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(225, 372, 'Mexico Tax', 16.0000, 'P', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(226, 373, 'Micronesia Tax', 35.0000, 'P', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(227, 374, 'Moldova Tax', 20.0000, 'P', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(228, 375, 'Monaco Tax', 20.0000, 'P', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(229, 376, 'Mongolia Tax', 10.0000, 'P', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(230, 377, 'Montenegro Tax', 21.0000, 'P', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(231, 378, 'Montserrat Tax', 15.0000, 'P', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(232, 379, 'Morocco Tax', 20.0000, 'P', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(233, 380, 'Mozambique Tax', 17.0000, 'P', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(234, 381, 'Myanmar Tax', 5.0000, 'P', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(235, 382, 'Namibia Tax', 15.0000, 'P', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(236, 383, 'Nepal Tax', 13.0000, 'P', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(237, 384, 'Netherlands Tax', 21.0000, 'P', '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(238, 385, 'New Zealand Tax', 15.0000, 'P', '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(239, 386, 'Nicaragua Tax', 15.0000, 'P', '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(240, 387, 'Niger Tax', 21.0000, 'P', '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(241, 388, 'Nigeria Tax', 5.0000, 'P', '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(242, 389, 'Norway Tax', 25.0000, 'P', '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(243, 390, 'Pakistan Tax', 17.0000, 'P', '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(244, 391, 'Panama Tax', 7.0000, 'P', '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(245, 392, 'Papua New Guinea Tax', 10.0000, 'P', '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(246, 393, 'Paraguay Tax', 10.0000, 'P', '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(247, 394, 'Peru Tax', 18.0000, 'P', '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(248, 395, 'Philippines Tax', 12.0000, 'P', '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(249, 396, 'Poland Tax', 23.0000, 'P', '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(250, 397, 'Portugal Tax', 23.0000, 'P', '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(251, 398, 'Reunion Tax', 8.5000, 'P', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(252, 399, 'Romania Tax', 19.0000, 'P', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(253, 400, 'Russia Tax', 20.0000, 'P', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(254, 401, 'Rwanda Tax', 18.0000, 'P', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(255, 402, 'San Marino Tax', 22.0000, 'P', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(256, 403, 'Saudi Arabia Tax', 15.0000, 'P', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(257, 404, 'Senegal Tax', 18.0000, 'P', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(258, 405, 'Serbia Tax', 20.0000, 'P', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(259, 406, 'Seychelles Tax', 15.0000, 'P', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(260, 407, 'Sierra Leone Tax', 15.0000, 'P', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(261, 408, 'Singapore Tax', 9.0000, 'P', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(262, 409, 'Slovakia Tax', 20.0000, 'P', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(263, 410, 'Slovenia Tax', 22.0000, 'P', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(264, 411, 'Solomon Islands Tax', 15.0000, 'P', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(265, 412, 'South Africa Tax', 15.0000, 'P', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(266, 413, 'Spain Tax', 21.0000, 'P', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(267, 414, 'Sri Lanka Tax', 18.0000, 'P', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(268, 415, 'St. Kitts and Nevis Tax', 17.0000, 'P', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(269, 416, 'St. Lucia Tax', 12.5000, 'P', '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(270, 417, 'St. Maarten Tax', 5.0000, 'P', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(271, 418, 'St. Vincent Tax', 15.0000, 'P', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(272, 419, 'Sudan Tax', 35.5400, 'P', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(273, 420, 'Suriname Tax', 10.0000, 'P', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(274, 421, 'Swaziland Tax', 14.0000, 'P', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(275, 422, 'Sweden Tax', 25.0000, 'P', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(276, 423, 'Switzerland Tax', 8.1000, 'P', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(277, 424, 'Taiwan Tax', 5.0000, 'P', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(278, 425, 'Tanzania Tax', 18.0000, 'P', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(279, 426, 'Thailand Tax', 7.0000, 'P', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(280, 427, 'Timor-Leste Tax', 5.0000, 'P', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(281, 428, 'Togo Tax', 18.0000, 'P', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(282, 429, 'Tonga Tax', 15.0000, 'P', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(283, 430, 'Trinidad and Tobago Tax', 12.5000, 'P', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(284, 431, 'Tunisia Tax', 19.0000, 'P', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(285, 432, 'Turkey Tax', 20.0000, 'P', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(286, 433, 'Turkmenistan Tax', 15.0000, 'P', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(287, 434, 'Uganda Tax', 18.0000, 'P', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(288, 435, 'Ukraine Tax', 20.0000, 'P', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(289, 436, 'United Arab Emirates Tax', 5.0000, 'P', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(290, 437, 'United Kingdom Tax', 20.0000, 'P', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(291, 438, 'Uruguay Tax', 22.0000, 'P', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(292, 439, 'Uzbekistan Tax', 20.0000, 'P', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(293, 440, 'Vanuatu Tax', 15.0000, 'P', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(294, 441, 'Venezuela Tax', 16.0000, 'P', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(295, 442, 'Vietnam Tax', 10.0000, 'P', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(296, 443, 'Yemen Tax', 5.0000, 'P', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(297, 444, 'Zambia Tax', 16.0000, 'P', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(298, 445, 'Zimbabwe Tax', 15.0000, 'P', '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(323, 470, 'Saskatchewan PST', 6.0000, 'P', '2024-09-19 13:07:25', '2024-09-19 13:07:25'),
+(322, 469, 'Québec PST', 9.9800, 'P', '2024-09-19 13:07:25', '2024-09-19 13:07:25'),
+(321, 468, 'Prince Edward Island PST', 10.0000, 'P', '2024-09-19 13:07:25', '2024-09-19 13:07:25'),
+(319, 466, 'Nova Scotia PST', 10.0000, 'P', '2024-09-19 13:07:25', '2024-09-19 13:07:25'),
+(316, 463, 'Manitoba PST', 7.0000, 'P', '2024-09-19 13:07:25', '2024-09-19 13:07:25'),
+(317, 464, 'New Brunswick PST', 10.0000, 'P', '2024-09-19 13:07:25', '2024-09-19 13:07:25'),
+(318, 465, 'Newfoundland and Labrador PST', 10.0000, 'P', '2024-09-19 13:07:25', '2024-09-19 13:07:25'),
+(320, 467, 'Ontario PST', 8.0000, 'P', '2024-09-19 13:07:25', '2024-09-19 13:07:25'),
+(315, 462, 'British Columbia PST', 7.0000, 'P', '2024-09-19 13:07:25', '2024-09-19 13:07:25');
 
 -----------------------------------------------------------
 
@@ -3651,8 +3323,204 @@ CREATE TABLE `oc_tax_rate_to_customer_group` (
 --
 
 INSERT INTO `oc_tax_rate_to_customer_group` (`tax_rate_id`, `customer_group_id`) VALUES
-(86, 1),
-(87, 1);
+(88, 1),
+(111, 1),
+(112, 1),
+(113, 1),
+(114, 1),
+(115, 1),
+(116, 1),
+(117, 1),
+(118, 1),
+(119, 1),
+(120, 1),
+(121, 1),
+(122, 1),
+(123, 1),
+(124, 1),
+(125, 1),
+(126, 1),
+(127, 1),
+(128, 1),
+(129, 1),
+(130, 1),
+(131, 1),
+(132, 1),
+(133, 1),
+(134, 1),
+(135, 1),
+(136, 1),
+(137, 1),
+(138, 1),
+(139, 1),
+(140, 1),
+(141, 1),
+(142, 1),
+(143, 1),
+(144, 1),
+(145, 1),
+(146, 1),
+(147, 1),
+(148, 1),
+(149, 1),
+(150, 1),
+(151, 1),
+(152, 1),
+(153, 1),
+(154, 1),
+(155, 1),
+(156, 1),
+(157, 1),
+(158, 1),
+(159, 1),
+(160, 1),
+(161, 1),
+(162, 1),
+(163, 1),
+(164, 1),
+(165, 1),
+(166, 1),
+(167, 1),
+(168, 1),
+(169, 1),
+(170, 1),
+(171, 1),
+(172, 1),
+(173, 1),
+(174, 1),
+(175, 1),
+(176, 1),
+(177, 1),
+(178, 1),
+(179, 1),
+(180, 1),
+(181, 1),
+(182, 1),
+(183, 1),
+(184, 1),
+(185, 1),
+(186, 1),
+(187, 1),
+(188, 1),
+(189, 1),
+(190, 1),
+(191, 1),
+(192, 1),
+(193, 1),
+(194, 1),
+(195, 1),
+(196, 1),
+(197, 1),
+(198, 1),
+(199, 1),
+(200, 1),
+(201, 1),
+(202, 1),
+(203, 1),
+(204, 1),
+(205, 1),
+(206, 1),
+(207, 1),
+(208, 1),
+(209, 1),
+(210, 1),
+(211, 1),
+(212, 1),
+(213, 1),
+(214, 1),
+(215, 1),
+(216, 1),
+(217, 1),
+(218, 1),
+(219, 1),
+(220, 1),
+(221, 1),
+(222, 1),
+(223, 1),
+(224, 1),
+(225, 1),
+(226, 1),
+(227, 1),
+(228, 1),
+(229, 1),
+(230, 1),
+(231, 1),
+(232, 1),
+(233, 1),
+(234, 1),
+(235, 1),
+(236, 1),
+(237, 1),
+(238, 1),
+(239, 1),
+(240, 1),
+(241, 1),
+(242, 1),
+(243, 1),
+(244, 1),
+(245, 1),
+(246, 1),
+(247, 1),
+(248, 1),
+(249, 1),
+(250, 1),
+(251, 1),
+(252, 1),
+(253, 1),
+(254, 1),
+(255, 1),
+(256, 1),
+(257, 1),
+(258, 1),
+(259, 1),
+(260, 1),
+(261, 1),
+(262, 1),
+(263, 1),
+(264, 1),
+(265, 1),
+(266, 1),
+(267, 1),
+(268, 1),
+(269, 1),
+(270, 1),
+(271, 1),
+(272, 1),
+(273, 1),
+(274, 1),
+(275, 1),
+(276, 1),
+(277, 1),
+(278, 1),
+(279, 1),
+(280, 1),
+(281, 1),
+(282, 1),
+(283, 1),
+(284, 1),
+(285, 1),
+(286, 1),
+(287, 1),
+(288, 1),
+(289, 1),
+(290, 1),
+(291, 1),
+(292, 1),
+(293, 1),
+(294, 1),
+(295, 1),
+(296, 1),
+(297, 1),
+(298, 1),
+(315, 1),
+(316, 1),
+(317, 1),
+(318, 1),
+(319, 1),
+(320, 1),
+(321, 1),
+(322, 1),
+(323, 1);
 
 -----------------------------------------------------------
 
@@ -3675,10 +3543,204 @@ CREATE TABLE `oc_tax_rule` (
 --
 
 INSERT INTO `oc_tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`, `priority`) VALUES
-(121, 10, 86, 'payment', 1),
-(120, 10, 87, 'store', 0),
-(128, 9, 86, 'shipping', 1),
-(127, 9, 87, 'shipping', 2);
+(128, 9, 88, 'shipping', 0),
+(740, 9, 323, 'shipping', 1),
+(739, 9, 322, 'shipping', 1),
+(738, 9, 321, 'shipping', 1),
+(737, 9, 320, 'shipping', 1),
+(736, 9, 319, 'shipping', 1),
+(735, 9, 318, 'shipping', 1),
+(734, 9, 317, 'shipping', 1),
+(733, 9, 316, 'shipping', 1),
+(732, 9, 315, 'shipping', 1),
+(731, 9, 197, 'shipping', 1),
+(730, 9, 134, 'shipping', 1),
+(729, 9, 119, 'shipping', 1),
+(728, 9, 120, 'shipping', 1),
+(727, 9, 121, 'shipping', 1),
+(726, 9, 131, 'shipping', 1),
+(725, 9, 130, 'shipping', 1),
+(724, 9, 129, 'shipping', 1),
+(723, 9, 128, 'shipping', 1),
+(722, 9, 127, 'shipping', 1),
+(721, 9, 133, 'shipping', 1),
+(720, 9, 111, 'shipping', 1),
+(719, 9, 112, 'shipping', 1),
+(718, 9, 211, 'shipping', 1),
+(717, 9, 161, 'shipping', 1),
+(716, 9, 132, 'shipping', 1),
+(715, 9, 118, 'shipping', 1),
+(714, 9, 117, 'shipping', 1),
+(713, 9, 116, 'shipping', 1),
+(712, 9, 115, 'shipping', 1),
+(711, 9, 114, 'shipping', 1),
+(710, 9, 113, 'shipping', 1),
+(709, 9, 126, 'shipping', 1),
+(708, 9, 125, 'shipping', 1),
+(707, 9, 124, 'shipping', 1),
+(706, 9, 158, 'shipping', 1),
+(705, 9, 159, 'shipping', 1),
+(704, 9, 149, 'shipping', 1),
+(703, 9, 148, 'shipping', 1),
+(702, 9, 147, 'shipping', 1),
+(701, 9, 137, 'shipping', 1),
+(700, 9, 138, 'shipping', 1),
+(699, 9, 139, 'shipping', 1),
+(698, 9, 140, 'shipping', 1),
+(697, 9, 157, 'shipping', 1),
+(696, 9, 156, 'shipping', 1),
+(695, 9, 155, 'shipping', 1),
+(694, 9, 123, 'shipping', 1),
+(693, 9, 122, 'shipping', 1),
+(692, 9, 135, 'shipping', 1),
+(691, 9, 136, 'shipping', 1),
+(690, 9, 150, 'shipping', 1),
+(689, 9, 151, 'shipping', 1),
+(688, 9, 152, 'shipping', 1),
+(687, 9, 153, 'shipping', 1),
+(686, 9, 154, 'shipping', 1),
+(685, 9, 141, 'shipping', 1),
+(684, 9, 196, 'shipping', 1),
+(683, 9, 162, 'shipping', 1),
+(682, 9, 173, 'shipping', 1),
+(681, 9, 163, 'shipping', 1),
+(680, 9, 164, 'shipping', 1),
+(679, 9, 165, 'shipping', 1),
+(678, 9, 166, 'shipping', 1),
+(677, 9, 167, 'shipping', 1),
+(676, 9, 168, 'shipping', 1),
+(675, 9, 169, 'shipping', 1),
+(674, 9, 170, 'shipping', 1),
+(673, 9, 174, 'shipping', 1),
+(672, 9, 175, 'shipping', 1),
+(671, 9, 185, 'shipping', 1),
+(670, 9, 176, 'shipping', 1),
+(669, 9, 177, 'shipping', 1),
+(668, 9, 178, 'shipping', 1),
+(667, 9, 179, 'shipping', 1),
+(666, 9, 180, 'shipping', 1),
+(665, 9, 181, 'shipping', 1),
+(664, 9, 182, 'shipping', 1),
+(663, 9, 183, 'shipping', 1),
+(662, 9, 184, 'shipping', 1),
+(661, 9, 171, 'shipping', 1),
+(660, 9, 172, 'shipping', 1),
+(659, 9, 186, 'shipping', 1),
+(658, 9, 199, 'shipping', 1),
+(657, 9, 198, 'shipping', 1),
+(656, 9, 188, 'shipping', 1),
+(655, 9, 189, 'shipping', 1),
+(654, 9, 190, 'shipping', 1),
+(653, 9, 191, 'shipping', 1),
+(652, 9, 192, 'shipping', 1),
+(651, 9, 193, 'shipping', 1),
+(650, 9, 194, 'shipping', 1),
+(649, 9, 200, 'shipping', 1),
+(648, 9, 210, 'shipping', 1),
+(647, 9, 209, 'shipping', 1),
+(646, 9, 187, 'shipping', 1),
+(645, 9, 201, 'shipping', 1),
+(644, 9, 202, 'shipping', 1),
+(643, 9, 203, 'shipping', 1),
+(642, 9, 204, 'shipping', 1),
+(641, 9, 205, 'shipping', 1),
+(640, 9, 206, 'shipping', 1),
+(639, 9, 207, 'shipping', 1),
+(638, 9, 208, 'shipping', 1),
+(637, 9, 195, 'shipping', 1),
+(636, 9, 228, 'shipping', 1),
+(635, 9, 216, 'shipping', 1),
+(634, 9, 217, 'shipping', 1),
+(633, 9, 218, 'shipping', 1),
+(632, 9, 219, 'shipping', 1),
+(631, 9, 220, 'shipping', 1),
+(630, 9, 221, 'shipping', 1),
+(629, 9, 222, 'shipping', 1),
+(628, 9, 236, 'shipping', 1),
+(627, 9, 237, 'shipping', 1),
+(626, 9, 215, 'shipping', 1),
+(625, 9, 214, 'shipping', 1),
+(624, 9, 213, 'shipping', 1),
+(623, 9, 230, 'shipping', 1),
+(622, 9, 231, 'shipping', 1),
+(621, 9, 232, 'shipping', 1),
+(620, 9, 233, 'shipping', 1),
+(619, 9, 234, 'shipping', 1),
+(618, 9, 235, 'shipping', 1),
+(617, 9, 225, 'shipping', 1),
+(616, 9, 224, 'shipping', 1),
+(615, 9, 223, 'shipping', 1),
+(614, 9, 251, 'shipping', 1),
+(613, 9, 252, 'shipping', 1),
+(612, 9, 253, 'shipping', 1),
+(611, 9, 240, 'shipping', 1),
+(610, 9, 241, 'shipping', 1),
+(609, 9, 242, 'shipping', 1),
+(608, 9, 243, 'shipping', 1),
+(607, 9, 244, 'shipping', 1),
+(606, 9, 245, 'shipping', 1),
+(605, 9, 246, 'shipping', 1),
+(604, 9, 247, 'shipping', 1),
+(603, 9, 248, 'shipping', 1),
+(602, 9, 239, 'shipping', 1),
+(601, 9, 238, 'shipping', 1),
+(600, 9, 249, 'shipping', 1),
+(599, 9, 254, 'shipping', 1),
+(598, 9, 255, 'shipping', 1),
+(597, 9, 256, 'shipping', 1),
+(596, 9, 257, 'shipping', 1),
+(595, 9, 258, 'shipping', 1),
+(594, 9, 259, 'shipping', 1),
+(593, 9, 260, 'shipping', 1),
+(592, 9, 261, 'shipping', 1),
+(591, 9, 250, 'shipping', 1),
+(590, 9, 229, 'shipping', 1),
+(589, 9, 142, 'shipping', 1),
+(588, 9, 283, 'shipping', 1),
+(587, 9, 284, 'shipping', 1),
+(586, 9, 285, 'shipping', 1),
+(585, 9, 286, 'shipping', 1),
+(584, 9, 276, 'shipping', 1),
+(583, 9, 275, 'shipping', 1),
+(582, 9, 274, 'shipping', 1),
+(581, 9, 264, 'shipping', 1),
+(580, 9, 265, 'shipping', 1),
+(579, 9, 266, 'shipping', 1),
+(578, 9, 282, 'shipping', 1),
+(577, 9, 281, 'shipping', 1),
+(576, 9, 143, 'shipping', 1),
+(575, 9, 144, 'shipping', 1),
+(574, 9, 145, 'shipping', 1),
+(573, 9, 146, 'shipping', 1),
+(572, 9, 160, 'shipping', 1),
+(571, 9, 263, 'shipping', 1),
+(570, 9, 277, 'shipping', 1),
+(569, 9, 278, 'shipping', 1),
+(568, 9, 279, 'shipping', 1),
+(567, 9, 280, 'shipping', 1),
+(566, 9, 267, 'shipping', 1),
+(565, 9, 268, 'shipping', 1),
+(564, 9, 294, 'shipping', 1),
+(563, 9, 295, 'shipping', 1),
+(562, 9, 296, 'shipping', 1),
+(561, 9, 297, 'shipping', 1),
+(560, 9, 298, 'shipping', 1),
+(559, 9, 262, 'shipping', 1),
+(558, 9, 212, 'shipping', 1),
+(557, 9, 226, 'shipping', 1),
+(556, 9, 293, 'shipping', 1),
+(555, 9, 292, 'shipping', 1),
+(554, 9, 291, 'shipping', 1),
+(553, 9, 269, 'shipping', 1),
+(552, 9, 270, 'shipping', 1),
+(551, 9, 271, 'shipping', 1),
+(550, 9, 272, 'shipping', 1),
+(549, 9, 273, 'shipping', 1),
+(548, 9, 287, 'shipping', 1),
+(547, 9, 288, 'shipping', 1),
+(546, 9, 289, 'shipping', 1),
+(545, 9, 290, 'shipping', 1),
+(544, 9, 227, 'shipping', 1);
 
 -----------------------------------------------------------
 
@@ -3714,6 +3776,49 @@ CREATE TABLE `oc_translation` (
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`translation_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `oc_translation`
+--
+
+INSERT INTO `oc_translation` (`translation_id`, `store_id`, `language_id`, `route`, `key`, `value`, `date_added`) VALUES
+(1, 0, 1, 'common/footer', 'text_powered', 'Hosted by &lt;a href=&quot;https://nomadtechnologysolutions.com&quot; target=&quot;_blank&quot;&gt;Nomad Technology Solutions LLC&lt;/a&gt;&lt;br /&gt; %s &amp;copy; %s', '2024-03-17 21:10:08'),
+(2, 0, 1, 'common/menu', 'text_category', 'Menu', '2024-04-04 18:25:25'),
+(6, 0, 1, 'account/voucher', 'text_message', '&lt;p&gt;Gift Certificate successfully added to your cart! Your gift certificate will be emailed to the recipient once you complete your order.&lt;/p&gt;', '2024-05-06 20:17:24'),
+(7, 0, 1, 'mail/voucher', 'text_subject', 'Congrats! You received a Gift Certificate from %s!', '2024-05-06 20:24:23'),
+(8, 0, 1, 'mail/voucher', 'text_greeting', 'Great news! You\'ve received a %s Gift Certificate!', '2024-05-06 20:25:55'),
+(9, 0, 1, 'mail/voucher', 'text_redeem', '&lt;b&gt;Here\'s How to Use Your Gift Certificate:&lt;/b&gt;&lt;br /&gt;\r\nSimply enter the code &lt;b&gt;%s&lt;/b&gt; at checkout to redeem your gift.', '2024-05-06 20:29:00'),
+(10, 0, 1, 'mail/voucher', 'text_from', 'This exciting gift is sent your way from &lt;b&gt;%s&lt;/b&gt;', '2024-05-06 20:57:52'),
+(11, 0, 1, 'mail/voucher', 'text_message', 'With the message:', '2024-05-06 21:05:43'),
+(12, 0, 1, 'mail/register', 'text_welcome', 'Welcome and thank you for creating your account at %s!', '2024-05-06 22:04:21'),
+(13, 0, 1, 'mail/register', 'text_login', 'Your account is ready to use, log in to view your past orders, saved addresses and cards, and various other account-related settings!', '2024-05-06 22:06:17'),
+(14, 0, 1, 'mail/register', 'text_service', 'Once logged in you\'ll be able to access your account from the top-right corner of the website. Here you\'ll find your past orders, saved addresses and cards, and various other account-related settings.', '2024-05-06 22:09:38'),
+(15, 0, 1, 'account/success', 'text_message', '&lt;p&gt;Congratulations! Your new account has been successfully created!&lt;/p&gt; &lt;p&gt;You can now log in to your account to access your wishlist, order history, and other account information.&lt;/p&gt; &lt;p&gt;If you have any questions about your account, or anything else here, please &lt;a href=&quot;%s&quot;&gt;contact us!&lt;/a&gt;&lt;/p&gt; &lt;p&gt;A confirmation has been sent to the provided e-mail address.&lt;/p&gt;', '2024-05-06 22:12:48'),
+(16, 0, 1, 'account/account', 'text_wishlist', 'View your wish list', '2024-05-06 22:13:40'),
+(17, 0, 1, 'account/download', 'text_empty', 'There are no downloads available for you right now!', '2024-05-06 22:14:11'),
+(18, 0, 1, 'product/product', 'text_related', 'Frequently bought together', '2024-05-06 23:14:41'),
+(19, 0, 1, 'product/product', 'text_success', 'Thank you for your review! It will appear here soon!', '2024-05-06 23:34:49'),
+(20, 0, 1, 'mail/review', 'text_waiting', 'There is a new product review awaiting approval. Log in to the admin site and navigate to Catalog &gt; Reviews to approve it.', '2024-05-06 23:36:27'),
+(21, 0, 1, 'information/contact', 'text_message', '&lt;p&gt;Thanks for reaching out! We\'ll be in touch soon!&lt;/p&gt;', '2024-05-09 18:20:30'),
+(22, 0, 1, 'product/product', 'tab_attribute', 'More Information', '2024-07-22 12:19:34'),
+(23, 0, 1, 'api/cart', 'error_required', 'Please select %s!', '2024-07-22 12:19:34'),
+(24, 0, 1, 'checkout/cart', 'error_required', 'Please select %s!', '2024-07-22 12:19:34'),
+(25, 0, 1, 'product/product', 'text_model', 'Model:', '2024-08-20 15:35:00'),
+(26, 0, 1, 'extension/payment/cheque', 'text_title', 'Check / Money Order', '2024-08-20 15:35:00'),
+(27, 0, 1, 'extension/payment/cheque', 'text_instruction', 'Check / Money Order Instructions', '2024-08-20 15:35:00'),
+(28, 0, 1, 'checkout/checkout', 'column_name', 'Product', '2024-08-20 15:35:00'),
+(29, 0, 1, 'checkout/cart', 'column_name', 'Product', '2024-08-20 15:35:00'),
+(30, 0, 1, 'extension/total/coupon', 'heading_title', 'Use Promo Code', '2024-08-20 15:35:00'),
+(31, 0, 1, 'extension/total/coupon', 'text_coupon', 'Promo (%s)', '2024-08-20 15:35:00'),
+(32, 0, 1, 'extension/total/coupon', 'text_success', 'Success: Your promo discount has been applied!', '2024-08-20 15:35:00'),
+(33, 0, 1, 'extension/total/coupon', 'entry_coupon', 'Enter your promo', '2024-08-20 15:35:00'),
+(34, 0, 1, 'extension/total/coupon', 'error_empty', 'Warning: Please enter a promo code!', '2024-08-20 15:35:00'),
+(35, 0, 1, 'en-gb', 'button_coupon', 'Apply', '2024-08-20 15:35:00'),
+(36, 0, 1, 'en-gb', 'button_voucher', 'Apply', '2024-08-20 15:35:00'),
+(37, 0, 1, 'extension/total/voucher', 'entry_voucher', 'Enter your gift code', '2024-08-20 15:35:00'),
+(38, 0, 1, 'product/product', 'text_note', '&lt;span class=&quot;text-danger&quot;&gt;Note:&lt;/span&gt; HTML content not supported!s', '2024-08-20 15:35:00'),
+(39, 0, 1, 'checkout/cart', 'text_next', 'What\'s next?', '2024-08-20 15:35:00'),
+(40, 0, 1, 'checkout/cart', 'text_next_choice', 'Have a promo code or gift certificate? Enter it here! (You can also do this later)', '2024-08-20 15:35:00');
 
 -----------------------------------------------------------
 
@@ -3754,73 +3859,7 @@ CREATE TABLE `oc_seo_url` (
 --
 
 INSERT INTO `oc_seo_url` (`seo_url_id`, `store_id`, `language_id`, `query`, `keyword`) VALUES
-(824, 0, 1, 'product_id=48', 'ipod-classic'),
-(836, 0, 1, 'category_id=20', 'desktops'),
-(834, 0, 1, 'category_id=26', 'pc'),
-(835, 0, 1, 'category_id=27', 'mac'),
-(730, 0, 1, 'manufacturer_id=8', 'apple'),
-(772, 0, 1, 'information_id=4', 'about_us'),
-(768, 0, 1, 'product_id=42', 'test'),
-(789, 0, 1, 'category_id=34', 'mp3-players'),
-(781, 0, 1, 'category_id=36', 'test2'),
-(774, 0, 1, 'category_id=18', 'laptop-notebook'),
-(775, 0, 1, 'category_id=46', 'macs'),
-(776, 0, 1, 'category_id=45', 'windows'),
-(777, 0, 1, 'category_id=25', 'component'),
-(778, 0, 1, 'category_id=29', 'mouse'),
-(779, 0, 1, 'category_id=28', 'monitor'),
-(780, 0, 1, 'category_id=35', 'test1'),
-(782, 0, 1, 'category_id=30', 'printer'),
-(783, 0, 1, 'category_id=31', 'scanner'),
-(784, 0, 1, 'category_id=32', 'web-camera'),
-(785, 0, 1, 'category_id=57', 'tablet'),
-(786, 0, 1, 'category_id=17', 'software'),
-(787, 0, 1, 'category_id=24', 'smartphone'),
-(788, 0, 1, 'category_id=33', 'camera'),
-(790, 0, 1, 'category_id=43', 'test11'),
-(791, 0, 1, 'category_id=44', 'test12'),
-(792, 0, 1, 'category_id=47', 'test15'),
-(793, 0, 1, 'category_id=48', 'test16'),
-(794, 0, 1, 'category_id=49', 'test17'),
-(795, 0, 1, 'category_id=50', 'test18'),
-(796, 0, 1, 'category_id=51', 'test19'),
-(797, 0, 1, 'category_id=52', 'test20'),
-(798, 0, 1, 'category_id=58', 'test25'),
-(799, 0, 1, 'category_id=53', 'test21'),
-(800, 0, 1, 'category_id=54', 'test22'),
-(801, 0, 1, 'category_id=55', 'test23'),
-(802, 0, 1, 'category_id=56', 'test24'),
-(803, 0, 1, 'category_id=38', 'test4'),
-(804, 0, 1, 'category_id=37', 'test5'),
-(805, 0, 1, 'category_id=39', 'test6'),
-(806, 0, 1, 'category_id=40', 'test7'),
-(807, 0, 1, 'category_id=41', 'test8'),
-(808, 0, 1, 'category_id=42', 'test9'),
-(809, 0, 1, 'product_id=30', 'canon-eos-5d'),
-(840, 0, 1, 'product_id=47', 'hp-lp3065'),
-(811, 0, 1, 'product_id=28', 'htc-touch-hd'),
-(812, 0, 1, 'product_id=43', 'macbook'),
-(813, 0, 1, 'product_id=44', 'macbook-air'),
-(814, 0, 1, 'product_id=45', 'macbook-pro'),
-(816, 0, 1, 'product_id=31', 'nikon-d300'),
-(817, 0, 1, 'product_id=29', 'palm-treo-pro'),
-(818, 0, 1, 'product_id=35', 'product-8'),
-(819, 0, 1, 'product_id=49', 'samsung-galaxy-tab-10-1'),
-(820, 0, 1, 'product_id=33', 'samsung-syncmaster-941bw'),
-(821, 0, 1, 'product_id=46', 'sony-vaio'),
-(837, 0, 1, 'product_id=41', 'imac'),
-(823, 0, 1, 'product_id=40', 'iphone'),
-(825, 0, 1, 'product_id=36', 'ipod-nano'),
-(826, 0, 1, 'product_id=34', 'ipod-shuffle'),
-(827, 0, 1, 'product_id=32', 'ipod-touch'),
-(828, 0, 1, 'manufacturer_id=9', 'canon'),
-(829, 0, 1, 'manufacturer_id=5', 'htc'),
-(830, 0, 1, 'manufacturer_id=7', 'hewlett-packard'),
-(831, 0, 1, 'manufacturer_id=6', 'palm'),
-(832, 0, 1, 'manufacturer_id=10', 'sony'),
-(841, 0, 1, 'information_id=6', 'delivery'),
-(842, 0, 1, 'information_id=3', 'privacy'),
-(843, 0, 1, 'information_id=5', 'terms');
+(1, 0, 1, 'category_id=1', 'shop-all-products');
 
 -----------------------------------------------------------
 
@@ -3865,8 +3904,7 @@ CREATE TABLE `oc_user_group` (
 --
 
 INSERT INTO `oc_user_group` (`user_group_id`, `name`, `permission`) VALUES
-(1, 'Administrator', '{"access":["catalog\\/attribute","catalog\\/attribute_group","catalog\\/category","catalog\\/download","catalog\\/filter","catalog\\/information","catalog\\/manufacturer","catalog\\/option","catalog\\/product","catalog\\/recurring","catalog\\/review","common\\/column_left","common\\/developer","common\\/filemanager","common\\/profile","common\\/security","customer\\/custom_field","customer\\/customer","customer\\/customer_approval","customer\\/customer_group","design\\/banner","design\\/layout","design\\/theme","design\\/translation","design\\/seo_url","event\\/statistics","event\\/theme","extension\\/advertise\\/google","extension\\/analytics\\/google","extension\\/captcha\\/basic","extension\\/captcha\\/google","extension\\/currency\\/ecb","extension\\/dashboard\\/activity","extension\\/dashboard\\/chart","extension\\/dashboard\\/customer","extension\\/dashboard\\/map","extension\\/dashboard\\/online","extension\\/dashboard\\/order","extension\\/dashboard\\/recent","extension\\/dashboard\\/sale","extension\\/extension\\/advertise","extension\\/extension\\/analytics","extension\\/extension\\/captcha","extension\\/extension\\/currency","extension\\/extension\\/dashboard","extension\\/extension\\/feed","extension\\/extension\\/fraud","extension\\/extension\\/menu","extension\\/extension\\/module","extension\\/extension\\/payment","extension\\/extension\\/report","extension\\/extension\\/shipping","extension\\/extension\\/theme","extension\\/extension\\/total","extension\\/feed\\/google_base","extension\\/feed\\/google_sitemap","extension\\/fraud\\/fraudlabspro","extension\\/fraud\\/ip","extension\\/fraud\\/maxmind","extension\\/marketing\\/remarketing","extension\\/module\\/account","extension\\/module\\/amazon_login","extension\\/module\\/amazon_pay","extension\\/module\\/banner","extension\\/module\\/bestseller","extension\\/module\\/carousel","extension\\/module\\/category","extension\\/module\\/ebay_listing","extension\\/module\\/featured","extension\\/module\\/filter","extension\\/module\\/google_hangouts","extension\\/module\\/html","extension\\/module\\/information","extension\\/module\\/klarna_checkout_module","extension\\/module\\/latest","extension\\/module\\/laybuy_layout","extension\\/module\\/pilibaba_button","extension\\/module\\/sagepay_direct_cards","extension\\/module\\/sagepay_server_cards","extension\\/module\\/slideshow","extension\\/module\\/special","extension\\/module\\/store","extension\\/payment\\/amazon_login_pay","extension\\/payment\\/authorizenet_aim","extension\\/payment\\/authorizenet_sim","extension\\/payment\\/bank_transfer","extension\\/payment\\/bluepay_hosted","extension\\/payment\\/bluepay_redirect","extension\\/payment\\/cardconnect","extension\\/payment\\/cardinity","extension\\/payment\\/cheque","extension\\/payment\\/cod","extension\\/payment\\/eway","extension\\/payment\\/firstdata","extension\\/payment\\/firstdata_remote","extension\\/payment\\/free_checkout","extension\\/payment\\/g2apay","extension\\/payment\\/globalpay","extension\\/payment\\/globalpay_remote","extension\\/payment\\/klarna_account","extension\\/payment\\/klarna_checkout","extension\\/payment\\/klarna_invoice","extension\\/payment\\/laybuy","extension\\/payment\\/liqpay","extension\\/payment\\/nochex","extension\\/payment\\/paymate","extension\\/payment\\/paypoint","extension\\/payment\\/payza","extension\\/payment\\/perpetual_payments","extension\\/payment\\/pilibaba","extension\\/payment\\/realex","extension\\/payment\\/realex_remote","extension\\/payment\\/sagepay_direct","extension\\/payment\\/sagepay_server","extension\\/payment\\/sagepay_us","extension\\/payment\\/opayo","extension\\/payment\\/securetrading_pp","extension\\/payment\\/securetrading_ws","extension\\/payment\\/skrill","extension\\/payment\\/twocheckout","extension\\/payment\\/web_payment_software","extension\\/payment\\/worldpay","extension\\/module\\/pp_braintree_button","extension\\/payment\\/pp_braintree","extension\\/report\\/customer_activity","extension\\/report\\/customer_order","extension\\/report\\/customer_reward","extension\\/report\\/customer_search","extension\\/report\\/customer_transaction","extension\\/report\\/marketing","extension\\/report\\/product_purchased","extension\\/report\\/product_viewed","extension\\/report\\/sale_coupon","extension\\/report\\/sale_order","extension\\/report\\/sale_return","extension\\/report\\/sale_shipping","extension\\/report\\/sale_tax","extension\\/shipping\\/auspost","extension\\/shipping\\/ec_ship","extension\\/shipping\\/fedex","extension\\/shipping\\/flat","extension\\/shipping\\/free","extension\\/shipping\\/item","extension\\/shipping\\/parcelforce_48","extension\\/shipping\\/pickup","extension\\/shipping\\/royal_mail","extension\\/shipping\\/ups","extension\\/shipping\\/usps","extension\\/shipping\\/weight","extension\\/theme\\/default","extension\\/total\\/coupon","extension\\/total\\/credit","extension\\/total\\/handling","extension\\/total\\/klarna_fee","extension\\/total\\/low_order_fee","extension\\/total\\/reward","extension\\/total\\/shipping","extension\\/total\\/sub_total","extension\\/total\\/tax","extension\\/total\\/total","extension\\/total\\/voucher","localisation\\/country","localisation\\/currency","localisation\\/geo_zone","localisation\\/language","localisation\\/length_class","localisation\\/location","localisation\\/order_status","localisation\\/return_action","localisation\\/return_reason","localisation\\/return_status","localisation\\/stock_status","localisation\\/tax_class","localisation\\/tax_rate","localisation\\/weight_class","localisation\\/zone","mail\\/affiliate","mail\\/customer","mail\\/forgotten","mail\\/return","mail\\/reward","mail\\/transaction","marketing\\/contact","marketing\\/coupon","marketing\\/marketing","marketplace\\/api","marketplace\\/event","marketplace\\/extension","marketplace\\/install","marketplace\\/installer","marketplace\\/marketplace","marketplace\\/modification","report\\/online","report\\/report","report\\/statistics","sale\\/order","sale\\/recurring","sale\\/return","sale\\/voucher","sale\\/voucher_theme","setting\\/setting","setting\\/store","startup\\/error","startup\\/event","startup\\/login","startup\\/permission","startup\\/router","startup\\/sass","startup\\/startup","tool\\/backup","tool\\/log","tool\\/upload","user\\/api","user\\/user","user\\/user_permission"],"modify":["catalog\\/attribute","catalog\\/attribute_group","catalog\\/category","catalog\\/download","catalog\\/filter","catalog\\/information","catalog\\/manufacturer","catalog\\/option","catalog\\/product","catalog\\/recurring","catalog\\/review","common\\/column_left","common\\/developer","common\\/filemanager","common\\/profile","common\\/security","customer\\/custom_field","customer\\/customer","customer\\/customer_approval","customer\\/customer_group","design\\/banner","design\\/layout","design\\/theme","design\\/translation","design\\/seo_url","event\\/statistics","event\\/theme","extension\\/advertise\\/google","extension\\/analytics\\/google","extension\\/captcha\\/basic","extension\\/captcha\\/google","extension\\/currency\\/ecb","extension\\/dashboard\\/activity","extension\\/dashboard\\/chart","extension\\/dashboard\\/customer","extension\\/dashboard\\/map","extension\\/dashboard\\/online","extension\\/dashboard\\/order","extension\\/dashboard\\/recent","extension\\/dashboard\\/sale","extension\\/extension\\/advertise","extension\\/extension\\/analytics","extension\\/extension\\/captcha","extension\\/extension\\/currency","extension\\/extension\\/dashboard","extension\\/extension\\/feed","extension\\/extension\\/fraud","extension\\/extension\\/menu","extension\\/extension\\/module","extension\\/extension\\/payment","extension\\/extension\\/report","extension\\/extension\\/shipping","extension\\/extension\\/theme","extension\\/extension\\/total","extension\\/feed\\/google_base","extension\\/feed\\/google_sitemap","extension\\/fraud\\/fraudlabspro","extension\\/fraud\\/ip","extension\\/fraud\\/maxmind","extension\\/marketing\\/remarketing","extension\\/module\\/account","extension\\/module\\/amazon_login","extension\\/module\\/amazon_pay","extension\\/module\\/banner","extension\\/module\\/bestseller","extension\\/module\\/carousel","extension\\/module\\/category","extension\\/module\\/ebay_listing","extension\\/module\\/featured","extension\\/module\\/filter","extension\\/module\\/google_hangouts","extension\\/module\\/html","extension\\/module\\/information","extension\\/module\\/klarna_checkout_module","extension\\/module\\/latest","extension\\/module\\/laybuy_layout","extension\\/module\\/pilibaba_button","extension\\/module\\/sagepay_direct_cards","extension\\/module\\/sagepay_server_cards","extension\\/module\\/slideshow","extension\\/module\\/special","extension\\/module\\/store","extension\\/payment\\/amazon_login_pay","extension\\/payment\\/authorizenet_aim","extension\\/payment\\/authorizenet_sim","extension\\/payment\\/bank_transfer","extension\\/payment\\/bluepay_hosted","extension\\/payment\\/bluepay_redirect","extension\\/payment\\/cardconnect","extension\\/payment\\/cardinity","extension\\/payment\\/cheque","extension\\/payment\\/cod","extension\\/payment\\/eway","extension\\/payment\\/firstdata","extension\\/payment\\/firstdata_remote","extension\\/payment\\/free_checkout","extension\\/payment\\/g2apay","extension\\/payment\\/globalpay","extension\\/payment\\/globalpay_remote","extension\\/payment\\/klarna_account","extension\\/payment\\/klarna_checkout","extension\\/payment\\/klarna_invoice","extension\\/payment\\/laybuy","extension\\/payment\\/liqpay","extension\\/payment\\/nochex","extension\\/payment\\/paymate","extension\\/payment\\/paypoint","extension\\/payment\\/payza","extension\\/payment\\/perpetual_payments","extension\\/payment\\/pilibaba","extension\\/payment\\/realex","extension\\/payment\\/realex_remote","extension\\/payment\\/sagepay_direct","extension\\/payment\\/sagepay_server","extension\\/payment\\/sagepay_us","extension\\/payment\\/opayo","extension\\/payment\\/securetrading_pp","extension\\/payment\\/securetrading_ws","extension\\/payment\\/skrill","extension\\/payment\\/twocheckout","extension\\/payment\\/web_payment_software","extension\\/payment\\/worldpay","extension\\/module\\/pp_braintree_button","extension\\/payment\\/pp_braintree","extension\\/report\\/customer_activity","extension\\/report\\/customer_order","extension\\/report\\/customer_reward","extension\\/report\\/customer_search","extension\\/report\\/customer_transaction","extension\\/report\\/marketing","extension\\/report\\/product_purchased","extension\\/report\\/product_viewed","extension\\/report\\/sale_coupon","extension\\/report\\/sale_order","extension\\/report\\/sale_return","extension\\/report\\/sale_shipping","extension\\/report\\/sale_tax","extension\\/shipping\\/auspost","extension\\/shipping\\/ec_ship","extension\\/shipping\\/fedex","extension\\/shipping\\/flat","extension\\/shipping\\/free","extension\\/shipping\\/item","extension\\/shipping\\/parcelforce_48","extension\\/shipping\\/pickup","extension\\/shipping\\/royal_mail","extension\\/shipping\\/ups","extension\\/shipping\\/usps","extension\\/shipping\\/weight","extension\\/theme\\/default","extension\\/total\\/coupon","extension\\/total\\/credit","extension\\/total\\/handling","extension\\/total\\/klarna_fee","extension\\/total\\/low_order_fee","extension\\/total\\/reward","extension\\/total\\/shipping","extension\\/total\\/sub_total","extension\\/total\\/tax","extension\\/total\\/total","extension\\/total\\/voucher","localisation\\/country","localisation\\/currency","localisation\\/geo_zone","localisation\\/language","localisation\\/length_class","localisation\\/location","localisation\\/order_status","localisation\\/return_action","localisation\\/return_reason","localisation\\/return_status","localisation\\/stock_status","localisation\\/tax_class","localisation\\/tax_rate","localisation\\/weight_class","localisation\\/zone","mail\\/affiliate","mail\\/customer","mail\\/forgotten","mail\\/return","mail\\/reward","mail\\/transaction","marketing\\/contact","marketing\\/coupon","marketing\\/marketing","marketplace\\/event","marketplace\\/api","marketplace\\/extension","marketplace\\/install","marketplace\\/installer","marketplace\\/marketplace","marketplace\\/modification","report\\/online","report\\/report","report\\/statistics","sale\\/order","sale\\/recurring","sale\\/return","sale\\/voucher","sale\\/voucher_theme","setting\\/setting","setting\\/store","startup\\/error","startup\\/event","startup\\/login","startup\\/permission","startup\\/router","startup\\/sass","startup\\/startup","tool\\/backup","tool\\/log","tool\\/upload","user\\/api","user\\/user","user\\/user_permission"]}'),
-(10, 'Demonstration', '');
+(1, 'Administrator', '{"access":["catalog\\/attribute","catalog\\/attribute_group","catalog\\/category","catalog\\/download","catalog\\/filter","catalog\\/information","catalog\\/manufacturer","catalog\\/option","catalog\\/product","catalog\\/recurring","catalog\\/review","common\\/column_left","common\\/developer","common\\/filemanager","common\\/profile","common\\/security","customer\\/custom_field","customer\\/customer","customer\\/customer_approval","customer\\/customer_group","design\\/banner","design\\/layout","design\\/theme","design\\/translation","design\\/seo_url","event\\/statistics","event\\/theme","extension\\/advertise\\/google","extension\\/analytics\\/google","extension\\/captcha\\/basic","extension\\/captcha\\/google","extension\\/currency\\/ecb","extension\\/dashboard\\/activity","extension\\/dashboard\\/chart","extension\\/dashboard\\/customer","extension\\/dashboard\\/map","extension\\/dashboard\\/online","extension\\/dashboard\\/order","extension\\/dashboard\\/recent","extension\\/dashboard\\/sale","extension\\/extension\\/advertise","extension\\/extension\\/analytics","extension\\/extension\\/captcha","extension\\/extension\\/currency","extension\\/extension\\/dashboard","extension\\/extension\\/feed","extension\\/extension\\/fraud","extension\\/extension\\/menu","extension\\/extension\\/module","extension\\/extension\\/payment","extension\\/extension\\/report","extension\\/extension\\/shipping","extension\\/extension\\/theme","extension\\/extension\\/total","extension\\/feed\\/google_base","extension\\/feed\\/google_sitemap","extension\\/fraud\\/fraudlabspro","extension\\/fraud\\/ip","extension\\/fraud\\/maxmind","extension\\/marketing\\/remarketing","extension\\/module\\/account","extension\\/module\\/amazon_login","extension\\/module\\/amazon_pay","extension\\/module\\/banner","extension\\/module\\/bestseller","extension\\/module\\/carousel","extension\\/module\\/category","extension\\/module\\/ebay_listing","extension\\/module\\/featured","extension\\/module\\/filter","extension\\/module\\/google_hangouts","extension\\/module\\/html","extension\\/module\\/information","extension\\/module\\/klarna_checkout_module","extension\\/module\\/latest","extension\\/module\\/laybuy_layout","extension\\/module\\/pilibaba_button","extension\\/module\\/sagepay_direct_cards","extension\\/module\\/sagepay_server_cards","extension\\/module\\/slideshow","extension\\/module\\/special","extension\\/module\\/store","extension\\/payment\\/amazon_login_pay","extension\\/payment\\/authorizenet_aim","extension\\/payment\\/authorizenet_sim","extension\\/payment\\/bank_transfer","extension\\/payment\\/bluepay_hosted","extension\\/payment\\/bluepay_redirect","extension\\/payment\\/cardconnect","extension\\/payment\\/cardinity","extension\\/payment\\/cheque","extension\\/payment\\/cod","extension\\/payment\\/eway","extension\\/payment\\/firstdata","extension\\/payment\\/firstdata_remote","extension\\/payment\\/free_checkout","extension\\/payment\\/g2apay","extension\\/payment\\/globalpay","extension\\/payment\\/globalpay_remote","extension\\/payment\\/klarna_account","extension\\/payment\\/klarna_checkout","extension\\/payment\\/klarna_invoice","extension\\/payment\\/laybuy","extension\\/payment\\/liqpay","extension\\/payment\\/nochex","extension\\/payment\\/paymate","extension\\/payment\\/paypoint","extension\\/payment\\/payza","extension\\/payment\\/perpetual_payments","extension\\/payment\\/pilibaba","extension\\/payment\\/realex","extension\\/payment\\/realex_remote","extension\\/payment\\/sagepay_direct","extension\\/payment\\/sagepay_server","extension\\/payment\\/sagepay_us","extension\\/payment\\/opayo","extension\\/payment\\/securetrading_pp","extension\\/payment\\/securetrading_ws","extension\\/payment\\/skrill","extension\\/payment\\/twocheckout","extension\\/payment\\/web_payment_software","extension\\/payment\\/worldpay","extension\\/module\\/pp_braintree_button","extension\\/payment\\/pp_braintree","extension\\/report\\/customer_activity","extension\\/report\\/customer_order","extension\\/report\\/customer_reward","extension\\/report\\/customer_search","extension\\/report\\/customer_transaction","extension\\/report\\/marketing","extension\\/report\\/product_purchased","extension\\/report\\/product_viewed","extension\\/report\\/sale_coupon","extension\\/report\\/sale_order","extension\\/report\\/sale_return","extension\\/report\\/sale_shipping","extension\\/report\\/sale_tax","extension\\/shipping\\/auspost","extension\\/shipping\\/ec_ship","extension\\/shipping\\/fedex","extension\\/shipping\\/flat","extension\\/shipping\\/free","extension\\/shipping\\/item","extension\\/shipping\\/parcelforce_48","extension\\/shipping\\/pickup","extension\\/shipping\\/royal_mail","extension\\/shipping\\/ups","extension\\/shipping\\/usps","extension\\/shipping\\/weight","extension\\/theme\\/default","extension\\/total\\/coupon","extension\\/total\\/credit","extension\\/total\\/handling","extension\\/total\\/klarna_fee","extension\\/total\\/low_order_fee","extension\\/total\\/reward","extension\\/total\\/shipping","extension\\/total\\/sub_total","extension\\/total\\/tax","extension\\/total\\/total","extension\\/total\\/voucher","localisation\\/country","localisation\\/currency","localisation\\/geo_zone","localisation\\/language","localisation\\/length_class","localisation\\/location","localisation\\/order_status","localisation\\/return_action","localisation\\/return_reason","localisation\\/return_status","localisation\\/stock_status","localisation\\/tax_class","localisation\\/tax_rate","localisation\\/weight_class","localisation\\/zone","mail\\/affiliate","mail\\/customer","mail\\/forgotten","mail\\/return","mail\\/reward","mail\\/transaction","marketing\\/contact","marketing\\/coupon","marketing\\/marketing","marketplace\\/api","marketplace\\/event","marketplace\\/extension","marketplace\\/install","marketplace\\/installer","marketplace\\/marketplace","marketplace\\/modification","report\\/online","report\\/report","report\\/statistics","sale\\/order","sale\\/recurring","sale\\/return","sale\\/voucher","sale\\/voucher_theme","setting\\/setting","setting\\/store","startup\\/error","startup\\/event","startup\\/login","startup\\/permission","startup\\/router","startup\\/sass","startup\\/startup","tool\\/backup","tool\\/log","tool\\/upload","user\\/api","user\\/user","user\\/user_permission"],"modify":["catalog\\/attribute","catalog\\/attribute_group","catalog\\/category","catalog\\/download","catalog\\/filter","catalog\\/information","catalog\\/manufacturer","catalog\\/option","catalog\\/product","catalog\\/recurring","catalog\\/review","common\\/column_left","common\\/developer","common\\/filemanager","common\\/profile","common\\/security","customer\\/custom_field","customer\\/customer","customer\\/customer_approval","customer\\/customer_group","design\\/banner","design\\/layout","design\\/theme","design\\/translation","design\\/seo_url","event\\/statistics","event\\/theme","extension\\/advertise\\/google","extension\\/analytics\\/google","extension\\/captcha\\/basic","extension\\/captcha\\/google","extension\\/currency\\/ecb","extension\\/dashboard\\/activity","extension\\/dashboard\\/chart","extension\\/dashboard\\/customer","extension\\/dashboard\\/map","extension\\/dashboard\\/online","extension\\/dashboard\\/order","extension\\/dashboard\\/recent","extension\\/dashboard\\/sale","extension\\/extension\\/advertise","extension\\/extension\\/analytics","extension\\/extension\\/captcha","extension\\/extension\\/currency","extension\\/extension\\/dashboard","extension\\/extension\\/feed","extension\\/extension\\/fraud","extension\\/extension\\/menu","extension\\/extension\\/module","extension\\/extension\\/payment","extension\\/extension\\/report","extension\\/extension\\/shipping","extension\\/extension\\/theme","extension\\/extension\\/total","extension\\/feed\\/google_base","extension\\/feed\\/google_sitemap","extension\\/fraud\\/fraudlabspro","extension\\/fraud\\/ip","extension\\/fraud\\/maxmind","extension\\/marketing\\/remarketing","extension\\/module\\/account","extension\\/module\\/amazon_login","extension\\/module\\/amazon_pay","extension\\/module\\/banner","extension\\/module\\/bestseller","extension\\/module\\/carousel","extension\\/module\\/category","extension\\/module\\/ebay_listing","extension\\/module\\/featured","extension\\/module\\/filter","extension\\/module\\/google_hangouts","extension\\/module\\/html","extension\\/module\\/information","extension\\/module\\/klarna_checkout_module","extension\\/module\\/latest","extension\\/module\\/laybuy_layout","extension\\/module\\/pilibaba_button","extension\\/module\\/sagepay_direct_cards","extension\\/module\\/sagepay_server_cards","extension\\/module\\/slideshow","extension\\/module\\/special","extension\\/module\\/store","extension\\/payment\\/amazon_login_pay","extension\\/payment\\/authorizenet_aim","extension\\/payment\\/authorizenet_sim","extension\\/payment\\/bank_transfer","extension\\/payment\\/bluepay_hosted","extension\\/payment\\/bluepay_redirect","extension\\/payment\\/cardconnect","extension\\/payment\\/cardinity","extension\\/payment\\/cheque","extension\\/payment\\/cod","extension\\/payment\\/eway","extension\\/payment\\/firstdata","extension\\/payment\\/firstdata_remote","extension\\/payment\\/free_checkout","extension\\/payment\\/g2apay","extension\\/payment\\/globalpay","extension\\/payment\\/globalpay_remote","extension\\/payment\\/klarna_account","extension\\/payment\\/klarna_checkout","extension\\/payment\\/klarna_invoice","extension\\/payment\\/laybuy","extension\\/payment\\/liqpay","extension\\/payment\\/nochex","extension\\/payment\\/paymate","extension\\/payment\\/paypoint","extension\\/payment\\/payza","extension\\/payment\\/perpetual_payments","extension\\/payment\\/pilibaba","extension\\/payment\\/realex","extension\\/payment\\/realex_remote","extension\\/payment\\/sagepay_direct","extension\\/payment\\/sagepay_server","extension\\/payment\\/sagepay_us","extension\\/payment\\/opayo","extension\\/payment\\/securetrading_pp","extension\\/payment\\/securetrading_ws","extension\\/payment\\/skrill","extension\\/payment\\/twocheckout","extension\\/payment\\/web_payment_software","extension\\/payment\\/worldpay","extension\\/module\\/pp_braintree_button","extension\\/payment\\/pp_braintree","extension\\/report\\/customer_activity","extension\\/report\\/customer_order","extension\\/report\\/customer_reward","extension\\/report\\/customer_search","extension\\/report\\/customer_transaction","extension\\/report\\/marketing","extension\\/report\\/product_purchased","extension\\/report\\/product_viewed","extension\\/report\\/sale_coupon","extension\\/report\\/sale_order","extension\\/report\\/sale_return","extension\\/report\\/sale_shipping","extension\\/report\\/sale_tax","extension\\/shipping\\/auspost","extension\\/shipping\\/ec_ship","extension\\/shipping\\/fedex","extension\\/shipping\\/flat","extension\\/shipping\\/free","extension\\/shipping\\/item","extension\\/shipping\\/parcelforce_48","extension\\/shipping\\/pickup","extension\\/shipping\\/royal_mail","extension\\/shipping\\/ups","extension\\/shipping\\/usps","extension\\/shipping\\/weight","extension\\/theme\\/default","extension\\/total\\/coupon","extension\\/total\\/credit","extension\\/total\\/handling","extension\\/total\\/klarna_fee","extension\\/total\\/low_order_fee","extension\\/total\\/reward","extension\\/total\\/shipping","extension\\/total\\/sub_total","extension\\/total\\/tax","extension\\/total\\/total","extension\\/total\\/voucher","localisation\\/country","localisation\\/currency","localisation\\/geo_zone","localisation\\/language","localisation\\/length_class","localisation\\/location","localisation\\/order_status","localisation\\/return_action","localisation\\/return_reason","localisation\\/return_status","localisation\\/stock_status","localisation\\/tax_class","localisation\\/tax_rate","localisation\\/weight_class","localisation\\/zone","mail\\/affiliate","mail\\/customer","mail\\/forgotten","mail\\/return","mail\\/reward","mail\\/transaction","marketing\\/contact","marketing\\/coupon","marketing\\/marketing","marketplace\\/event","marketplace\\/api","marketplace\\/extension","marketplace\\/install","marketplace\\/installer","marketplace\\/marketplace","marketplace\\/modification","report\\/online","report\\/report","report\\/statistics","sale\\/order","sale\\/recurring","sale\\/return","sale\\/voucher","sale\\/voucher_theme","setting\\/setting","setting\\/store","startup\\/error","startup\\/event","startup\\/login","startup\\/permission","startup\\/router","startup\\/sass","startup\\/startup","tool\\/backup","tool\\/log","tool\\/upload","user\\/api","user\\/user","user\\/user_permission"]}');
 
 -----------------------------------------------------------
 
@@ -3925,9 +3963,7 @@ CREATE TABLE `oc_voucher_theme` (
 --
 
 INSERT INTO `oc_voucher_theme` (`voucher_theme_id`, `image`) VALUES
-(8, 'catalog/demo/canon_eos_5d_2.jpg'),
-(7, 'catalog/demo/gift-voucher-birthday.jpg'),
-(6, 'catalog/demo/apple_logo.jpg');
+(9, '');
 
 -----------------------------------------------------------
 
@@ -3948,9 +3984,7 @@ CREATE TABLE `oc_voucher_theme_description` (
 --
 
 INSERT INTO `oc_voucher_theme_description` (`voucher_theme_id`, `language_id`, `name`) VALUES
-(6, 1, 'Christmas'),
-(7, 1, 'Birthday'),
-(8, 1, 'General');
+(9, 1, 'Default');
 
 -----------------------------------------------------------
 
@@ -3970,10 +4004,10 @@ CREATE TABLE `oc_weight_class` (
 --
 
 INSERT INTO `oc_weight_class` (`weight_class_id`, `value`) VALUES
-(1, '1.00000000'),
-(2, '1000.00000000'),
-(5, '2.20460000'),
-(6, '35.27400000');
+(1, '0.45359200'),
+(2, '453.59200000'),
+(5, '1.00000000'),
+(6, '16.00000000');
 
 -----------------------------------------------------------
 
@@ -8154,112 +8188,202 @@ CREATE TABLE `oc_zone_to_geo_zone` (
 --
 
 INSERT INTO `oc_zone_to_geo_zone` (`zone_to_geo_zone_id`, `country_id`, `zone_id`, `geo_zone_id`, `date_added`, `date_modified`) VALUES
-(1, 222, 0, 4, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(2, 222, 3513, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(3, 222, 3514, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(4, 222, 3515, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(5, 222, 3516, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(6, 222, 3517, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(7, 222, 3518, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(8, 222, 3519, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(9, 222, 3520, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(10, 222, 3521, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(11, 222, 3522, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(12, 222, 3523, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(13, 222, 3524, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(14, 222, 3525, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(15, 222, 3526, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(16, 222, 3527, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(17, 222, 3528, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(18, 222, 3529, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(19, 222, 3530, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(20, 222, 3531, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(21, 222, 3532, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(22, 222, 3533, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(23, 222, 3534, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(24, 222, 3535, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(25, 222, 3536, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(26, 222, 3537, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(27, 222, 3538, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(28, 222, 3539, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(29, 222, 3540, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(30, 222, 3541, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(31, 222, 3542, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(32, 222, 3543, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(33, 222, 3544, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(34, 222, 3545, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(35, 222, 3546, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(36, 222, 3547, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(37, 222, 3548, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(38, 222, 3549, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(39, 222, 3550, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(40, 222, 3551, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(41, 222, 3552, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(42, 222, 3553, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(43, 222, 3554, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(44, 222, 3555, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(45, 222, 3556, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(46, 222, 3557, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(47, 222, 3558, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(48, 222, 3559, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(49, 222, 3560, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(50, 222, 3561, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(51, 222, 3562, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(52, 222, 3563, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(53, 222, 3564, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(54, 222, 3565, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(55, 222, 3566, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(56, 222, 3567, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(57, 222, 3568, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(58, 222, 3569, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(59, 222, 3570, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(60, 222, 3571, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(61, 222, 3572, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(62, 222, 3573, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(63, 222, 3574, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(64, 222, 3575, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(65, 222, 3576, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(66, 222, 3577, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(67, 222, 3578, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(68, 222, 3579, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(69, 222, 3580, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(70, 222, 3581, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(71, 222, 3582, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(72, 222, 3583, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(73, 222, 3584, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(74, 222, 3585, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(75, 222, 3586, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(76, 222, 3587, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(77, 222, 3588, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(78, 222, 3589, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(79, 222, 3590, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(80, 222, 3591, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(81, 222, 3592, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(82, 222, 3593, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(83, 222, 3594, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(84, 222, 3595, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(85, 222, 3596, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(86, 222, 3597, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(87, 222, 3598, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(88, 222, 3599, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(89, 222, 3600, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(90, 222, 3601, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(91, 222, 3602, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(92, 222, 3603, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(93, 222, 3604, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(94, 222, 3605, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(95, 222, 3606, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(96, 222, 3607, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(97, 222, 3608, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(98, 222, 3609, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(99, 222, 3610, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(100, 222, 3611, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(101, 222, 3612, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(102, 222, 3949, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(103, 222, 3950, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(104, 222, 3951, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(105, 222, 3952, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(106, 222, 3953, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(107, 222, 3954, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(108, 222, 3955, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(109, 222, 3972, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(110, 223, 3666, 5, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(111, 223, 0, 6, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(119, 5, 0, 261, '2024-09-19 12:12:58', '2024-09-19 12:12:58'),
+(118, 4, 0, 260, '2024-09-19 12:12:36', '2024-09-19 12:12:36'),
+(117, 3, 0, 259, '2024-09-19 12:12:05', '2024-09-19 12:12:05'),
+(116, 2, 0, 258, '2024-09-19 12:01:18', '2024-09-19 12:01:18'),
+(120, 6, 0, 262, '2024-09-19 12:13:23', '2024-09-19 12:13:23'),
+(121, 7, 0, 263, '2024-09-19 12:13:45', '2024-09-19 12:13:45'),
+(122, 9, 0, 264, '2024-09-19 12:14:04', '2024-09-19 12:14:04'),
+(123, 10, 0, 265, '2024-09-19 12:14:23', '2024-09-19 12:14:23'),
+(124, 11, 0, 266, '2024-09-19 12:14:41', '2024-09-19 12:14:41'),
+(125, 12, 0, 267, '2024-09-19 12:14:57', '2024-09-19 12:14:57'),
+(126, 13, 0, 268, '2024-09-19 12:15:17', '2024-09-19 12:15:17'),
+(127, 14, 0, 269, '2024-09-19 12:15:34', '2024-09-19 12:15:34'),
+(128, 15, 0, 270, '2024-09-19 12:15:48', '2024-09-19 12:15:48'),
+(129, 16, 0, 271, '2024-09-19 12:16:02', '2024-09-19 12:16:02'),
+(130, 17, 0, 272, '2024-09-19 12:16:14', '2024-09-19 12:16:14'),
+(131, 18, 0, 273, '2024-09-19 12:16:26', '2024-09-19 12:16:26'),
+(132, 19, 0, 274, '2024-09-19 12:16:42', '2024-09-19 12:16:42'),
+(133, 20, 0, 275, '2024-09-19 12:16:55', '2024-09-19 12:16:55'),
+(134, 21, 0, 276, '2024-09-19 12:17:08', '2024-09-19 12:17:08'),
+(135, 22, 0, 277, '2024-09-19 12:17:23', '2024-09-19 12:17:23'),
+(136, 23, 0, 278, '2024-09-19 12:17:36', '2024-09-19 12:17:36'),
+(137, 25, 0, 279, '2024-09-19 12:17:48', '2024-09-19 12:17:48'),
+(138, 26, 0, 280, '2024-09-19 12:18:06', '2024-09-19 12:18:06'),
+(139, 245, 0, 281, '2024-09-19 12:18:39', '2024-09-19 12:18:39'),
+(140, 27, 0, 282, '2024-09-19 12:18:57', '2024-09-19 12:18:57'),
+(141, 28, 0, 283, '2024-09-19 12:19:11', '2024-09-19 12:19:11'),
+(142, 30, 0, 284, '2024-09-19 12:19:26', '2024-09-19 12:19:26'),
+(143, 33, 0, 285, '2024-09-19 12:19:46', '2024-09-19 12:19:46'),
+(144, 34, 0, 286, '2024-09-19 12:21:43', '2024-09-19 12:21:43'),
+(145, 35, 0, 287, '2024-09-19 12:21:58', '2024-09-19 12:21:58'),
+(146, 36, 0, 288, '2024-09-19 12:22:10', '2024-09-19 12:22:10'),
+(147, 37, 0, 289, '2024-09-19 12:22:27', '2024-09-19 12:22:27'),
+(148, 38, 0, 290, '2024-09-19 12:24:21', '2024-09-19 12:24:21'),
+(149, 39, 0, 291, '2024-09-19 12:24:41', '2024-09-19 12:24:41'),
+(150, 41, 0, 292, '2024-09-19 12:25:23', '2024-09-19 12:25:23'),
+(151, 42, 0, 293, '2024-09-19 12:25:38', '2024-09-19 12:25:38'),
+(152, 43, 0, 294, '2024-09-19 12:25:52', '2024-09-19 12:25:52'),
+(153, 44, 0, 295, '2024-09-19 12:26:08', '2024-09-19 12:26:08'),
+(154, 47, 0, 296, '2024-09-19 12:26:21', '2024-09-19 12:26:21'),
+(155, 48, 0, 297, '2024-09-19 12:26:34', '2024-09-19 12:26:34'),
+(156, 49, 0, 298, '2024-09-19 12:26:53', '2024-09-19 12:26:53'),
+(157, 50, 0, 299, '2024-09-19 12:27:05', '2024-09-19 12:27:05'),
+(158, 51, 0, 300, '2024-09-19 12:27:19', '2024-09-19 12:27:19'),
+(159, 53, 0, 301, '2024-09-19 12:27:32', '2024-09-19 12:27:32'),
+(160, 246, 0, 302, '2024-09-19 12:27:45', '2024-09-19 12:27:45'),
+(161, 55, 0, 303, '2024-09-19 12:27:58', '2024-09-19 12:27:58'),
+(162, 56, 0, 304, '2024-09-19 12:28:09', '2024-09-19 12:28:09'),
+(163, 57, 0, 305, '2024-09-19 12:28:22', '2024-09-19 12:28:22'),
+(164, 58, 0, 306, '2024-09-19 12:40:08', '2024-09-19 12:40:08'),
+(165, 59, 0, 307, '2024-09-19 12:40:15', '2024-09-19 12:40:15'),
+(166, 60, 0, 308, '2024-09-19 12:40:27', '2024-09-19 12:40:27'),
+(167, 62, 0, 309, '2024-09-19 12:40:27', '2024-09-19 12:40:27'),
+(168, 63, 0, 310, '2024-09-19 12:40:27', '2024-09-19 12:40:27'),
+(169, 64, 0, 311, '2024-09-19 12:40:39', '2024-09-19 12:40:39'),
+(170, 65, 0, 312, '2024-09-19 12:40:39', '2024-09-19 12:40:39'),
+(171, 66, 0, 313, '2024-09-19 12:40:39', '2024-09-19 12:40:39'),
+(172, 67, 0, 314, '2024-09-19 12:40:39', '2024-09-19 12:40:39'),
+(173, 68, 0, 315, '2024-09-19 12:40:39', '2024-09-19 12:40:39'),
+(174, 70, 0, 316, '2024-09-19 12:40:39', '2024-09-19 12:40:39'),
+(175, 71, 0, 317, '2024-09-19 12:40:50', '2024-09-19 12:40:50'),
+(176, 72, 0, 318, '2024-09-19 12:40:50', '2024-09-19 12:40:50'),
+(177, 74, 0, 319, '2024-09-19 12:40:50', '2024-09-19 12:40:50'),
+(178, 76, 0, 320, '2024-09-19 12:40:50', '2024-09-19 12:40:50'),
+(179, 78, 0, 321, '2024-09-19 12:40:50', '2024-09-19 12:40:50'),
+(180, 79, 0, 322, '2024-09-19 12:40:50', '2024-09-19 12:40:50'),
+(181, 80, 0, 323, '2024-09-19 12:40:50', '2024-09-19 12:40:50'),
+(182, 81, 0, 324, '2024-09-19 12:41:31', '2024-09-19 12:41:31'),
+(183, 82, 0, 325, '2024-09-19 12:41:31', '2024-09-19 12:41:31'),
+(184, 84, 0, 326, '2024-09-19 12:41:31', '2024-09-19 12:41:31'),
+(185, 86, 0, 327, '2024-09-19 12:41:31', '2024-09-19 12:41:31'),
+(186, 87, 0, 328, '2024-09-19 12:41:31', '2024-09-19 12:41:31'),
+(187, 88, 0, 329, '2024-09-19 12:41:31', '2024-09-19 12:41:31'),
+(188, 89, 0, 330, '2024-09-19 12:41:31', '2024-09-19 12:41:31'),
+(189, 90, 0, 331, '2024-09-19 12:41:44', '2024-09-19 12:41:44'),
+(190, 91, 0, 332, '2024-09-19 12:41:44', '2024-09-19 12:41:44'),
+(191, 92, 0, 333, '2024-09-19 12:41:56', '2024-09-19 12:41:56'),
+(192, 93, 0, 334, '2024-09-19 12:41:56', '2024-09-19 12:41:56'),
+(193, 95, 0, 335, '2024-09-19 12:41:56', '2024-09-19 12:41:56'),
+(194, 97, 0, 336, '2024-09-19 12:42:04', '2024-09-19 12:42:04'),
+(195, 98, 0, 337, '2024-09-19 12:42:04', '2024-09-19 12:42:04'),
+(196, 99, 0, 338, '2024-09-19 12:42:04', '2024-09-19 12:42:04'),
+(197, 100, 0, 339, '2024-09-19 12:42:22', '2024-09-19 12:42:22'),
+(198, 102, 0, 340, '2024-09-19 12:42:22', '2024-09-19 12:42:22'),
+(199, 103, 0, 341, '2024-09-19 12:42:22', '2024-09-19 12:42:22'),
+(200, 104, 0, 342, '2024-09-19 12:42:22', '2024-09-19 12:42:22'),
+(201, 105, 0, 343, '2024-09-19 12:42:22', '2024-09-19 12:42:22'),
+(202, 52, 0, 344, '2024-09-19 12:42:22', '2024-09-19 12:42:22'),
+(203, 106, 0, 345, '2024-09-19 12:42:32', '2024-09-19 12:42:32'),
+(204, 107, 0, 346, '2024-09-19 12:42:32', '2024-09-19 12:42:32'),
+(205, 257, 0, 347, '2024-09-19 12:42:32', '2024-09-19 12:42:32'),
+(206, 108, 0, 348, '2024-09-19 12:42:32', '2024-09-19 12:42:32'),
+(207, 109, 0, 349, '2024-09-19 12:42:32', '2024-09-19 12:42:32'),
+(208, 110, 0, 350, '2024-09-19 12:42:42', '2024-09-19 12:42:42'),
+(209, 113, 0, 351, '2024-09-19 12:42:42', '2024-09-19 12:42:42'),
+(210, 115, 0, 352, '2024-09-19 12:42:42', '2024-09-19 12:42:42'),
+(211, 116, 0, 353, '2024-09-19 12:42:42', '2024-09-19 12:42:42'),
+(212, 117, 0, 354, '2024-09-19 12:42:42', '2024-09-19 12:42:42'),
+(213, 118, 0, 355, '2024-09-19 12:42:52', '2024-09-19 12:42:52'),
+(214, 119, 0, 356, '2024-09-19 12:42:52', '2024-09-19 12:42:52'),
+(215, 120, 0, 357, '2024-09-19 12:42:52', '2024-09-19 12:42:52'),
+(216, 122, 0, 358, '2024-09-19 12:42:52', '2024-09-19 12:42:52'),
+(217, 123, 0, 359, '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(218, 124, 0, 360, '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(219, 126, 0, 361, '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(220, 127, 0, 362, '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(221, 128, 0, 363, '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(222, 129, 0, 364, '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(223, 130, 0, 365, '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(224, 131, 0, 366, '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(225, 132, 0, 367, '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(226, 133, 0, 368, '2024-09-19 12:43:04', '2024-09-19 12:43:04'),
+(227, 134, 0, 369, '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(228, 135, 0, 370, '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(229, 136, 0, 371, '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(230, 138, 0, 372, '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(231, 139, 0, 373, '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(232, 140, 0, 374, '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(233, 141, 0, 375, '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(234, 142, 0, 376, '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(235, 242, 0, 377, '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(236, 143, 0, 378, '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(237, 144, 0, 379, '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(238, 145, 0, 380, '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(239, 146, 0, 381, '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(240, 147, 0, 382, '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(241, 149, 0, 383, '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(242, 150, 0, 384, '2024-09-19 12:43:26', '2024-09-19 12:43:26'),
+(243, 153, 0, 385, '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(244, 154, 0, 386, '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(245, 155, 0, 387, '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(246, 156, 0, 388, '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(247, 160, 0, 389, '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(248, 162, 0, 390, '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(249, 164, 0, 391, '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(250, 165, 0, 392, '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(251, 166, 0, 393, '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(252, 167, 0, 394, '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(253, 168, 0, 395, '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(254, 170, 0, 396, '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(255, 171, 0, 397, '2024-09-19 12:43:34', '2024-09-19 12:43:34'),
+(256, 174, 0, 398, '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(257, 175, 0, 399, '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(258, 176, 0, 400, '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(259, 177, 0, 401, '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(260, 182, 0, 402, '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(261, 184, 0, 403, '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(262, 185, 0, 404, '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(263, 243, 0, 405, '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(264, 186, 0, 406, '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(265, 187, 0, 407, '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(266, 188, 0, 408, '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(267, 189, 0, 409, '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(268, 190, 0, 410, '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(269, 191, 0, 411, '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(270, 193, 0, 412, '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(271, 195, 0, 413, '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(272, 196, 0, 414, '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(273, 178, 0, 415, '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(274, 179, 0, 416, '2024-09-19 12:44:23', '2024-09-19 12:44:23'),
+(275, 250, 0, 417, '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(276, 180, 0, 418, '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(277, 199, 0, 419, '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(278, 200, 0, 420, '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(279, 202, 0, 421, '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(280, 203, 0, 422, '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(281, 204, 0, 423, '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(282, 206, 0, 424, '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(283, 208, 0, 425, '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(284, 209, 0, 426, '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(285, 61, 0, 427, '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(286, 210, 0, 428, '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(287, 212, 0, 429, '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(288, 213, 0, 430, '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(289, 214, 0, 431, '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(290, 215, 0, 432, '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(291, 216, 0, 433, '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(292, 219, 0, 434, '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(293, 220, 0, 435, '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(294, 221, 0, 436, '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(295, 222, 0, 437, '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(296, 225, 0, 438, '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(297, 226, 0, 439, '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(298, 227, 0, 440, '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(299, 229, 0, 441, '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(300, 230, 0, 442, '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(301, 235, 0, 443, '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(302, 238, 0, 444, '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(303, 239, 0, 445, '2024-09-19 12:44:32', '2024-09-19 12:44:32'),
+(327, 38, 613, 470, '2024-09-19 13:07:25', '2024-09-19 13:07:25'),
+(325, 38, 611, 468, '2024-09-19 13:07:25', '2024-09-19 13:07:25'),
+(323, 38, 608, 466, '2024-09-19 13:07:25', '2024-09-19 13:07:25'),
+(319, 38, 603, 462, '2024-09-19 13:07:25', '2024-09-19 13:07:25'),
+(326, 38, 612, 469, '2024-09-19 13:07:25', '2024-09-19 13:07:25'),
+(324, 38, 610, 467, '2024-09-19 13:07:25', '2024-09-19 13:07:25'),
+(322, 38, 606, 465, '2024-09-19 13:07:25', '2024-09-19 13:07:25'),
+(320, 38, 604, 463, '2024-09-19 13:07:25', '2024-09-19 13:07:25'),
+(321, 38, 605, 464, '2024-09-19 13:07:25', '2024-09-19 13:07:25');
