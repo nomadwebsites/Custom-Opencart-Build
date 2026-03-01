@@ -123,18 +123,18 @@ class ModelUpgrade1009 extends Model {
 			fclose($handle);
 		}
 	
-		$files = glob(DIR_OPENCART . '{config.php,admin/config.php}', GLOB_BRACE);
+		$files = safe_glob(DIR_OPENCART . '{config.php,admin/config.php}', GLOB_BRACE);
 
 		foreach ($files as $file) {
 			$lines = file($file);
 	
 			for ($i = 0; $i < count($lines); $i++) { 
 				if ((strpos($lines[$i], 'DIR_IMAGE') !== false) && (strpos($lines[$i + 1], 'DIR_STORAGE') === false)) {
-					array_splice($lines, $i + 1, 0, array('define(\'DIR_STORAGE\', DIR_SYSTEM . \'storage/\');'));
+					array_splice($lines, $i + 1, 0, array('define(\'DIR_STORAGE\', DIR_SYSTEM . \'storage/\');' . "\n"));
 				}
 
 				if ((strpos($lines[$i], 'DIR_MODIFICATION') !== false) && (strpos($lines[$i + 1], 'DIR_SESSION') === false)) {
-					array_splice($lines, $i + 1, 0, array('define(\'DIR_SESSION\', DIR_STORAGE . \'session/\');'));
+					array_splice($lines, $i + 1, 0, array('define(\'DIR_SESSION\', DIR_STORAGE . \'session/\');' . "\n"));
 				}
 
 				if (strpos($lines[$i], 'DIR_CACHE') !== false) {

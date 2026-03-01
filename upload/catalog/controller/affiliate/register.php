@@ -308,7 +308,7 @@ class ControllerAffiliateRegister extends Controller {
 
 	protected function validate() {
 		if (!empty($this->request->post['firstname'])) {
-			if ((utf8_strlen(trim($this->request->post['firstname'])) < 1) || (utf8_strlen(trim($this->request->post['firstname'])) > 32)) {
+			if ((utf8_strlen($this->request->post['firstname']) < 1) || (utf8_strlen($this->request->post['firstname']) > 32)) {
 				$this->error['firstname'] = $this->language->get('error_firstname');
 			}
 		} else {
@@ -316,7 +316,7 @@ class ControllerAffiliateRegister extends Controller {
 		}
 
 		if (!empty($this->request->post['lastname'])) {
-			if ((utf8_strlen(trim($this->request->post['lastname'])) < 1) || (utf8_strlen(trim($this->request->post['lastname'])) > 32)) {
+			if ((utf8_strlen($this->request->post['lastname']) < 1) || (utf8_strlen($this->request->post['lastname']) > 32)) {
 				$this->error['lastname'] = $this->language->get('error_lastname');
 			}
 		} else {
@@ -371,11 +371,7 @@ class ControllerAffiliateRegister extends Controller {
 			$this->error['password'] = $this->language->get('error_password');
 		}
 
-		if (!empty($this->request->post['confirm']) && !empty($this->request->post['password'])) {
-			if ($this->request->post['confirm'] != $this->request->post['password']) {
-				$this->error['confirm'] = $this->language->get('error_confirm');
-			}
-		} else {
+		if ($this->request->post['confirm'] !== $this->request->post['password']) {
 			$this->error['confirm'] = $this->language->get('error_confirm');
 		}
 		

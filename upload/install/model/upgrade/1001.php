@@ -5,10 +5,10 @@ class ModelUpgrade1001 extends Model {
 		$this->db->query("ALTER TABLE `" . DB_PREFIX . "address` CHANGE `company` `company` VARCHAR(40) NOT NULL");
 
 		// order
-		$this->db->query("ALTER TABLE `" . DB_PREFIX . "order` CHANGE `payment_company` `payment_company` VARCHAR(40) NOT NULL");
+		$this->db->query("ALTER TABLE `" . DB_PREFIX . "order` CHANGE `payment_company` `payment_company` VARCHAR(60) NOT NULL");
 
 		// order
-		$this->db->query("ALTER TABLE `" . DB_PREFIX . "order` CHANGE `shipping_company` `shipping_company` VARCHAR(40) NOT NULL");
+		$this->db->query("ALTER TABLE `" . DB_PREFIX . "order` CHANGE `shipping_company` `shipping_company` VARCHAR(60) NOT NULL");
 
 		// affiliate
 		$query = $this->db->query("SELECT * FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = '" . DB_DATABASE . "' AND TABLE_NAME = '" . DB_PREFIX . "affiliate'");
@@ -157,7 +157,7 @@ class ModelUpgrade1001 extends Model {
 
 		// Update the config.php by adding a DIR_MODIFICATION
 		if (is_file(DIR_OPENCART . 'config.php')) {
-			$files = glob(DIR_OPENCART . '{config.php,admin/config.php}', GLOB_BRACE);
+			$files = safe_glob(DIR_OPENCART . '{config.php,admin/config.php}', GLOB_BRACE);
 
 			foreach ($files as $file) {
 				if (!is_writable($file)) {
